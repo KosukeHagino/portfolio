@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="cmn/css/normalize.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="cmn/css/style.css">
+    <link rel="icon" href="cmn/img/icon/logo.svg" type="image/svg">
+    <script src="cmn/js/jquery-3.7.1.min.js"></script>
+    <script src="cmn/js/script.js" defer></script>
+    <title>Kosuke Hagino's Portfolio</title>
+  </head>
+
+  <body class="sub_page">
+
+    <!-- container -->
+    <div class="container">
+      <!-- header -->
+      <header class="header">
+        <div class="logo_area">
+          <img src="cmn/img/icon/logo_w.svg" alt="ロゴ">
+        </div>
+
+        <!-- global_nav -->
+        <nav class="global_nav">
+          <ul class="global_nav_list">
+            <li class="global_nav_item">
+              <a href="index.html">
+                <div class="global_nav_icon"></div>
+                <div class="global_nav_name">
+                  <span class="global_nav_name_ja">-ホーム</span>
+                  <span class="global_nav_name_en">HOME</span>
+                </div>
+              </a>
+            </li>
+            <li class="global_nav_item">
+              <a href="profile.html">
+                <div class="global_nav_icon"></div>
+                <div class="global_nav_name">
+                  <span class="global_nav_name_ja">-プロフィール</span>
+                  <span class="global_nav_name_en">PROFILE</span>
+                </div>
+              </a>
+            </li>
+            <li class="global_nav_item">
+              <a href="works.html">
+                <div class="global_nav_icon"></div>
+                <div class="global_nav_name">
+                  <span class="global_nav_name_ja">-制作物</span>
+                  <span class="global_nav_name_en">WORKS</span>
+                </div>
+              </a>
+            </li>
+            <li class="global_nav_item">
+              <a href="#">
+                <div class="global_nav_icon contact"></div>
+                <div class="global_nav_name">
+                  <span class="global_nav_name_ja">-お問い合わせ</span>
+                  <span class="global_nav_name_en">CONTACT</span>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </nav>  <!-- global_nav end -->
+      </header> <!-- header end -->
+
+      <!-- main -->
+      <main class="main">
+        <!-- wrapper -->
+        <div class="wrapper">
+
+          <!-- section -->
+          <section class="section">
+            <h1 class="title">
+              <span class="title_ja">お問い合わせ</span>
+              <span class="title_en">CONTACT</span>
+            </h1>
+            <!-- inner_wrapper -->
+            <div class="inner_wrapper">
+              <p class="contact_text">
+                お問い合わせは､以下のフォームからお願いいたします｡<br>
+                後日、ご入力いただいたメールアドレス宛に回答をさせていただきます。<br>
+                ＊の付いた項目は必須事項です｡
+              </p>
+
+              <!-- contact_form -->
+              <form class="contact_form" id="contactForm" action="#" method="post">
+                <ul class="contact_form_list">
+                    <li class="contact_form_item">
+                        <p class="contact_form_item_name">お問い合わせ種別＊</p>
+                        <div class="contact_form_item_content">
+                            <label><input id="subject1" type="radio" name="subject" value="Web制作/コーディングの依頼" required>Web制作/コーディングの依頼</label>
+                            <label><input id="subject2" type="radio" name="subject" value="その他">その他</label>
+                        </div>
+                    </li>
+                    <li class="contact_form_item">
+                        <p class="contact_form_item_name">お名前＊</p>
+                        <input id="name" class="contact_form_item_content" type="text" name="name" placeholder="お名前を入力してください。" required>
+                    </li>
+                    <li class="contact_form_item">
+                        <p class="contact_form_item_name">御社名</p>
+                        <input id="company" class="contact_form_item_content" type="text" name="company" placeholder="御社名を入力してください。（任意）">
+                    </li>
+                    <li class="contact_form_item">
+                        <p class="contact_form_item_name">メールアドレス＊</p>
+                        <input id="mail" class="contact_form_item_content" type="email" name="mail" placeholder="メールアドレスを入力してください。" required>
+                    </li>
+                    <li class="contact_form_item">
+                        <p class="contact_form_item_name">お問い合わせ内容＊</p>
+                        <textarea id="message" class="contact_form_item_content" name="message" placeholder="お問い合わせ内容を入力してください。" required></textarea>
+                    </li>
+                </ul>
+                <div class="contact_privacy">
+                    <input id="privacy_policy" type="checkbox" name="privacy_policy" required>
+                    <p><a class="privacy_link" href="privacy.html" target="_blank">プライバシーポリシー</a>に同意する</p>
+                </div>
+                <button class="contact_btn" type="button" onclick="goToConfirm()">確認</button>
+            </form> <!-- contact_form end -->
+
+            </div>  <!-- inner_wrappaer end -->
+          </section> <!-- section end -->
+        </div>  <!-- wrapper end -->
+
+        <!-- scroll -->
+        <div class="scroll">
+          <p class="scroll_txt">scroll</p>
+          <span class="scroll_bar"></span>
+        </div>
+        <!-- scroll end -->
+        
+      </main> <!-- main end -->
+    </div>  <!-- container end -->
+
+    <!-- footer -->
+    <footer class="footer">
+      <p><a href="privacy.html">プライバシーポリシー</a></p>
+      <p><small>&copy;2025 KOSUKE HAGINO</small></p>
+    </footer> <!-- footer end -->
+  </body>
+</html>

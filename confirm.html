@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="cmn/css/normalize.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="cmn/css/style.css">
+    <link rel="icon" href="cmn/img/icon/logo.svg" type="image/svg">
+    <script src="cmn/js/jquery-3.7.1.min.js"></script>
+    <script src="cmn/js/script.js" defer></script>
+    <title>Kosuke Hagino's Portfolio</title>
+  </head>
+
+  <body class="sub_page">
+
+    <!-- container -->
+    <div class="container">
+      <!-- header -->
+      <header class="header">
+        <div class="logo_area">
+          <img src="cmn/img/icon/logo_w.svg" alt="ロゴ">
+        </div>
+
+        <!-- global_nav -->
+        <nav class="global_nav">
+          <ul class="global_nav_list">
+            <li class="global_nav_item">
+              <a href="index.html">
+                <div class="global_nav_icon"></div>
+                <div class="global_nav_name">
+                  <span class="global_nav_name_ja">-ホーム</span>
+                  <span class="global_nav_name_en">HOME</span>
+                </div>
+              </a>
+            </li>
+            <li class="global_nav_item">
+              <a href="profile.html">
+                <div class="global_nav_icon"></div>
+                <div class="global_nav_name">
+                  <span class="global_nav_name_ja">-プロフィール</span>
+                  <span class="global_nav_name_en">PROFILE</span>
+                </div>
+              </a>
+            </li>
+            <li class="global_nav_item">
+              <a href="works.html">
+                <div class="global_nav_icon"></div>
+                <div class="global_nav_name">
+                  <span class="global_nav_name_ja">-制作物</span>
+                  <span class="global_nav_name_en">WORKS</span>
+                </div>
+              </a>
+            </li>
+            <li class="global_nav_item">
+              <a href="#">
+                <div class="global_nav_icon contact"></div>
+                <div class="global_nav_name">
+                  <span class="global_nav_name_ja">-お問い合わせ</span>
+                  <span class="global_nav_name_en">CONTACT</span>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </nav>  <!-- global_nav end -->
+      </header> <!-- header end -->
+
+      <!-- main -->
+      <main class="main">
+        <!-- wrapper -->
+        <div class="wrapper">
+
+          <!-- section -->
+          <section class="section confirm">
+            <h1 class="title">
+              <span class="title_ja">お問い合わせ</span>
+              <span class="title_en">CONTACT</span>
+            </h1>
+            <!-- inner_wrapper -->
+            <div class="inner_wrapper">
+                <p class="contact_text">
+                    ご入力いただいた内容は以下の通りです。誤りがないかご確認ください。<br>
+                    特にメールアドレスについては、誤りがあるとお返事ができませんので必ずご確認ください。<br>
+                    内容にお間違いがなければ [送信] ボタンを押してください。
+                </p>
+                <!-- confirm_area -->
+                <div class="confirm_area">
+                    <ul>
+                        <li><strong>お問い合わせ種別</strong> <span id="confirmInquiryType"></span></li>
+                        <li><strong>お名前</strong> <span id="confirmName"></span></li>
+                        <li><strong>御社名</strong> <span id="confirmCompany"></span></li>
+                        <li><strong>メールアドレス</strong> <span id="confirmMail"></span></li>
+                        <li><strong>お問い合わせ内容</strong> <span id="confirmMessage"></span></li>
+                    </ul>
+                    <button class="contact_prev_btn" onclick="goBack()">＜＜　入力画面に戻る</button>
+                    <button class="contact_btn" onclick="submitForm()">送信</button>
+                </div>  <!-- confirm_area end -->
+            </div>  <!-- inner_wrappaer end -->
+          </section> <!-- section end -->
+        </div>  <!-- wrapper end -->
+
+        <!-- scroll -->
+        <div class="scroll">
+          <p class="scroll_txt">scroll</p>
+          <span class="scroll_bar"></span>
+        </div>
+        <!-- scroll end -->
+        
+      </main> <!-- main end -->
+    </div>  <!-- container end -->
+
+    <!-- footer -->
+    <footer class="footer">
+      <p><a href="privacy.html">プライバシーポリシー</a></p>
+      <p><small>&copy;2025 KOSUKE HAGINO</small></p>
+    </footer> <!-- footer end -->
+  </body>
+</html>
