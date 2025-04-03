@@ -783,8 +783,11 @@ span {
 }
 
 .sub_page .contact_form_item label {
-    cursor: pointer;
     margin-right: 30px;
+}
+
+.sub_page .contact_form_item label:hover {
+    cursor: pointer;
 }
 
 .sub_page .contact_form_item_name {
@@ -804,6 +807,11 @@ span {
     height: 16px;
     vertical-align: middle;
     margin-right: 10px;
+}
+
+.sub_page .contact_form input[type="radio"]:hover,
+.sub_page .contact_form input[type="checkbox"]:hover {
+    cursor: pointer;
 }
 
 .sub_page .contact_form input[type="radio"] {
