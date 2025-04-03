@@ -1,0 +1,12 @@
+# OSの一時ファイル
+.DS_Store
+Thumbs.db
+
+# エディタの設定ファイル（VS Codeを使うなら）
+.vscode/
+
+# Git管理不要な一時ファイル
+*.log
+*.bak
+*.swp
+*.tmp
