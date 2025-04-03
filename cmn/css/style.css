@@ -309,7 +309,7 @@ span {
 }
 
 .footer p a:hover {
-    opacity: 0.5;
+    opacity: 0.8;
     text-decoration: underline;
 }
 
@@ -662,7 +662,8 @@ span {
     filter: drop-shadow(3px 3px 3px var(--gray));
 }
 
-.sub_page .btn {
+.sub_page .arrow_btn,
+.sub_page .plus_btn {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -670,8 +671,8 @@ span {
     margin: 30px auto 0;
 }
 
-.sub_page .arrow_btn,
-.sub_page .plus_btn {
+.sub_page .arrow_btn img,
+.sub_page .plus_btn img {
     width: 40px;
     height: 40px;
     border: none;
@@ -681,8 +682,8 @@ span {
     transition: 0.3s
 }
 
-.sub_page .arrow_btn:hover,
-.sub_page .plus_btn:hover {
+.sub_page .arrow_btn img:hover,
+.sub_page .plus_btn img:hover {
     cursor: pointer;
     filter: none;
     opacity: 0.8;
@@ -691,7 +692,13 @@ span {
 .sub_page .btn_txt {
     font-size: 1.2rem;
     line-height: 40px;
+    color: var(--gray);
+}
+
+.sub_page .btn_txt:hover {
+    text-decoration: underline;
     color: var(--blue);
+    cursor: pointer;
 }
 
 .sub_page .works_area dl {
@@ -822,12 +829,12 @@ span {
 }
 
 .sub_page .privacy_link {
-    color: var(--blue);
+    color: var(--gray);
 }
 
 .sub_page .privacy_link:hover {
     text-decoration: underline;
-    opacity: 0.8;
+    color: var(--blue);
 }
 
 .sub_page .contact_btn {
