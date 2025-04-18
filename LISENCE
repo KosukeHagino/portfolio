@@ -1,0 +1,37 @@
+MIT License
+
+Copyright (c) 2025 Kosuke Hagino
+
+Permission is hereby granted, free of charge, to any person obtaining a copy  
+of this software and associated documentation files (the "Software"), to deal  
+in the Software without restriction, including without limitation the rights  
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell  
+copies of the Software, and to permit persons to whom the Software is  
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all  
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR  
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,  
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE  
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER  
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,  
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE  
+SOFTWARE.
+
+
+---
+
+This project uses icons licensed under the MIT License from Iconify (https://icon-sets.iconify.design):
+
+- home_icon.svg        by Ben Sperry
+- profile_icon.svg     by Siemens AG
+- works_icon.svg       by Microsoft Corporation
+- contact_icon.svg     by Resolve to Save Lives
+- html_icon.svg        by Themesberg
+- css_icon.svg         by Themesberg
+- js_icon.svg          by Microsoft Corporation
+- php_icon.svg         by Arturo Wibawa
+- figma_icon.svg       by Astrit
+- github_icon.svg      by Themesberg
