@@ -1,0 +1,241 @@
+@charset "utf-8";
+
+/**************************************************
+   Variable
+**************************************************/
+:root {
+    /* --- Break point --- */
+    --bp-sp : 768px;        /* スマホとタブレットの境界 */
+    --bp-tab : 1024px;      /* タブレットとPCの境界 */
+
+    /* --- z-index --- */
+    --z-header          : 5000;         /* ヘッダー */
+    --z-header-menu-btn : 200;          /* ヘッダー内メニューボタン */
+    --z-header-nav      : 100;          /* ヘッダー内ナビ */
+    --z-mask            : 4000;         /* ヘッダー開時の背景マスク */
+    --z-footer          : 2000;         /* フッター */
+    --z-main            : 1;            /* メイン */
+
+    /* --- Colors --- */
+    /* >> base */
+    --clr-bg-page    : #e6ecec;         /* Gray  : サイト全体の背景 */
+    --clr-bg-card    : #faffff;         /* White : タブ・カードの背景・メニュー文字色 */
+    --clr-text       : #1c1c1c;         /* Black : メインの文字色 */
+    /* >> accent & states */
+    --clr-primary    : #558890;         /* Green : メニュー背景・タグ文字・差し色 */
+    --clr-active     : #1e2a3a;         /* Blue  : ホバー・アクティブ背景 */
+    --clr-bg-contact : linear-gradient(180deg, #748e91 0%, #1e2a3a 100%);     /* Gradient(Green → Blue) : コンタクトセクションの背景色 */
+
+    /* --- Font family --- */
+    /* >> common */
+    --fnt-base   : dnp-shuei-gothic-gin-std, Montserrat, Corbel, source-sans-pro, sans-serif;
+    --fnt-accent : futura-pt, dnp-shuei-gothic-gin-std, sans-serif;
+
+    /* --- Spacing / Margin / Padding --- */
+    --spc-xs  : 0.8rem;         /* 8px */
+    --spc-s   : 1.6rem;         /* 16px */
+    --spc-m   : 2.4rem;         /* 24px */
+    --spc-l   : 4.8rem;         /* 48px */
+    --spc-xl  : 7.2rem;         /* 72px */
+    --spc-2xl : 12.0rem;        /* 120px */
+}
+
+
+
+/**************************************************
+   Selector
+**************************************************/
+html {
+    inline-size: 100%;
+    font-size: 62.5%;           /* default 16px * 62.5% = 10px */
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.l-body {
+    margin-inline: auto;
+    background-color: var(--clr-bg-page);
+    color: var(--clr-text);
+    font-family: var(--fnt-base);
+    font-size: 1.2rem;
+    line-height: 1.8;
+    letter-spacing: 0.12em;
+}
+
+img {
+    display: block;
+    max-inline-size: 100%;
+    block-size: auto;
+    object-fit: cover;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+    color: inherit;             /* リンクテキストの色をリセット */
+}
+
+span {
+    display: inline-block;
+}
+
+
+
+/**************************************************
+   Component
+**************************************************/
+.c-hamburger {
+    inline-size: 24px;
+    block-size: 24px;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+}
+
+.c-hamburger__line {
+    display: block;
+    position: absolute;
+    inset-block-start: 50%;
+    inline-size: 100%;
+    block-size: 3px;
+    background-color: var(--clr-text);
+}
+
+.c-hamburger .c-hamburger__line:nth-child(1) {
+    transform: translateY(calc(-50% - 5px));
+}
+
+.c-hamburger .c-hamburger__line:nth-child(2) {
+    transform: translateY(calc(-50% + 5px));
+}
+
+
+
+/**************************************************
+   Utility
+**************************************************/
+.u-visually-hidden {
+    display: none;
+}
+
+
+
+/**************************************************
+   Header
+**************************************************/
+.l-header {
+    position: fixed;
+    inset-inline: 0;
+    inset-block-start: 0;
+    z-index: var(--z-header);
+}
+
+.l-header__logo {
+    position: absolute;
+    inset-inline-start: var(--spc-m);
+    inset-block-start: var(--spc-m);
+    margin: 0;
+    line-height: 1;
+}
+
+.l-header__logo-link {
+    font-family: var(--fnt-accent);
+    font-size: 2.4rem;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+}
+
+.l-header__nav {
+    position: absolute;
+    inset-inline-end: 0;
+    inset-block-start: 0;
+    inline-size: 100%;
+    block-size: 100dvh;
+    padding-block: var(--spc-xl);
+    background-color: var(--clr-primary);
+    z-index: var(--z-header-nav);
+    visibility: hidden;
+}
+
+.l-header__menu {
+    padding-block: var(--space-l);
+}
+
+.l-header__item {
+    border-block-start: 1px dotted var(--clr-bg-card);
+}
+
+.l-header__item:last-child {
+    border-block-end: 1px dotted var(--clr-bg-card);
+}
+
+.l-header__menu-link {
+    display: block;
+    padding-inline: var(--spc-l);
+    padding-block: var(--spc-m);
+    font-family: var(--fnt-accent);
+    font-size: 2.4rem;
+    letter-spacing: 0.2em;
+    color: var(--clr-bg-card);
+}
+
+.l-header__menu-btn {
+    position: absolute;
+    inset-inline-end: var(--spc-m);
+    inset-block-start: var(--spc-m);
+    z-index: var(--z-header-menu-btn);
+}
+
+
+
+/**************************************************
+   Main
+**************************************************/
+.l-main {
+    z-index: var(--z-main);
+}
+
+
+
+/**************************************************
+   Footer
+**************************************************/
+.l-footer {
+    position: fixed;
+    inset-inline: 0;
+    inset-block-end: 0;
+    font-size: 1.0rem;
+    z-index: var(--z-footer);
+}
+
+.l-footer__github {
+    position: absolute;
+    inset-inline-start: var(--spc-m);
+    inset-block-end: var(--spc-m);
+}
+
+.l-footer__github-link {
+    letter-spacing: 0.2em;
+    color: var(--clr-text);
+}
+
+.l-footer__github-link::after {
+    content: ">";
+    padding-inline-start: var(--spc-xs);
+}
+
+.l-footer__copy {
+    position: absolute;
+    inset-inline-end: var(--spc-m);
+    inset-block-end: var(--spc-m);
+    letter-spacing: 0.2em;
+    color: var(--clr-text);
+}

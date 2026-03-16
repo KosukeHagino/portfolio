@@ -1,0 +1,117 @@
+@charset "utf-8";
+
+/* --- 変数はcommon.cssで一括管理 --- */
+
+
+
+/**************************************************
+   p-work-info
+**************************************************/
+.p-work-info {
+    position: fixed;
+    inset-inline-start: 10%;
+    inset-block-start: 12.5dvh;
+    inline-size: 80%;
+    block-size: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+}
+
+.p-work-info__list {
+    position: relative;
+    inset-inline-start: 0;
+    inset-block-start: 0;
+}
+
+.p-work-info__item {
+    block-size: 40px;
+    display: flex;
+    align-items: center;
+    gap: var(--spc-m);
+}
+
+.p-work-info__item--hidden {
+    
+}
+
+.p-work-info__tag {
+    color: var(--clr-primary);
+}
+
+.p-work-info__title {
+    font-size: 1.4rem;
+    font-weight: 400;
+}
+
+
+
+/**************************************************
+   p-work-visual
+**************************************************/
+.p-work-visual {
+
+}
+
+.p-work-visual__list {
+    inline-size: 100%;
+    block-size: 100dvh;
+    display: flex;
+    align-items: center;
+    overflow-x: auto;                   /* 横スクロールを有効 */
+    overflow-y: clip;                   /* 縦スクロールを無効 */
+    overscroll-behavior-x: contain;     /* スクロールが端で止まるように */
+    scroll-snap-type: x mandatory;      /* 横方向にスナップ */
+    -ms-overflow-style: none;           /* スクロールバーを非表示（IE / 旧Edge用） */
+    scrollbar-width: none;              /* スクロールバーを非表示（Firefox用） */
+    scroll-behavior: smooth;            /* 滑らかにスクロール */
+    padding-inline: 25%;                /* 左右に余白を設けて、前後の画像を少し画面に入れ込む */
+    gap: 15%;                           /* 前後の画像との隙間 */
+    -webkit-overflow-scrolling: touch;      /* 指での操作を滑らかにする */
+}
+
+.p-work-visual__list::-webkit-scrollbar {
+    display: none;                      /* スクロールバーを非表示（Chrome / Safari / 新Edge用） */
+}
+
+.p-work-visual__item {
+    flex: 0 0 100%;                     /* 画像を拡大縮小させずに常に幅100%にする */
+    scroll-snap-align: center;          /* 画面中央にスナップ */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.p-work-visual__item--hero {
+    margin-inline-end: 50vw;            /* 右側の制作物との距離を空けて制作物を見せないようにする */
+    pointer-events: none;               /* マウス操作を無効化 */
+}
+
+.p-work-visual__item--contact {
+    margin-inline-start: 50vw;          /* 左側の制作物との距離を空けて制作物を見せないようにする */
+    pointer-events: none;               /* マウス操作を無効化 */
+}
+
+.p-work-visual__hero {
+
+}
+
+.p-work-visual__name {
+    display: block;
+    margin-block-end: var(--spc-s);
+    font-family: var(--fnt-accent);
+    font-size: 2.4rem;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    text-align: center;
+}
+
+.p-work-visual__job {
+    display: block;
+    font-family: var(--fnt-accent);
+    font-size: 1.6rem;
+    font-weight: 400;  
+    color: var(--clr-primary);
+    text-align: center;
+}
