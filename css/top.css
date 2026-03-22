@@ -5,7 +5,7 @@
 
 
 /**************************************************
-   p-work-info
+   Work-info
 **************************************************/
 .p-work-info {
     position: fixed;
@@ -14,20 +14,11 @@
     block-size: 40px;
     display: flex;
     justify-content: center;
-    border-block-end: 1px solid var(--clr-primary);
-    padding-inline: var(--spc-m);
+    /* border-block-end: 1px solid var(--clr-primary); */
+    padding-inline: var(--spc-l);
     overflow: hidden;               /* はみ出た前後のテキストを隠す */
     pointer-events: none;
     z-index: var(--z-front-content);
-}
-
-.p-work-info::after {
-    position: absolute;
-    inset-inline-start: 10%;
-    inset-block-end: 12.5dvh;
-    inline-size: 80%;
-    block-size: 40px;
-    border-block-end: 1px solid var(--clr-primary);
 }
 
 .p-work-info__list {
@@ -95,7 +86,7 @@
 
 
 /**************************************************
-   p-work-visual
+   Work-visual
 **************************************************/
 .p-work-visual {
 
@@ -144,42 +135,45 @@
 
 /* --- First slide（Hero） --- */
 .p-work-visual__item--hero {
-    margin-inline-end: 50vw;            /* 右側の制作物との距離を空けて制作物を見せないようにする */
-    pointer-events: none;               /* マウス操作を無効化 */
+    margin-inline-end: 50vw;            /* 制作物スライドとの距離を空けて画面内に入らないようにする */
+    pointer-events: none;
 }
 
 .p-work-visual__hero {
-    text-align: center;
+    
 }
 
 .p-work-visual__name {
     display: block;
-    margin-block-end: var(--spc-s);
+    margin-block-end: var(--spc-m);
     font-family: var(--fnt-accent);
     font-weight: 700;
-    font-size: 2.4rem;
+    font-size: 4.0rem;
+    line-height: 1.6;
     letter-spacing: 0.3em;
+    text-align: justify;
 }
 
 .p-work-visual__job {
     display: block;
     font-weight: 400;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     letter-spacing: 0.15em;
     color: var(--clr-primary);
+    text-align: justify;
 }
 
 /* --- Last slide（Contact） --- */
 .p-work-visual__item--contact {
-    margin-inline-start: 50vw;          /* 左側の制作物との距離を空けて制作物を見せないようにする */
-    pointer-events: none;               /* マウス操作を無効化 */
+    margin-inline-start: 50vw;          /* 制作物スライドとの距離を空けて画面内に入らないようにする */
+    pointer-events: none;
 }
 
 .p-work-visual__contact-body {
     background-color: var(--clr-bg-card);
     padding-inline: var(--spc-m);
     padding-block: var(--spc-l);
-    border-radius: 8px;
+    border-radius: 16px;
     filter: drop-shadow(0 0 4px #ccc);
     text-align: center;
 }
@@ -187,4 +181,32 @@
 .p-work-visual__contact-text {
     font-size: 1rem;
     margin-block-end: var(--spc-m);
+}
+
+
+
+/**************************************************
+   Indicator (SP only)
+**************************************************/
+.p-indicator {
+    position: fixed;
+    inset-block-end: var(--spc-xl);
+    inline-size: 100vw;
+    display: flex;
+    justify-content: center;
+    gap: var(--spc-s);
+    padding-block: var(--spc-s);
+}
+
+.p-indicator__dot {
+    inline-size: 8px;
+    block-size: 8px;
+    border-radius: 50%;
+    background-color: var(--clr-primary);
+    transition: all 0.3s ease;
+}
+
+.p-indicator__dot.is-active {
+    background-color: var(--clr-active);
+    transform: scale(1.5);
 }
