@@ -9,20 +9,31 @@
 **************************************************/
 .p-work-info {
     position: fixed;
-    inset-inline-start: 10%;
     inset-block-start: 12.5dvh;
-    inline-size: 80%;
+    inline-size: 100%;
     block-size: 40px;
     display: flex;
     justify-content: center;
-    align-items: center;
+    border-block-end: 1px solid var(--clr-primary);
+    padding-inline: var(--spc-m);
+    overflow: hidden;               /* はみ出た前後のテキストを隠す */
     pointer-events: none;
+    z-index: var(--z-front-content);
+}
+
+.p-work-info::after {
+    position: absolute;
+    inset-inline-start: 10%;
+    inset-block-end: 12.5dvh;
+    inline-size: 80%;
+    block-size: 40px;
+    border-block-end: 1px solid var(--clr-primary);
 }
 
 .p-work-info__list {
-    position: relative;
-    inset-inline-start: 0;
-    inset-block-start: 0;
+    inline-size: 100%;
+    transform: translateY(calc(var(--current-index) * -40px));      /* JSから受け取る--current-indexで全体移動 */
+    transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .p-work-info__item {
@@ -30,10 +41,15 @@
     display: flex;
     align-items: center;
     gap: var(--spc-m);
+    transition: opacity 0.6s ease;
 }
 
-.p-work-info__item--hidden {
-    
+/* --- 子要素：基本の待機状態（0以外）ｰｰｰ */
+.p-work-info__tag,
+.p-work-info__title {
+    opacity: 0;
+    transform: translateY(20px);        /* 基本は下待機 */
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .p-work-info__tag {
@@ -43,6 +59,37 @@
 .p-work-info__title {
     font-size: 1.4rem;
     font-weight: 400;
+}
+
+/* --- 上側待機（diff < 0) --- */
+.p-work-info__item[data-index-diff^="-"] .p-work-info__tag,
+.p-work-info__item[data-index-diff^="-"] .p-work-info__title {
+    opacity: 0;
+    transform: translateY(-20px);
+}
+
+/* --- 中央表示（diff = 0） --- */
+.p-work-info__item[data-index-diff="0"] .p-work-info__tag,
+.p-work-info__item[data-index-diff="0"] .p-work-info__title {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- 子要素の時間差表示（diff = 0） --- */
+.p-work-info__item[data-index-diff="0"] .p-work-info__tag { transition-delay: 0.3s; }
+.p-work-info__item[data-index-diff="0"] .p-work-info__title { transition-delay: 0.45s; }
+
+/* --- 下側待機（diff > 0) --- */
+.p-work-info__item:not([data-index-diff="0"]):not([data-index-diff^="-"]) .p-work-info__tag,
+.p-work-info__item:not([data-index-diff="0"]):not([data-index-diff^="-"]) .p-work-info__title {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+/* --- Hero/Contact（非表示） --- */
+.p-work-info__item--hidden {
+    opacity: 0;
+    visibility: hidden;
 }
 
 
@@ -83,35 +130,61 @@
     align-items: center;
 }
 
+/* --- Works slide --- */
+.p-work-visual__item .c-work-media__img {
+    transform: scale(0.8);
+    opacity: 0.4;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.p-work-visual__item.is-active .c-work-media__img {
+    transform: scale(1.0);
+    opacity: 1;
+}
+
+/* --- First slide（Hero） --- */
 .p-work-visual__item--hero {
     margin-inline-end: 50vw;            /* 右側の制作物との距離を空けて制作物を見せないようにする */
     pointer-events: none;               /* マウス操作を無効化 */
 }
 
-.p-work-visual__item--contact {
-    margin-inline-start: 50vw;          /* 左側の制作物との距離を空けて制作物を見せないようにする */
-    pointer-events: none;               /* マウス操作を無効化 */
-}
-
 .p-work-visual__hero {
-
+    text-align: center;
 }
 
 .p-work-visual__name {
     display: block;
     margin-block-end: var(--spc-s);
     font-family: var(--fnt-accent);
-    font-size: 2.4rem;
     font-weight: 700;
+    font-size: 2.4rem;
     letter-spacing: 0.3em;
-    text-align: center;
 }
 
 .p-work-visual__job {
     display: block;
-    font-family: var(--fnt-accent);
+    font-weight: 400;
     font-size: 1.6rem;
-    font-weight: 400;  
+    letter-spacing: 0.15em;
     color: var(--clr-primary);
+}
+
+/* --- Last slide（Contact） --- */
+.p-work-visual__item--contact {
+    margin-inline-start: 50vw;          /* 左側の制作物との距離を空けて制作物を見せないようにする */
+    pointer-events: none;               /* マウス操作を無効化 */
+}
+
+.p-work-visual__contact-body {
+    background-color: var(--clr-bg-card);
+    padding-inline: var(--spc-m);
+    padding-block: var(--spc-l);
+    border-radius: 8px;
+    filter: drop-shadow(0 0 4px #ccc);
     text-align: center;
+}
+
+.p-work-visual__contact-text {
+    font-size: 1rem;
+    margin-block-end: var(--spc-m);
 }
