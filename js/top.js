@@ -4,7 +4,8 @@
    初期化処理（ページ読み込み時に一度だけ実行）
 **************************************************/
 const initTopPage = () => {
-    initWorksScrollObserver();  // スクロール監視とテキスト連動の仕組みを起動
+    initWorksScrollObserver();      // スクロール監視とテキスト連動の仕組みを起動
+    initIndicator();                // スマホ用ドットインジケーターを作成
 };
 
 // 全てのリソースが読み込まれてから初期化を開始
@@ -42,6 +43,9 @@ const initWorksScrollObserver = () => {
         workInfoItems.forEach((item, i) => {
             item.setAttribute('data-index-diff', i - index);
         });
+
+        // インジケーターも更新
+        updateIndicator(index);
     };
 
     // 交差監視（Intersection Observer）の設定
@@ -65,4 +69,49 @@ const initWorksScrollObserver = () => {
 
     // 全ての画像を監視対象に登録
     workVisualItems.forEach(item => observer.observe(item));
+};
+
+
+
+/**************************************************
+   [機能] スマホ用インジケーター（ドット）
+**************************************************/
+const initIndicator = () => {
+    // 要素の取得
+    const workVisualItems = document.querySelectorAll('.p-work-visual__item');
+    const indicator = document.getElementById('js-indicator');
+
+    // 取得失敗時は実行しない
+    if (!indicator || workVisualItems.length === 0) return;
+
+    // 再読み込みやリセット時に、ドットが重複して生成されるのを防止
+    indicator.innerHTML = '';
+
+    // スライドの数だけドットを生成してDOMに追加
+    workVisualItems.forEach((_, index) => {
+        const dot = document.createElement('span');
+        dot.classList.add('p-indicator__dot');
+
+        // 最初の要素に初期アクティブクラスを付与
+        if (index === 0) {
+            dot.classList.add('is-active');
+        }
+
+        indicator.appendChild(dot);
+    });
+};
+
+// インジケーターの表示更新
+// 現在表示されているスライドのインデックス番号を受け取り、アクティブクラスを切替
+const updateIndicator = (index) => {
+    // 要素の取得
+    const dots = document.querySelectorAll('.p-indicator__dot');
+
+    // 取得失敗時は実行しない
+    if (dots.length === 0) return;
+
+    // 引数で受け取ったindexと、ループのiが一致するドットにだけクラスを付与（他は削除）
+    dots.forEach((dot, i) => {
+        dot.classList.toggle('is-active', i === index)
+    });
 };
