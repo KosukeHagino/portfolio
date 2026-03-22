@@ -18,6 +18,7 @@
     </script> <!-- Adobe Fontsの指定 end -->
 
     <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/component.css">
     <link rel="stylesheet" href="./css/top.css">
     <link rel="icon" href="./img/svg/favicon.svg" type="image/svg"> <!-- ファビコンは後で作成 -->
     <script src="./js/common.js" defer></script>
@@ -44,9 +45,9 @@
     <main class="l-main">
         <div class="p-work-info">
             <h2 class="u-visually-hidden">Works Infomation</h2>
-            <ul class="p-work-info__list">
+            <ul id="js-work-info-list" class="p-work-info__list">
                 <li class="p-work-info__item p-work-info__item--hidden">
-                    <span class="u-visually-hidden">No information</span>
+                    <span>No information</span>
                 </li>
                 <li class="p-work-info__item">
                     <span class="p-work-info__tag">#web</span>
@@ -71,7 +72,7 @@
         </div>
 
         <div class="p-work-visual">
-            <ul class="p-work-visual__list">
+            <ul id="js-work-visual-list" class="p-work-visual__list">
                 <li class="p-work-visual__item p-work-visual__item--hero">
                     <h2 class="p-work-visual__hero">
                         <span class="p-work-visual__name">KOSUKE&nbsp;HAGINO</span>
@@ -81,13 +82,13 @@
     
                 <li class="p-work-visual__item">
                     <a class="p-work-visual__link" href=""> <!-- リンク先は後で入力 -->
-                        <div class="p-work-visual__media">
+                        <div class="c-work-media">
                             <picture>
-                                <source srcset="./img/screenshot/sp.webp" media="(max-width: 768px)">   <!-- 画像は後で差し替える -->
-                                <img class="p-work-visual__img" src="./img/screenshot/pc.webp" alt="ポートフォリオ">  <!-- 画像は後で差し替える -->
+                                <source srcset="./img/screenshot/portfolio-pc.webp" media="(min-width: 768px)">   <!-- 画像は後で差し替える -->
+                                <img class="c-work-media__img" src="./img/screenshot/portfolio-sp.webp" alt="ポートフォリオ">  <!-- 画像は後で差し替える -->
                             </picture>
-                            <div class="p-work-visual__overlay">
-                                <span class="p-work-visual__view">VIEW DETAIL</span>
+                            <div class="c-work-media__overlay">
+                                <span class="c-work-media__view">VIEW DETAIL</span>
                             </div>
                         </div>
                     </a>
@@ -95,13 +96,13 @@
     
                 <li class="p-work-visual__item">
                     <a class="p-work-visual__link" href=""> <!-- リンク先は後で入力 -->
-                        <div class="p-work-visual__media">
+                        <div class="c-work-media">
                             <picture>
-                                <source srcset="./img/screenshot/sp.webp" media="(max-width: 768px)">   <!-- 画像は後で差し替える -->
-                                <img class="p-work-visual__img" src="./img/screenshot/pc.webp" alt="カフェ">  <!-- 画像は後で差し替える -->
+                                <source srcset="./img/screenshot/portfolio-pc.webp" media="(min-width: 768px)">   <!-- 画像は後で差し替える -->
+                                <img class="c-work-media__img" src="./img/screenshot/portfolio-sp.webp" alt="カフェ">  <!-- 画像は後で差し替える -->
                             </picture>
-                            <div class="p-work-visual__overlay">
-                                <span class="p-work-visual__view">VIEW DETAIL</span>
+                            <div class="c-work-media__overlay">
+                                <span class="c-work-media__view">VIEW DETAIL</span>
                             </div>
                         </div>
                     </a>
@@ -109,13 +110,13 @@
     
                 <li class="p-work-visual__item">
                     <a class="p-work-visual__link" href=""> <!-- リンク先は後で入力 -->
-                        <div class="p-work-visual__media">
+                        <div class="c-work-media">
                             <picture>
-                                <source srcset="./img/screenshot/sp.webp" media="(max-width: 768px)">   <!-- 画像は後で差し替える -->
-                                <img class="p-work-visual__img" src="./img/screenshot/pc.webp" alt="英会話スクール">  <!-- 画像は後で差し替える -->
+                                <source srcset="./img/screenshot/portfolio-pc.webp" media="(min-width: 768px)">   <!-- 画像は後で差し替える -->
+                                <img class="c-work-media__img" src="./img/screenshot/portfolio-sp.webp" alt="英会話スクール">  <!-- 画像は後で差し替える -->
                             </picture>
-                            <div class="p-work-visual__overlay">
-                                <span class="p-work-visual__view">VIEW DETAIL</span>
+                            <div class="c-work-media__overlay">
+                                <span class="c-work-media__view">VIEW DETAIL</span>
                             </div>
                         </div>
                     </a>
@@ -123,26 +124,27 @@
     
                 <li class="p-work-visual__item">
                     <a class="p-work-visual__link" href=""> <!-- リンク先は後で入力 -->
-                        <div class="p-work-visual__media">
+                        <div class="c-work-media">
                             <picture>
-                                <source srcset="./img/screenshot/sp.webp" media="(max-width: 768px)">   <!-- 画像は後で差し替える -->
-                                <img class="p-work-visual__img" src="./img/screenshot/pc.webp" alt="転職サイト">  <!-- 画像は後で差し替える -->
+                                <source srcset="./img/screenshot/portfolio-pc.webp" media="(min-width: 768px)">   <!-- 画像は後で差し替える -->
+                                <img class="c-work-media__img" src="./img/screenshot/portfolio-sp.webp" alt="転職サイト">  <!-- 画像は後で差し替える -->
                             </picture>
-                            <div class="p-work-visual__overlay">
-                                <span class="p-work-visual__view">VIEW DETAIL</span>
+                            <div class="c-work-media__overlay">
+                                <span class="c-work-media__view">VIEW DETAIL</span>
                             </div>
                         </div>
                     </a>
                 </li>
     
                 <li class="p-work-visual__item p-work-visual__item--contact">
-                    <h2 class="p-work-visual__title">Contact</h2>
                     <div class="p-work-visual__contact-body">
-                        <p class="p-work-visual__text">
+                        <h2 class="c-section-title">Contact</h2>
+                        <p class="p-work-visual__contact-text">
                             ご覧いただきありがとうございます。<br>
-                            下記のメールアドレスにお気軽にご連絡ください。</span>
+                            下記のメールアドレスにお気軽に<span class="u-br--sp"></span>
+                            ご連絡ください。
                         </p>
-                        <a class="p-work-visual__mail" href="mailto:kosukehagino.web@gmail.com">kosukehagino.web@gmail.com</a>
+                        <a class="c-btn-contact" href="mailto:kosukehagino.web@gmail.com">kosukehagino.web@gmail.com</a>
                     </div>
                 </li>
             </ul>

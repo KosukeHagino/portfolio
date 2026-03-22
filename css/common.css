@@ -15,6 +15,8 @@
     --z-mask            : 4000;         /* ヘッダー開時の背景マスク */
     --z-footer          : 2000;         /* フッター */
     --z-main            : 1;            /* メイン */
+    --z-front-content   : 2;            /* メイン内の前面に表示するコンテンツ */
+    --z-back-content    : -1;           /* メイン内の背面に表示するコンテンツ */
 
     /* --- Colors --- */
     /* >> base */
@@ -32,6 +34,7 @@
     --fnt-accent : futura-pt, dnp-shuei-gothic-gin-std, sans-serif;
 
     /* --- Spacing / Margin / Padding --- */
+    --spc-2xs : 0.4rem;         /* 4px */
     --spc-xs  : 0.8rem;         /* 8px */
     --spc-s   : 1.6rem;         /* 16px */
     --spc-m   : 2.4rem;         /* 24px */
@@ -47,7 +50,7 @@
 **************************************************/
 html {
     inline-size: 100%;
-    font-size: 62.5%;           /* default 16px * 62.5% = 10px */
+    font-size: 62.5%;           /* 1rem = 16px * 62.5% = 10px */
 }
 
 *, *::before, *::after {
@@ -85,45 +88,6 @@ a {
 
 span {
     display: inline-block;
-}
-
-
-
-/**************************************************
-   Component
-**************************************************/
-.c-hamburger {
-    inline-size: 24px;
-    block-size: 24px;
-    cursor: pointer;
-    border: none;
-    background-color: transparent;
-}
-
-.c-hamburger__line {
-    display: block;
-    position: absolute;
-    inset-block-start: 50%;
-    inline-size: 100%;
-    block-size: 3px;
-    background-color: var(--clr-text);
-}
-
-.c-hamburger .c-hamburger__line:nth-child(1) {
-    transform: translateY(calc(-50% - 5px));
-}
-
-.c-hamburger .c-hamburger__line:nth-child(2) {
-    transform: translateY(calc(-50% + 5px));
-}
-
-
-
-/**************************************************
-   Utility
-**************************************************/
-.u-visually-hidden {
-    display: none;
 }
 
 
@@ -238,4 +202,28 @@ span {
     inset-block-end: var(--spc-m);
     letter-spacing: 0.2em;
     color: var(--clr-text);
+}
+
+
+
+/**************************************************
+   Utility
+**************************************************/
+/* --- アクセシビリティ対応用（視覚的には消しつつ、情報は残す） --- */
+.u-visually-hidden {
+    position: absolute;
+    inline-size: 1px;
+    block-size: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* --- スマホ改行用 --- */
+.u-br--sp {
+    display: block;
+    content: "";
 }
