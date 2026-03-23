@@ -2,8 +2,6 @@
 
 /* --- 変数はcommon.cssで一括管理 --- */
 
-
-
 /**************************************************
    Loading
 **************************************************/
@@ -41,21 +39,20 @@ body:not(.is-loading) .l-loading {
     transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+.l-loading__num {
+    width: 2.5em;               /* 3桁の数字が入る幅を確保 */
+    text-align: right;          /* 右寄せにして、%との距離を常に一定にする */
+}
+
+/* --- Active --- */
 .l-loading__counter.is-active {
     opacity: 1;
     filter: blur(0);
     transform: scale(1);
 }
 
-.l-loading__num {
-    width: 2.5em;               /* 3桁の数字が入る幅を確保 */
-    text-align: right;          /* 右寄せにして、%との距離を常に一定にする */
-}
-
-
-
 /**************************************************
-   Work-info
+   Work info
 **************************************************/
 .p-work-info {
     position: fixed;
@@ -131,15 +128,9 @@ body:not(.is-loading) .l-loading {
     visibility: hidden;
 }
 
-
-
 /**************************************************
-   Work-visual
+   Work visual list
 **************************************************/
-.p-work-visual {
-
-}
-
 .p-work-visual__list {
     inline-size: 100%;
     block-size: 100dvh;
@@ -176,6 +167,7 @@ body:not(.is-loading) .l-loading {
     transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+/* --- Active --- */
 .p-work-visual__item.is-active .c-work-media__img {
     transform: scale(1.0);
     opacity: 1;
@@ -183,12 +175,8 @@ body:not(.is-loading) .l-loading {
 
 /* --- First slide（Hero） --- */
 .p-work-visual__item--hero {
-    margin-inline-end: 20vw;            /* 制作物スライドとの距離を空けて画面内に入らないようにする */
+    margin-inline-end: 20vw;            /* 制作物のスライドが画面内に入らないようにする */
     pointer-events: none;
-}
-
-.p-work-visual__hero {
-    
 }
 
 .p-work-visual__name {
@@ -206,13 +194,6 @@ body:not(.is-loading) .l-loading {
     will-change: opacity, transform, filter;        /* パフォーマンス向上 */
 }
 
-body.is-ready .p-work-visual__name {
-    opacity: 1;
-    transform: translateY(0);
-    filter: blur(0);
-    transition: all 1.2s cubic-bezier(0.16, 1, 0.30, 1);
-}
-
 .p-work-visual__job {
     display: block;
     font-weight: 400;
@@ -226,6 +207,14 @@ body.is-ready .p-work-visual__name {
     will-change: opacity, transform, filter;        /* パフォーマンス向上 */
 }
 
+/* --- Ready --- */
+body.is-ready .p-work-visual__name {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+    transition: all 1.2s cubic-bezier(0.16, 1, 0.30, 1);
+}
+
 body.is-ready .p-work-visual__job {
     opacity: 1;
     transform: translateY(0);
@@ -235,16 +224,13 @@ body.is-ready .p-work-visual__job {
 
 /* --- Last slide（Contact） --- */
 .p-work-visual__item--contact {
-    margin-inline-start: 20vw;          /* 制作物スライドとの距離を空けて画面内に入らないようにする */
+    margin-inline-start: 20vw;          /* 制作物のスライドが画面内に入らないようにする */
     pointer-events: none;
 }
 
 .p-work-visual__contact-body {
-    background-color: var(--clr-bg-card);
     padding-inline: var(--spc-m);
     padding-block: var(--spc-l);
-    border-radius: 16px;
-    filter: drop-shadow(0 0 4px #ccc);
     text-align: center;
 }
 
@@ -252,8 +238,6 @@ body.is-ready .p-work-visual__job {
     font-size: 1rem;
     margin-block-end: var(--spc-m);
 }
-
-
 
 /**************************************************
    Indicator (SP only)
@@ -276,12 +260,11 @@ body.is-ready .p-work-visual__job {
     transition: all 0.3s ease;
 }
 
+/* --- Active --- */
 .p-indicator__dot.is-active {
     background-color: var(--clr-active);
     transform: scale(1.5);
 }
-
-
 
 /**************************************************
    Pagetop
