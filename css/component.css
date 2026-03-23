@@ -38,6 +38,39 @@
 }
 
 
+
+/**************************************************
+   Page top button
+**************************************************/
+.c-pagetop {
+    background-color: var(--clr-primary);
+    color: var(--clr-bg-card);
+    padding-block: var(--spc-xs);
+    padding-inline: var(--spc-s);
+    border: none;
+    border-radius: 16px 0 0 16px;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.c-pagetop.is-show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.c-pagetop__text {
+    display: block;
+    font-family: var(--fnt-accent);
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+
+
+
 /**************************************************
    Works img
 **************************************************/
