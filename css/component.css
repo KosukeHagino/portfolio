@@ -1,35 +1,46 @@
 @charset "utf-8";
 
 /**************************************************
-   Component
+   Menu icon
 **************************************************/
-/* --- Menu icon --- */
 .c-hamburger {
-    inline-size: 24px;
-    block-size: 24px;
-    cursor: pointer;
-    border: none;
+    inline-size: 32px;
+    block-size: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    appearance: none;                   /* ブラウザ独自のスタイルをリセット */
     background-color: transparent;
+    border: none;
+    cursor: pointer;
 }
 
 .c-hamburger__line {
     display: block;
-    position: absolute;
-    inset-block-start: 50%;
     inline-size: 100%;
-    block-size: 3px;
+    block-size: 2px;
     background-color: var(--clr-text);
+    transform-origin: center;
+    transition: all 0.3s ease;
 }
 
-.c-hamburger .c-hamburger__line:nth-child(1) {
-    transform: translateY(calc(-50% - 5px));
+/* --- Active --- */
+.is-active .c-hamburger__line {
+    background-color: var(--clr-bg-card);
 }
 
-.c-hamburger .c-hamburger__line:nth-child(2) {
-    transform: translateY(calc(-50% + 5px));
+.is-active .c-hamburger__line:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
 }
 
-/* --- Works img --- */
+.is-active .c-hamburger__line:nth-child(2) {
+    transform: translateY(-6px) rotate(-45deg);
+}
+
+
+/**************************************************
+   Works img
+**************************************************/
 .c-work-media {
     overflow: hidden;
     border-radius: 8px;
@@ -77,7 +88,11 @@
     line-height: 1;
 }
 
-/* --- Section title --- */
+
+
+/**************************************************
+   Section title
+**************************************************/
 .c-section-title {
     position: relative;
     font-family: var(--fnt-accent);
@@ -107,7 +122,11 @@
     transition-delay: 0.3s;
 }
 
-/* --- Contact button --- */
+
+
+/**************************************************
+   Contact button
+**************************************************/
 .c-btn-contact {
     display: inline-block;
     padding-block: var(--spc-2xs);
