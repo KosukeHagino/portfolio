@@ -118,15 +118,22 @@ span {
 }
 
 .l-header__nav {
-    position: absolute;
+    position: fixed;
     inset-inline-end: 0;
-    inset-block-start: 0;
+    inset-block-start: -100dvh;
     inline-size: 100%;
     block-size: 100dvh;
-    padding-block: var(--spc-xl);
+    padding-block: var(--spc-2xl);
     background-color: var(--clr-primary);
     z-index: var(--z-header-nav);
     visibility: hidden;
+    transition: inset-block-start 0.3s ease-in-out, visibility 0.3s;
+}
+
+/* --- Active --- */
+.l-header__nav.is-active {
+    inset-block-start: 0;
+    visibility: visible;
 }
 
 .l-header__menu {
@@ -154,7 +161,7 @@ span {
 .l-header__menu-btn {
     position: absolute;
     inset-inline-end: var(--spc-m);
-    inset-block-start: var(--spc-m);
+    inset-block-start: calc(var(--spc-m) + 5px);
     z-index: var(--z-header-menu-btn);
 }
 

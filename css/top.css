@@ -135,7 +135,7 @@
 
 /* --- First slide（Hero） --- */
 .p-work-visual__item--hero {
-    margin-inline-end: 50vw;            /* 制作物スライドとの距離を空けて画面内に入らないようにする */
+    margin-inline-end: 20vw;            /* 制作物スライドとの距離を空けて画面内に入らないようにする */
     pointer-events: none;
 }
 
@@ -165,7 +165,7 @@
 
 /* --- Last slide（Contact） --- */
 .p-work-visual__item--contact {
-    margin-inline-start: 50vw;          /* 制作物スライドとの距離を空けて画面内に入らないようにする */
+    margin-inline-start: 20vw;          /* 制作物スライドとの距離を空けて画面内に入らないようにする */
     pointer-events: none;
 }
 

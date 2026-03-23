@@ -48,24 +48,25 @@ const initWorksScrollObserver = () => {
         updateIndicator(index);
     };
 
+    const options = {
+        root: workVisualList,           // 監視する親要素
+        threshold: 0.1,                 // 10%入れば反応（SEなどの小画面対策）
+        rootMargin: "0px -25% 0px -25%" // 中央50%のエリアを監視
+    }
+
     // 交差監視（Intersection Observer）の設定
     // 左右25%のrootMarginにより、画面中央の50%エリアに入った瞬間を検知
     const observer = new IntersectionObserver((entries) => {
-        // 中央に入った要素のみを抽出
-        const intersectingEntry = entries.find(entry => entry.isIntersecting);
-
-        if (intersectingEntry) {
-            // 監視対象（workVisualItems）の中の何番目かを特定
-            const index = Array.from(workVisualItems).indexOf(intersectingEntry.target);
-            if (index !== -1) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // 文字列から数値に変換する（SEなどのブラウザ挙動を安定させるため）
+                const index = Number(entry.target.getAttribute('data-index'));
                 updateActiveState(index);
+            } else {
+                entry.target.classList.remove('is-active');
             }
-        }
-    }, { 
-        root: workVisualList,           // 監視する親要素
-        threshold: 0.6,                 // 60%以上露出で検知（スナップ動作に合わせる）
-        rootMargin: "0px -25% 0px -25%" // 判定エリアを中央50%に絞り込む
-    });
+        });
+    }, options );
 
     // 全ての画像を監視対象に登録
     workVisualItems.forEach(item => observer.observe(item));
