@@ -8,7 +8,7 @@
     --bp-sp : 768px;        /* スマホとタブレットの境界 */
     --bp-tab : 1024px;      /* タブレットとPCの境界 */
 
-    /* --- z-index --- */
+    /* --- Z-index --- */
     --z-loading         : 8000;         /* ローディング */
     --z-header          : 5000;         /* ヘッダー */
     --z-header-menu-btn : 200;          /* ヘッダー内メニューボタン */
@@ -46,8 +46,6 @@
     --spc-xl  : 7.2rem;         /* 72px */
     --spc-2xl : 12.0rem;        /* 120px */
 }
-
-
 
 /**************************************************
    Selector
@@ -90,11 +88,16 @@ a {
     color: inherit;             /* リンクテキストの色をリセット */
 }
 
+button {
+    appearance: none;                   /* ブラウザ独自のスタイルをリセット */
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
 span {
     display: inline-block;
 }
-
-
 
 /**************************************************
    Header
@@ -123,7 +126,7 @@ span {
 
 .l-header__nav {
     position: fixed;
-    inset-inline-end: 0;
+    inset-inline: 0;
     inset-block-start: -100dvh;
     inline-size: 100%;
     block-size: 100dvh;
@@ -154,7 +157,7 @@ span {
 
 .l-header__menu-link {
     display: block;
-    padding-inline: var(--spc-l);
+    padding-inline: var(--spc-xl);
     padding-block: var(--spc-m);
     font-family: var(--fnt-accent);
     font-size: 2.4rem;
@@ -169,16 +172,12 @@ span {
     z-index: var(--z-header-menu-btn);
 }
 
-
-
 /**************************************************
    Main
 **************************************************/
 .l-main {
     z-index: var(--z-main);
 }
-
-
 
 /**************************************************
    Footer
@@ -187,7 +186,6 @@ span {
     position: fixed;
     inset-inline: 0;
     inset-block-end: 0;
-    font-size: 1.0rem;
     z-index: var(--z-footer);
 }
 
@@ -198,6 +196,7 @@ span {
 }
 
 .l-footer__github-link {
+    font-size: 1.0rem;
     letter-spacing: 0.2em;
     color: var(--clr-text);
 }
@@ -211,11 +210,10 @@ span {
     position: absolute;
     inset-inline-end: var(--spc-m);
     inset-block-end: var(--spc-m);
+    font-size: 1.0rem;
     letter-spacing: 0.2em;
     color: var(--clr-text);
 }
-
-
 
 /**************************************************
    Utility
