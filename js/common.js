@@ -21,9 +21,7 @@ const initHamburgerMenu = () => {
     const menuBtn = document.getElementById('js-hamburger');
     const nav = document.getElementById('js-header-nav');
     const body = document.body;
-
-    // 取得失敗時は実行しない
-    if (!menuBtn || !nav/*  || !mask */) return;
+    if (!menuBtn || !nav) return;
 
     menuBtn.addEventListener('click', () => {
         // 現在の状態（開いているか）を判定
