@@ -9,6 +9,7 @@
     --bp-tab : 1024px;      /* タブレットとPCの境界 */
 
     /* --- z-index --- */
+    --z-loading         : 8000;         /* ローディング */
     --z-header          : 5000;         /* ヘッダー */
     --z-header-menu-btn : 200;          /* ヘッダー内メニューボタン */
     --z-header-nav      : 100;          /* ヘッダー内ナビ */
@@ -32,6 +33,8 @@
     /* >> common */
     --fnt-base   : dnp-shuei-gothic-gin-std, Montserrat, Corbel, source-sans-pro, sans-serif;
     --fnt-accent : futura-pt, dnp-shuei-gothic-gin-std, sans-serif;
+    /* >> top */
+    --fnt-countup : "inter-variable",sans-serif;
 
     /* --- Spacing / Margin / Padding --- */
     --spc-2xs : 0.4rem;         /* 4px */

@@ -133,11 +133,11 @@
     padding-inline: var(--spc-s);
     margin-inline: auto;
     border: 1px solid var(--clr-primary);
-    border-radius: 9999px;                                      /* 左右両端を半円 */
+    border-radius: 9999px;                      /* 左右両端を半円 */
     font-family: var(--fnt-accent);
     font-size: 1.4rem;
-    color: var(--clr-primary);                                  /* 通常：緑 */
-    transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);        /* ホバー：0.6秒かけて文字色を変化 */
+    color: var(--clr-primary);
+    transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 

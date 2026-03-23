@@ -5,6 +5,56 @@
 
 
 /**************************************************
+   Loading
+**************************************************/
+.l-loading {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--clr-text);
+    z-index: var(--z-loading);
+    transition: opacity 1.5s ease, visibility 1.5s;
+}
+
+/* --- 2回目以降またはローディング終了時 */
+body:not(.is-loading) .l-loading {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* --- Counter --- */
+.l-loading__counter {
+    display: flex;
+    align-items: baseline;
+    font-family: var(--fnt-countup);
+    font-variation-settings: 'wght' 400, 'slnt' -10;
+    font-size: 2.0rem;
+    color: var(--clr-bg-card);
+    letter-spacing: 0.12em;
+    font-variant-numeric: tabular-nums;     /* 数字の幅を等幅（固定幅）にする */
+    opacity: 0;
+    filter: blur(15px);
+    transform: scale(1.1);
+    transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.l-loading__counter.is-active {
+    opacity: 1;
+    filter: blur(0);
+    transform: scale(1);
+}
+
+.l-loading__num {
+    width: 2.5em;               /* 3桁の数字が入る幅を確保 */
+    text-align: right;          /* 右寄せにして、%との距離を常に一定にする */
+}
+
+
+
+/**************************************************
    Work-info
 **************************************************/
 .p-work-info {
@@ -14,17 +64,16 @@
     block-size: 40px;
     display: flex;
     justify-content: center;
-    /* border-block-end: 1px solid var(--clr-primary); */
     padding-inline: var(--spc-l);
-    overflow: hidden;               /* はみ出た前後のテキストを隠す */
+    overflow: hidden;               /* 前後のテキストを隠す */
     pointer-events: none;
     z-index: var(--z-front-content);
 }
 
 .p-work-info__list {
     inline-size: 100%;
-    transform: translateY(calc(var(--current-index) * -40px));      /* JSから受け取る--current-indexで全体移動 */
-    transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    transform: translateY(calc(var(--current) * -100%));        /* JSから受け取る--currentで全体移動 */
+    transition: transform 1.2s cubic-bezier(0.16, 1, 0.30, 1);
 }
 
 .p-work-info__item {
@@ -32,15 +81,14 @@
     display: flex;
     align-items: center;
     gap: var(--spc-m);
-    transition: opacity 0.6s ease;
 }
 
 /* --- 子要素：基本の待機状態（0以外）ｰｰｰ */
 .p-work-info__tag,
 .p-work-info__title {
     opacity: 0;
-    transform: translateY(20px);        /* 基本は下待機 */
-    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    transform: translateY(20px);
+    transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .p-work-info__tag {
@@ -125,7 +173,7 @@
 .p-work-visual__item .c-work-media__img {
     transform: scale(0.8);
     opacity: 0.4;
-    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .p-work-visual__item.is-active .c-work-media__img {
@@ -152,6 +200,17 @@
     line-height: 1.6;
     letter-spacing: 0.3em;
     text-align: justify;
+    opacity: 0;
+    transform: translateY(20px);
+    filter: blur(10px);
+    will-change: opacity, transform, filter;        /* パフォーマンス向上 */
+}
+
+body.is-ready .p-work-visual__name {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+    transition: all 1.2s cubic-bezier(0.16, 1, 0.30, 1);
 }
 
 .p-work-visual__job {
@@ -161,6 +220,17 @@
     letter-spacing: 0.15em;
     color: var(--clr-primary);
     text-align: justify;
+    opacity: 0;
+    transform: translateY(10px);
+    filter: blur(5px);
+    will-change: opacity, transform, filter;        /* パフォーマンス向上 */
+}
+
+body.is-ready .p-work-visual__job {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+    transition: all 1.2s cubic-bezier(0.16, 1, 0.30, 1) 0.6s;
 }
 
 /* --- Last slide（Contact） --- */
