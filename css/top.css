@@ -260,12 +260,12 @@ body.is-ready .p-work-visual__job {
 **************************************************/
 .p-indicator {
     position: fixed;
-    inset-block-end: var(--spc-xl);
+    inset-block-end: var(--spc-l);
     inline-size: 100vw;
     display: flex;
     justify-content: center;
     gap: var(--spc-s);
-    padding-block: var(--spc-s);
+    padding-block: var(--spc-xs);
 }
 
 .p-indicator__dot {
@@ -279,4 +279,16 @@ body.is-ready .p-work-visual__job {
 .p-indicator__dot.is-active {
     background-color: var(--clr-active);
     transform: scale(1.5);
+}
+
+
+
+/**************************************************
+   Pagetop
+**************************************************/
+.l-pagetop {
+    position: fixed;
+    inset-block-end: var(--spc-l);
+    inset-inline-end: 0;
+    z-index: var(--z-pagetop);
 }
