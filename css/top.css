@@ -13,7 +13,14 @@
     align-items: center;
     background-color: var(--clr-text);
     z-index: var(--z-loading);
-    transition: opacity 1.5s ease, visibility 1.5s;
+    opacity: 1;
+    visibility: visible;
+}
+
+/* --- ローディング中（初回） --- */
+body.is-loading .l-loading {
+    opacity: 1;
+    visibility: visible;
 }
 
 /* --- 2回目以降またはローディング終了時 */
@@ -21,6 +28,9 @@ body:not(.is-loading) .l-loading {
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
+    transition:
+        opacity 1.2s ease,
+        visibility 1.2s;
 }
 
 /* --- Counter --- */
@@ -51,6 +61,16 @@ body:not(.is-loading) .l-loading {
     transform: scale(1);
 }
 
+/* --- ローディング終了時 */
+body:not(.is-loading) .l-loading__counter {
+    opacity: 0;
+    visibility: hidden;
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s;
+}
+
+
 /**************************************************
    Work info
 **************************************************/
@@ -69,12 +89,15 @@ body:not(.is-loading) .l-loading {
 
 .p-work-info__list {
     inline-size: 100%;
-    transform: translateY(calc(var(--current) * -100%));        /* JSから受け取る--currentで全体移動 */
+    transform: translateY(calc(var(--current) * -40px));        /* JSから受け取る--currentで全体移動 */
     transition: transform 1.2s cubic-bezier(0.16, 1, 0.30, 1);
 }
 
 .p-work-info__item {
     block-size: 40px;
+}
+
+.p-work-info__link {
     display: flex;
     align-items: center;
     gap: var(--spc-m);
@@ -84,7 +107,7 @@ body:not(.is-loading) .l-loading {
 .p-work-info__tag,
 .p-work-info__title {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(10px);
     transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -97,11 +120,16 @@ body:not(.is-loading) .l-loading {
     font-weight: 400;
 }
 
+.p-work-info__title::after {
+    content: ">";
+    padding-inline-start: var(--spc-xs);
+}
+
 /* --- 上側待機（diff < 0) --- */
 .p-work-info__item[data-index-diff^="-"] .p-work-info__tag,
 .p-work-info__item[data-index-diff^="-"] .p-work-info__title {
     opacity: 0;
-    transform: translateY(-20px);
+    transform: translateY(-10px);
 }
 
 /* --- 中央表示（diff = 0） --- */
@@ -119,7 +147,7 @@ body:not(.is-loading) .l-loading {
 .p-work-info__item:not([data-index-diff="0"]):not([data-index-diff^="-"]) .p-work-info__tag,
 .p-work-info__item:not([data-index-diff="0"]):not([data-index-diff^="-"]) .p-work-info__title {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(10px);
 }
 
 /* --- Hero/Contact（非表示） --- */
@@ -127,6 +155,7 @@ body:not(.is-loading) .l-loading {
     opacity: 0;
     visibility: hidden;
 }
+
 
 /**************************************************
    Work visual list
@@ -188,10 +217,6 @@ body:not(.is-loading) .l-loading {
     line-height: 1.6;
     letter-spacing: 0.3em;
     text-align: justify;
-    opacity: 0;
-    transform: translateY(20px);
-    filter: blur(10px);
-    will-change: opacity, transform, filter;        /* パフォーマンス向上 */
 }
 
 .p-work-visual__job {
@@ -201,6 +226,10 @@ body:not(.is-loading) .l-loading {
     letter-spacing: 0.15em;
     color: var(--clr-primary);
     text-align: justify;
+}
+
+.p-work-visual__name,
+.p-work-visual__job {
     opacity: 0;
     transform: translateY(10px);
     filter: blur(5px);
@@ -239,6 +268,7 @@ body.is-ready .p-work-visual__job {
     margin-block-end: var(--spc-m);
 }
 
+
 /**************************************************
    Indicator (SP only)
 **************************************************/
@@ -265,6 +295,7 @@ body.is-ready .p-work-visual__job {
     background-color: var(--clr-active);
     transform: scale(1.5);
 }
+
 
 /**************************************************
    Pagetop

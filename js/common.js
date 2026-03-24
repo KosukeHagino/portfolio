@@ -7,11 +7,11 @@
 const initCommon = () => {
     initHamburgerMenu();        // メニュー開閉機能の有効化
     initPageTop();              // ページトップへ戻るボタンの有効化
+    initScrollShow();           // スクロールに応じたコンテンツ表示の有効化
 };
 
 // ページ読み込み完了時に実行
 window.addEventListener('load', initCommon);
-
 
 
 /**************************************************
@@ -38,7 +38,6 @@ const initHamburgerMenu = () => {
         menuBtn.setAttribute('aria-expanded', !isExpanded);
     });
 };
-
 
 
 /**************************************************
@@ -79,4 +78,29 @@ const initPageTop = () => {
             workVisualList.scrollTo({ left: 0, behavior: 'smooth' });
         }
     });
+};
+
+
+/**************************************************
+   [機能] スクロールに応じて表示
+**************************************************/
+const initScrollShow = () => {
+    const targets = document.querySelectorAll('.js-scroll');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            // 画面内に入ったら
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-show');
+                // 一度表示したら監視を止める（パフォーマンス向上）
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        root: null, // ブラウザの画面全体を監視
+        rootMargin: '0px 0px -15% 0px', // 画面の下端から15%入ったところで発動
+        threshold: 0 // 少しでも入ったら反応
+    });
+
+    targets.forEach(target => observer.observe(target));
 };
