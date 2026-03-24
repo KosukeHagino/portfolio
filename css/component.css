@@ -33,6 +33,7 @@
     transform: translateY(-6px) rotate(-45deg);
 }
 
+
 /**************************************************
    Page top button
 **************************************************/
@@ -63,6 +64,7 @@
     opacity: 1;
     transform: translateX(0);
 }
+
 
 /**************************************************
    Works img
@@ -101,7 +103,7 @@
 /* --- Active --- */
 .is-active .c-work-media__overlay {
     opacity: 1;
-    transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.75s;
+    transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .is-active .c-work-media__view::before {
@@ -114,6 +116,7 @@
     color: var(--clr-bg-card);
     line-height: 1;
 }
+
 
 /**************************************************
    Section title
@@ -145,8 +148,9 @@
 /* --- Active --- */
 .is-active .c-section-title::after {
     inline-size: 100%;
-    transition-delay: 0.3s;
+    transition-delay: 0.6s;
 }
+
 
 /**************************************************
    Contact button
@@ -161,8 +165,8 @@
     font-family: var(--fnt-accent);
     font-size: 1.4rem;
     color: var(--clr-primary);
-    transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 }
+
 
 /**************************************************
    Media Queries

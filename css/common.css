@@ -47,6 +47,7 @@
     --spc-2xl : 12.0rem;        /* 120px */
 }
 
+
 /**************************************************
    Selector
 **************************************************/
@@ -99,6 +100,7 @@ span {
     display: inline-block;
 }
 
+
 /**************************************************
    Header
 **************************************************/
@@ -134,7 +136,9 @@ span {
     background-color: var(--clr-primary);
     z-index: var(--z-header-nav);
     visibility: hidden;
-    transition: inset-block-start 0.3s ease-in-out, visibility 0.3s;
+    transition:
+        inset-block-start 0.3s ease-in-out,
+        visibility 0.3s;
 }
 
 /* --- Active --- */
@@ -172,12 +176,14 @@ span {
     z-index: var(--z-header-menu-btn);
 }
 
+
 /**************************************************
    Main
 **************************************************/
 .l-main {
     z-index: var(--z-main);
 }
+
 
 /**************************************************
    Footer
@@ -215,6 +221,7 @@ span {
     color: var(--clr-text);
 }
 
+
 /**************************************************
    Utility
 **************************************************/
@@ -236,3 +243,45 @@ span {
     display: block;
     content: "";
 }
+
+/* --- Scroll Animation --- */
+/* --- Text >> fade up (js-scrollやu-delayとセットで付与） --- */
+.u-fade-up {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition:
+        opacity 0.6s cubic-bezier(0.33, 1, 0.68, 1),
+        transform 0.6s cubic-bezier(0.33, 1, 0.68, 1),
+        visibility 0.6s;
+}
+
+.u-fade-up.is-show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* --- Image >> fade scale (js-scrollやu-delayとセットで付与） --- */
+.u-fade-scale {
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.9);
+    transition:
+        opacity 0.6s cubic-bezier(0.33, 1, 0.68, 1),
+        transform 0.6s cubic-bezier(0.33, 1, 0.68, 1),
+        visibility 0.6s;
+}
+
+.u-fade-scale.is-show {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+
+/* --- delay --- */
+.u-delay-300  { transition-delay: 0.3s; }
+.u-delay-600  { transition-delay: 0.6s; }
+.u-delay-900  { transition-delay: 0.9s; }
+.u-delay-1200 { transition-delay: 1.2s; }
+.u-delay-1500 { transition-delay: 1.5s; }

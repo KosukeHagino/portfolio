@@ -3,12 +3,16 @@
 /**************************************************
    初回訪問判定
 **************************************************/
-// ちらつき防止のため、読み込みを待たずに即実行
+// ちらつき防止のため、他の処理より先に実行
 const hasLoaded = sessionStorage.getItem('has-loaded');
-if(!hasLoaded) {
-    document.body.classList.add('is-loading');
-}
 
+if(!hasLoaded) {
+    // 初回：is-loadingクラスを付与
+    document.body.classList.add('is-loading');
+} else {
+    // 2回目以降：即座にクラスを外して黒画面を見せない
+    document.body.classList.remove('is-loading');
+}
 
 
 /**************************************************
@@ -38,7 +42,6 @@ const timers = {
 }
 
 
-
 /**************************************************
    初期化処理
 **************************************************/
@@ -49,9 +52,8 @@ const initTopPage = () => {
     initLoading();                  // ローディング演出を開始
 };
 
-// 全てのリソースが読み込まれてから初期化を開始
+// ページ読み込み完了時に実行
 window.addEventListener('load', initTopPage);
-
 
 
 /**************************************************
@@ -110,7 +112,6 @@ const initWorksScrollObserver = () => {
     // 全ての画像を監視対象に登録
     workVisualItems.forEach(item => observer.observe(item));
 };
-
 
 
 /**************************************************
@@ -202,7 +203,6 @@ const showContentDirectly = () => {
     workVisualList.addEventListener('wheel', cancelAutoScroll);
     workVisualList.addEventListener('touchstart', cancelAutoScroll);
 };
-
 
 
 /**************************************************
