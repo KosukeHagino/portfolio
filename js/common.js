@@ -81,8 +81,9 @@ const initHamburgerMenu = () => {
     // 要素の取得
     const menuBtn = document.getElementById('js-hamburger');
     const nav = document.getElementById('js-header-nav');
+    const mask = document.getElementById('js-mask');
     const body = document.body;
-    if (!menuBtn || !nav) return;
+    if (!menuBtn || !nav || !mask) return;
 
     menuBtn.addEventListener('click', () => {
         // 現在の状態（開いているか）を判定
@@ -92,6 +93,7 @@ const initHamburgerMenu = () => {
         // is-active クラスをトリガーに、CSSでアニメーションさせる
         menuBtn.classList.toggle('is-active');
         nav.classList.toggle('is-active');
+        mask.classList.toggle('is-active');
         body.classList.toggle('is-fixed');
 
         // アクセシビリティ属性の更新
