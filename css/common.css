@@ -10,6 +10,7 @@
 
     /* --- Z-index --- */
     --z-loading         : 8000;         /* ローディング */
+    --z-cursor          : 7000;         /* 追尾カーソル */
     --z-header          : 5000;         /* ヘッダー */
     --z-header-menu-btn : 200;          /* ヘッダー内メニューボタン */
     --z-header-nav      : 100;          /* ヘッダー内ナビ */
@@ -362,5 +363,12 @@ span {
     .l-header__menu-link:hover {
         background-color: var(--clr-active);
         transition: background-color 0.6s ease;
+    }
+
+    .l-footer__github-link:hover {
+        text-decoration: underline;
+        text-underline-offset: 0.5em;
+        text-decoration-thickness: 0.5px;
+        text-decoration-color: var(--clr-primary);
     }
 }

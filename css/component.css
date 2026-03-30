@@ -1,6 +1,44 @@
 @charset "utf-8";
 
 /**************************************************
+   Custom cursor
+**************************************************/
+.c-cursor {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 12px;
+    height: 12px;
+    margin-inline-start: var(--spc-xs);
+    margin-block-start: var(--spc-xs);
+    border-radius: 50%;
+    pointer-events: none;               /* クリックの邪魔にならないようにする */
+    z-index: var(--z-cursor);
+    background-color: var(--clr-active);
+    opacity: 0;
+    visibility: hidden;
+    translate: var(--x, 0px) var(--y, 0px);     /* マウスの現在地をJSから受け取る。それまでは画面左上に配置。 */
+    transition:
+        translate 0.1s ease-out,
+        opacity 0.3s ease,
+        scale 0.3s ease,
+        background-color 0.3s ease;
+}
+
+body.content-ready .c-cursor {
+    opacity: 0.7;
+    visibility: visible;
+}
+
+/* --- ボタンやリンクなどのホバー時 --- */
+body.content-ready .c-cursor.cursor-large {
+    scale: 3;
+    background-color: var(--clr-primary);
+}
+
+
+/**************************************************
    Menu icon
 **************************************************/
 .c-hamburger {
@@ -195,13 +233,15 @@
 
 /* --- Tablet & Desktop --- */
 @media screen and (min-width: 768px) {
-    
 
 }
 
 
 /* --- Desktop --- */
 @media screen and (min-width: 1025px) {
+    .c-cursor {
+        display: block;                              /* 追尾カーソルを表示 */
+    }
 
     .c-pagetop:hover {
         background-color: var(--clr-active);

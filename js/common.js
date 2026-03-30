@@ -1,10 +1,24 @@
 'use strict';
 
 /**************************************************
+   グローバル変数
+**************************************************/
+// マウスの現在座標を保持
+window.mouseX = 0;
+window.mouseY = 0;
+
+
+/**************************************************
    初期化処理
 **************************************************/
+// ローディング画面がないページ（＝トップページ以外）なら、すぐに表示フラグを立てる
+if (!document.getElementById('js-loading')) {
+    document.body.classList.add('content-ready');
+}
+
 // ページ読み込み時に一度だけ実行
 const initCommon = () => {
+    initCustomCursor();         // 追尾カーソルの開始
     initHamburgerMenu();        // メニュー開閉機能の有効化
     initPageTop();              // ページトップへ戻るボタンの有効化
     initScrollShow();           // スクロールに応じたコンテンツ表示の有効化
@@ -12,6 +26,52 @@ const initCommon = () => {
 
 // ページ読み込み完了時に実行
 window.addEventListener('load', initCommon);
+
+
+/**************************************************
+   [機能] 追尾カーソルの制御
+**************************************************/
+// マウスの動きに滑らかに追従するカスタムカーソルの実装
+const initCustomCursor = () => {
+    const cursor = document.getElementById('js-cursor');
+    if (!cursor) return;
+
+    let cursorX = 0;    // カーソルの現在のX座標
+    let cursorY = 0;    // カーソルの現在のY座標
+
+    // マウスが動くたびに座標を更新
+    document.addEventListener('mousemove', (e) => {
+        window.mouseX = e.clientX;
+        window.mouseY = e.clientY;
+    });
+
+    // アニメーションループ
+    // 毎フレーム実行され、カーソルをマウス位置へ滑らかに移動させる
+    const animateCursor = () => {
+        // 現在地から目標地点までの距離の15%ずつ移動させることでヌルヌル動かす
+        cursorX += (window.mouseX - cursorX) * 0.15;
+        cursorY += (window.mouseY - cursorY) * 0.15;
+
+        // CSS変数を通じて位置を反映
+        cursor.style.setProperty('--x', `${cursorX}px`);
+        cursor.style.setProperty('--y', `${cursorY}px`);
+
+        // 次の描画フレームでも呼び出す
+        requestAnimationFrame(animateCursor);
+    };
+    requestAnimationFrame(animateCursor);
+
+    // ホバーイベントの設定
+    // 特定の要素に乗ったときにカーソルの見た目を変える
+    const updateHoverEvents = () => {
+        const hoverElements = document.querySelectorAll('a, button');
+        hoverElements.forEach((el) => {
+            el.addEventListener('mouseenter', () => cursor.classList.add('cursor-large'));
+            el.addEventListener('mouseleave', () => cursor.classList.remove('cursor-large'));
+        });
+    };
+    updateHoverEvents();
+};
 
 
 /**************************************************
