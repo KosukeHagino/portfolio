@@ -164,7 +164,6 @@ const updateCount = (el, current) => {
     }
 };
 
-
 // ローディング終了
 const endLoading = () => {
     sessionStorage.setItem('has-loaded', 'true');
@@ -182,6 +181,9 @@ const endLoading = () => {
 
 // 表示後の自動スクロール
 const showContentDirectly = () => {
+    // クラスを付与（カスタムカーソル用）
+    document.body.classList.add('content-ready');
+
     // 要素を取得
     const workVisualList = document.getElementById('js-work-visual-list');
     const firstWork = document.querySelector('.p-work-visual__item[data-index="0"]');
