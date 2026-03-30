@@ -33,6 +33,7 @@ const TOP_CONFIG = {
     OPENING_SCROLL_DELAY: 1500,     // 幕を開き始めてから1枚目のスクロールを開始するまでの待ち時間
     AUTO_SCROLL_DELAY: 600,         // 自動スクロール関数が呼ばれてから実際に動き出すまでの実行遅延
     NEXT_SLIDE_DELAY: 3000,         // 1枚目表示後、2枚目へ移動するまでの待機時間
+    SCROLL_SPEED_RATIO: 2.5         // マウスホイールの回転を横スクロール量に変換する倍率
 };
 
 // タイマー管理（一括キャンセル用）
@@ -111,6 +112,16 @@ const initWorksScrollObserver = () => {
 
     // 全ての画像を監視対象に登録
     workVisualItems.forEach(item => observer.observe(item));
+
+    // マウスの縦スクロールを横スクロールの動きに変換する
+    workVisualList.addEventListener('wheel', (e) => {
+        if (e.ctrlKey || e.deltaY === 0) return;
+        e.preventDefault(); // ブラウザ標準の挙動を止めて、自分でスクロールさせる
+        workVisualList.scrollBy({
+            left: e.deltaY * TOP_CONFIG.SCROLL_SPEED_RATIO,
+            behavior: 'auto'
+        });
+    }, { passive: false });
 };
 
 

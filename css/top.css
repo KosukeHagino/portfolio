@@ -3,6 +3,18 @@
 /* --- 変数はcommon.cssで一括管理 --- */
 
 /**************************************************
+   Keyframes
+**************************************************/
+/* --- Scroll bar --- */
+@keyframes scroll-bar {
+    0%    { transform: scaleX(0); transform-origin: left; }     /* 左端を固定して右へ伸ばす */
+    50%   { transform: scaleX(1); transform-origin: left; }
+    50.1% { transform: scaleX(1); transform-origin: right; }    /* 右端を固定して左へ縮ませる */
+    100%  { transform: scaleX(0); transform-origin: right; }
+}
+
+
+/**************************************************
    Loading
 **************************************************/
 .l-loading {
@@ -54,7 +66,7 @@ body:not(.is-loading) .l-loading {
     text-align: right;          /* 右寄せにして、%との距離を常に一定にする */
 }
 
-/* --- Active --- */
+/* --- ローディング中 --- */
 .l-loading__counter.is-active {
     opacity: 1;
     filter: blur(0);
@@ -83,7 +95,6 @@ body:not(.is-loading) .l-loading__counter {
     justify-content: center;
     padding-inline: var(--spc-l);
     overflow: hidden;               /* 前後のテキストを隠す */
-    pointer-events: none;
     z-index: var(--z-front-content);
 }
 
@@ -264,7 +275,7 @@ body.is-ready .p-work-visual__job {
 }
 
 .p-work-visual__contact-text {
-    font-size: 1rem;
+    font-size: 1.0rem;
     margin-block-end: var(--spc-m);
 }
 
@@ -298,6 +309,14 @@ body.is-ready .p-work-visual__job {
 
 
 /**************************************************
+   Scroll bar (PC only)
+**************************************************/
+.p-scroll {
+    display: none;
+}
+
+
+/**************************************************
    Pagetop
 **************************************************/
 .l-pagetop {
@@ -305,4 +324,87 @@ body.is-ready .p-work-visual__job {
     inset-block-end: var(--spc-l);
     inset-inline-end: 0;
     z-index: var(--z-pagetop);
+}
+
+
+/**************************************************
+   Media Queries
+**************************************************/
+/*-------------------------------------------------
+   Breakpoints
+   - Mobile:  (default)
+   - Tablet:  768px
+   - Desktop: 1025px
+-------------------------------------------------*/
+
+/* --- Tablet & Desktop --- */
+@media screen and (min-width: 768px) {
+    
+    .p-work-info {
+        inset-block-start: var(--spc-l);
+        padding-inline: 25%;
+    }
+}
+
+
+/* --- Desktop --- */
+@media screen and (min-width: 1025px) {
+    
+    .p-work-info__link:hover {
+        text-decoration: underline;
+        text-underline-offset: 0.5em;
+        text-decoration-thickness: 0.5px;
+        text-decoration-color: var(--clr-primary);
+    }
+
+    .p-work-visual__name {
+        font-size: 5.6rem;
+    }
+
+    .p-work-visual__job {
+        font-size: 1.95rem;
+    }
+
+    .p-indicator {
+        display: none;
+    }
+
+    .p-scroll {
+        display: block;
+        position: fixed;
+        inset-inline-start: 50%;
+        inset-block-end: var(--spc-l);
+        transform: translateX(-50%);
+        inline-size: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        pointer-events: none;
+    }
+
+    .p-scroll__text {
+        display: flex;
+        justify-content: center;
+        padding-inline: var(--spc-m);
+        font-size: 1.2rem;
+        letter-spacing: 0.4em;
+        background-color: var(--clr-bg-page);
+    }
+
+    .p-scroll__text::after {
+        content: "";
+        position: absolute;
+        inset-block-end: 50%;
+        inline-size: 100%;
+        block-size: 0.5px;
+        background-color: var(--clr-text);
+        z-index: var(--z-back-content);
+        animation: scroll-bar 1.2s infinite ease-out;
+    }
+
+    .p-work-visual__contact-text {
+        font-size: 1.2rem;
+        margin-block-end: var(--spc-l);
+    }
+
 }

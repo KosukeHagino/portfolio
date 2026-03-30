@@ -70,6 +70,9 @@
    Works img
 **************************************************/
 .c-work-media {
+    position: relative;
+    display: inline-block;
+    inline-size: fit-content;
     overflow: hidden;
     border-radius: 8px;
     filter: drop-shadow(0 0 4px #ccc);
@@ -78,8 +81,11 @@
 .c-work-media__img {
     display: block;
     inline-size: 100%;
+    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+/* --- overlay --- */
+/* --- スマホ・タブレット：常時表示の「>」アイコン --- */
 .c-work-media__overlay {
     position: absolute;
     inset-inline-start: 20px;
@@ -92,27 +98,30 @@
     background-color: var(--clr-primary);
     border: 1px solid var(--clr-bg-card);
     border-radius: 50%;
+    pointer-events: none;
+    z-index: var(--z-front-content);
     opacity: 0;
-}
-
-.c-work-media__view {
-    font-size: 0;
-    border: none;
-}
-
-/* --- Active --- */
-.is-active .c-work-media__overlay {
-    opacity: 1;
     transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.is-active .c-work-media__view::before {
-    content: ">";
+/* --- 画面内に入ったら表示（jsと連携） --- */
+.is-active .c-work-media__overlay {
+    opacity: 1;
+    transition-delay: 0.6s;
+}
+
+/* --- スマホ・タブレット：「>」の中身 --- */
+/* --- テキスト「VIEW DETAIL」は非表示にして、疑似要素で「>」を作成 --- */
+.c-work-media__view {
+    font-size: 0;                       /* テキストは非表示 */
+}
+
+.c-work-media__view:after {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: var(--fnt-accent);
-    font-size: 2.0rem;
+    content: ">";
+    font-size: 1.4rem;
     color: var(--clr-bg-card);
     line-height: 1;
 }
@@ -167,22 +176,101 @@
     color: var(--clr-primary);
 }
 
+.c-btn-contact::after {
+    content: "→";
+    display: inline-block;
+    padding-inline-start: var(--spc-m);
+}
+
 
 /**************************************************
    Media Queries
 **************************************************/
 /*-------------------------------------------------
-   Desktop (Layout Switch) 
-   画面サイズに応じたレイアウトの切り替え（ブレイクポイント: 768px）
+   Breakpoints
+   - Mobile:  (default)
+   - Tablet:  768px
+   - Desktop: 1025px
 -------------------------------------------------*/
-@media screen and (min-width:768px) {
-    .work-hover-overlay {
+
+/* --- Tablet & Desktop --- */
+@media screen and (min-width: 768px) {
+    
+
+}
+
+
+/* --- Desktop --- */
+@media screen and (min-width: 1025px) {
+
+    .c-pagetop:hover {
+        background-color: var(--clr-active);
+        padding-right: var(--spc-m);            /* 少し左にせり出させる */
+    }
+
+    /* --- PC：「>」アイコンのスタイルをリセット --- */
+    .c-work-media__overlay {
         position: absolute;
         inset: 0;
+        inline-size: 100%;
+        block-size: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        border: none;
+        border-radius: 0;
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: rgba(0, 0, 0, 0.7);
         opacity: 0;
+        pointer-events: auto;
+        transform: inherit;
+        transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .is-active .c-work-media__overlay {
+        opacity: 0;
+        transition-delay: 0s;
+    }
+
+    /* --- PC：親要素にホバーしたとき、オーバーレイ（マスク）を表示 --- */
+    .c-work-media:hover .c-work-media__overlay {
+        opacity: 1;
+    }
+
+    /* --- PC：VIEW DETAIL テキストのスタイル --- */
+    .c-work-media__view {
+        display: block;
+        font-size: 1.4rem;
+        font-family: var(--fnt-accent);
+        letter-spacing: 0.2em;
+        color: var(--clr-bg-card);
+        border: 1px solid var(--clr-bg-card);
+        border-radius: 4px;
+        text-align: center;
+        padding-inline: var(--spc-s);
+        padding-block: var(--spc-xs);
+        transform: scale(1.1);
+        transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    /* --- PC：ホバー時にVIEW DETAILを少し小さくしながら表示 --- */
+    .c-work-media:hover .c-work-media__view {
+        transform: scale(1);
+    }
+
+    /* --- PC：「>」を完全に消す --- */
+    .c-work-media__view::after {
+        display: none;
+    }
+
+    .c-section-title {
+        font-size: 4.8rem;
+        padding-block-end: var(--spc-s);
+        margin-block-end: var(--spc-xl);
+    }
+
+    .c-btn-contact {
+        font-size: 2.8rem;
+        padding-block: var(--spc-xs);
+        padding-inline: var(--spc-l);
     }
 }
