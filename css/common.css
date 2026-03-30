@@ -1,5 +1,13 @@
 @charset "utf-8";
 
+/*-------------------------------------------------
+   Breakpoints
+   - Mobile:  (default)
+   - Tablet:  768px
+   - Desktop: 1025px
+-------------------------------------------------*/
+
+
 /**************************************************
    Variable
 **************************************************/
@@ -14,7 +22,7 @@
     --z-header          : 5000;         /* ヘッダー */
     --z-header-menu-btn : 200;          /* ヘッダー内メニューボタン */
     --z-header-nav      : 100;          /* ヘッダー内ナビ */
-    --z-mask            : 4000;         /* ヘッダー開時の背景マスク */
+    --z-mask            : 4000;         /* メニュー開時の背景マスク */
     --z-pagetop         : 3000;         /* ページトップに戻るボタン */
     --z-footer          : 2000;         /* フッター */
     --z-main            : 1;            /* メイン */
@@ -226,6 +234,14 @@ span {
 
 
 /**************************************************
+   Mask
+**************************************************/
+.l-mask {
+    display: none;
+}
+
+
+/**************************************************
    Utility
 **************************************************/
 /* --- アクセシビリティ対応用（視覚的には消しつつ、情報は残す） --- */
@@ -293,16 +309,9 @@ span {
 /**************************************************
    Media Queries
 **************************************************/
-/*-------------------------------------------------
-   Breakpoints
-   - Mobile:  (default)
-   - Tablet:  768px
-   - Desktop: 1025px
--------------------------------------------------*/
-
 /* --- Tablet & Desktop --- */
 @media screen and (min-width: 768px) {
-    
+   
     .l-header__nav {
         padding-block-start: var(--spc-xl);
     }
@@ -370,5 +379,21 @@ span {
         text-underline-offset: 0.5em;
         text-decoration-thickness: 0.5px;
         text-decoration-color: var(--clr-primary);
+    }
+
+    .l-mask {
+        display: block;
+        position: fixed;
+        inset: 0;
+        background-color: var(--clr-text);
+        z-index: var(--z-mask);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+    }
+
+    .l-mask.is-active {
+        opacity: 0.8;
+        visibility: visible;
     }
 }
