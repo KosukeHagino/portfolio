@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/normalize.css">
+
+    <!-- Adobe Fontsの指定 -->
+    <script>
+        (function(d) {
+            var config = {
+            kitId: 'fav6ghg',
+            scriptTimeout: 3000,
+            async: true
+            },
+            h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+        })(document);
+    </script> <!-- Adobe Fontsの指定 end -->
+    
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/component.css">
+    <link rel="stylesheet" href="./css/profile.css">
+    <link rel="icon" href="./img/svg/favicon.svg" type="image/svg"> <!-- ファビコンは後で作成 -->
+    <script src="./js/common.js" defer></script>
+    <script src="./js/profile.js" defer></script>
+    <title>萩野弘祐のポートフォリオ</title>
+</head>
+<body class="l-body">
+    <div id="js-cursor" class="c-cursor"></div>
+
+    <header class="l-header">
+        <h1 class="l-header__logo"><a href="./index.html" class="l-header__logo-link">HAGINO</a></h1>
+        <nav id="js-header-nav" class="l-header__nav">
+            <ul class="l-header__menu">
+                <li class="l-header__item"><a href="./index.html" class="l-header__menu-link">Top</a></li>
+                <li class="l-header__item"><a href="./profile.html" class="l-header__menu-link">Profile</a></li>
+                <li class="l-header__item"><a href="./skills.html" class="l-header__menu-link">Skills</a></li>
+                <li class="l-header__item"><a href="./works.html" class="l-header__menu-link">Works</a></li>
+            </ul>
+        </nav>
+        <button type="button" id="js-hamburger" class="l-header__menu-btn c-hamburger" aria-controls="js-header-nav" aria-expanded="false">
+            <span class="c-hamburger__line"></span>
+            <span class="c-hamburger__line"></span>
+        </button>
+    </header>
+
+    <main class="l-main">
+        <div class="l-wrapper">
+
+            <section class="p-about l-section">
+                <h2 class="c-section-title">
+                    <span class="js-scroll-text">About</span>
+                </h2>
+
+                <div class="p-about__container l-container">
+                    <img class="p-about__photo js-scroll-img u-delay-600" src="./img/photo/aboutme.jpg" alt="萩野弘祐の写真">
+
+                    <div class="p-about__body js-scroll-text u-delay-900">
+                        <h3 class="p-about__name">
+                            <span class="p-about__name-jp">萩野 弘祐</span>
+                            <span class="p-about__name-en">KOSUKE HAGINO</span>
+                        </h3>
+                        <p class="p-about__description">
+                            これまで厨房設計士として、作業動線の効率化と使いやすさを追求してきました。厨房づくりを通じた課題解決にやりがいを感じる中、怪我による療養を経験。この期間を機に自身のキャリアを見つめ直し、以前より強い関心をもっていたWeb制作の世界への転身を決意しました。<br><br>
+                            設計士として培ったユーザー視点と、最適な動線を考える力は、WebのUI/UXデザインや構造設計にも通じると考えています。単に見栄えを整えるだけでなく、クライアントの意図を汲み取り、本質的な課題を解決できるフロントエンドエンジニアを目指しています。
+                        </p>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="p-process l-section js-section">
+                <h2 class="c-section-title">
+                    <span class="js-scroll-text">Thought Process</span>
+                </h2>
+                <p class="l-section__lead js-scroll-text">Web制作において大切にしているのは、単にコードを書くことではなく「その先にいる誰か」を想像することです。ユーザーの使いやすさや、情報の届け方にこだわり、細かな配慮を積み重ねることで、心地よい体験の提供を目指しています。</p>
+
+                <ul class="p-process__list l-container js-scroll-img">
+                    <li class="p-process__item js-process-item is-active">
+                        <div class="p-process__side">
+                            <span class="p-process__num">01</span>
+                            <span class="p-process__label">FOR USERS</span>
+                            <div class="p-process-icon">
+                                <span class="c-process-icon__line"></span>
+                                <span class="c-process-icon__line"></span>
+                            </div>
+                        </div>
+                        <div class="p-process__body">
+                            <div class="p-process__inner">
+                                <h3 class="p-process__title">ユーザーの動きを想像する</h3>
+                                <p class="p-process__text">
+                                    厨房機器を配置する際に調理する人の動線を考えてきたように、Web制作でもユーザーがこのボタンをどんな時に押すのかを常に想像するようにしています。いきなりコードを書くのではなく、使う人の目線に立った親切な設計を意識し、誰もが迷わず操作できるサイト作りを大切にしています。
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="p-process__item js-process-item">
+                        <div class="p-process__side">
+                            <span class="p-process__num">02</span>
+                            <span class="p-process__label">FOR TEAM</span>
+                            <div class="p-process-icon">
+                                <span class="c-process-icon__line"></span>
+                                <span class="c-process-icon__line"></span>
+                            </div>
+                        </div>
+                        <div class="p-process__body">
+                            <div class="p-process__inner">
+                                <h3 class="p-process__title">意図が伝わるように情報を整理する</h3>
+                                <p class="p-process__text">
+                                    厨房工事に関わる多くの業者が目にする図面を作ってきた経験を活かし、自分以外の誰が見ても一目で意図が伝わるような情報の整理を心がけています。コーディングでも、次にそのコードを触る人が迷わないように、コメントをつけて読みやすくメンテナンスしやすい書き方を意識して、円滑な連携に貢献したいと考えています。
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="p-process__item js-process-item">
+                        <div class="p-process__side">
+                            <span class="p-process__num">03</span>
+                            <span class="p-process__label">FOR SYSTEM</span>
+                            <div class="p-process-icon">
+                                <span class="c-process-icon__line"></span>
+                                <span class="c-process-icon__line"></span>
+                            </div>
+                        </div>
+                        <div class="p-process__body">
+                            <div class="p-process__inner">
+                                <h3 class="p-process__title">見えない部分まで丁寧に作り込む</h3>
+                                <p class="p-process__text">
+                                    電気や給排水などの正しい設備計画によって厨房機器が動作するように、Webサイトもユーザーの目に見えないコードの構造が動作の安定性を決めると考えています。表面のデザインを再現するだけでなく、中身のコードが整理されて正確に組み立てられているかという裏側の仕組みを大切にし、表示が崩れにくい丁寧なコーディングを心がけています。
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="p-achievement l-section js-section">
+                <h2 class="c-section-title">
+                    <span class="js-scroll-text">Achievement</span>
+                </h2>
+                <p class="l-section__lead js-scroll-text">前職では厨房設計に従事しながら、特定顧客の修理メンテナンスに関する事務管理も兼任していました。設計業務の枠を超え、現場の課題に対して自分なりの提案を積み重ねたことが、大幅なコスト削減や業務効率化へと繋がりました。</p>
+
+                <ul class="p-process__list l-container js-scroll-img">
+                    <li class="p-process__item js-process-item is-active">
+                        <div class="p-process__side">
+                            <span class="p-process__num">04</span>
+                            <span class="p-process__label">DATA ANALYSIS</span>
+                            <div class="p-process-icon">
+                                <span class="c-process-icon__line"></span>
+                                <span class="c-process-icon__line"></span>
+                            </div>
+                        </div>
+                        <div class="p-process__body">
+                            <div class="p-process__inner">
+                                <h3 class="p-process__title">データ活用による課題解決</h3>
+                                <p class="p-process__text">
+                                    「修理総額が高い」という顧客からの課題に対し、受付機能のみだった機器修理管理台帳を抜本的に改善しました。修理進捗や金額、故障原因、交換部品、作業内容などを詳細に記録・蓄積する運用を徹底。膨大なデータの分析から、特定店舗の使用環境への改善提案や、故障頻度に基づいた的確な機器入替提案を可能にしました。結果として、店舗増に伴う総額増の中でも1店舗・1機器あたりの修理コストの削減に成功。データに基づく根拠ある提案が、顧客からの深い信頼と、円滑な設備投資の承認へと繋がりました。
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="js-process-item">
+                        <!-- process-side -->
+                        <div class="process-side">
+                            <span class="p-process__num">05</span>
+                            <span class="p-process__label">WORK EFFICIENCY</span>
+                            <div class="p-process-icon">
+                                <span class="c-process-icon__line"></span>
+                                <span class="c-process-icon__line"></span>
+                            </div>
+                        </div>
+                        <div class="p-process__body">
+                            <div class="p-process__inner">
+                                <h3 class="p-process__title">発注業務の効率化</h3>
+                                <p class="p-process__text">
+                                    顧客店舗・顧客本部・私の三者間で頻発していた備品の特定と見積依頼の工程を、情報を視覚化することで自主的に効率化しました。従来は名称のみのやり取りで誤認が多く、三者間での確認作業に多大な時間を費やしていました。そこで、全備品を網羅した写真付きリストを独自に作成。さらに各備品の見積書をセットでシステムへ登録することを提案・実行しました。結果、写真による直感的な判断が可能になり、問い合わせ件数が大幅に減少。顧客側にとっても毎回見積を依頼する手間がなくなり、三者全員の業務負担を軽減する仕組みづくりに貢献しました。
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="js-process-item">
+                        <div class="process-side">
+                            <span class="p-process__num">06</span>
+                            <span class="p-process__label">PROCESS STANDARD</span>
+                            <div class="p-process-icon">
+                                <span class="c-process-icon__line"></span>
+                                <span class="c-process-icon__line"></span>
+                            </div>
+                        </div>
+                        <div class="p-process__body">
+                            <div class="p-process__inner">
+                                <h3 class="p-process__title">専門知識の共有と対応の標準化</h3>
+                                <p class="p-process__text">
+                                    個人の経験値に依存していたトラブル対応をルール化し、無駄な修理費用の発生を大幅に削減しました。従来は、リセット操作等の軽微な対応で済む事案でも、担当者の知識量によって誤って修理依頼（サービスマン派遣）を出してしまい、不必要なコストが発生していました。この対応のばらつきを解消するため、過去の事例を網羅した故障判断セルフチェック表を作成。誰もが同等の判断ができる仕組みを整え、全店舗へ配布・周知を徹底しました。結果、無駄な出張修理を最小限に抑え、修理コストの削減を実現しました。
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <section id="contact" class="p-contact l-section js-contact-trigger">
+                <div class="p-contact__bg js-contact-bg">
+                    <div class="c-marquee">
+                        <div class="c-marquee__inner">
+                            <span>GET IN TOUCH / CONTACT ME / GET IN TOUCH / CONTACT ME /</span>
+                            <span>GET IN TOUCH / CONTACT ME / GET IN TOUCH / CONTACT ME /</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="p-contact__container l-container">
+                    <div class="p-contact__content">
+                        <div class="p-contact__photos">
+                            <img class="p-contact__img js-scroll-img" src="./img/photo/sakura.jpg" alt="">
+                            <img class="p-contact__img js-scroll-img delay-300" src="./img/photo/taiwan.jpg" alt="">
+                            <img class="p-contact__img js-scroll-img delay-600" src="./img/photo/sunset.jpg" alt="">
+                        </div>
+
+                        <div class="p-contact__info">
+                            <h2 class="c-section-title">
+                                <span class="js-scroll-text">Contact</span>
+                            </h2>
+                            <div class="p-contact__body js-scroll-text u-delay-1500">
+                                <p class="p-contact__text">
+                                    ご覧いただきありがとうございます。<br>
+                                    下記のメールアドレスにお気軽に<span class="u-sp-br">ご連絡ください。</span>
+                                </p>
+                                <a href="mailto:kosukehagino.web@gmail.com class="c-btn-mail"">kosukehagino.web@gmail.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>              
+            </section>>
+        </div>
+    </main>
+
+    <button type="button" id="js-pagetop" class="c-pagetop l-pagetop" aria-label="ページトップに戻る">
+        <span class="c-pagetop__text">Page top</span>
+    </button>
+
+    <footer class="l-footer">
+        <p class="l-footer__github"><a href="https://github.com/KosukeHagino/portfolio" class="l-footer__github-link" target="_blank">My GitHub</a></p>
+        <p class="l-footer__copy">&copy;2026 kosuke hagino</p>
+    </footer>
+</body>
+</html>
