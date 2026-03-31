@@ -392,6 +392,7 @@ span {
         transition: all 0.3s ease;
     }
 
+    /* --- Active --- */
     .l-mask.is-active {
         opacity: 0.8;
         visibility: visible;

@@ -306,14 +306,26 @@
 .c-btn-contact::after {
     content: "→";
     display: inline-block;
-    padding-inline-start: var(--spc-m);
 }
 
 /* --- Desktop --- */
 @media screen and (min-width: 1025px) {
     .c-btn-contact {
-        font-size: 2.8rem;
+        font-size: 2.0rem;
         padding-block: var(--spc-xs);
         padding-inline: var(--spc-l);
+        pointer-events: auto;
+    }
+
+    .c-btn-contact::after {
+        padding-inline-start: var(--spc-m);
+    }
+
+    .c-btn-contact:hover {
+        color: var(--clr-bg-card);
+        background-color: var(--clr-active);
+        transition:
+            color 0.3s ease,
+            background-color 0.3s ease;
     }
 }
