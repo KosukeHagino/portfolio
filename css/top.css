@@ -10,6 +10,7 @@
 
 /* --- 変数はcommon.cssで一括管理 --- */
 
+
 /**************************************************
    Keyframes
 **************************************************/
@@ -119,7 +120,7 @@ body:not(.is-loading) .l-loading__counter {
 .p-work-info__link {
     display: flex;
     align-items: center;
-    gap: var(--spc-m);
+    gap: var(--spc-s);
 }
 
 /* --- 子要素：基本の待機状態（0以外）ｰｰｰ */
@@ -325,18 +326,7 @@ body.is-ready .p-work-visual__job {
 
 
 /**************************************************
-   Pagetop
-**************************************************/
-.l-pagetop {
-    position: fixed;
-    inset-block-end: var(--spc-l);
-    inset-inline-end: 0;
-    z-index: var(--z-pagetop);
-}
-
-
-/**************************************************
-   Media Queries
+   Media queries
 **************************************************/
 /* --- Tablet & Desktop --- */
 @media screen and (min-width: 768px) {

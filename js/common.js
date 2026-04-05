@@ -22,6 +22,7 @@ const initCommon = () => {
     initHamburgerMenu();        // メニュー開閉機能の有効化
     initPageTop();              // ページトップへ戻るボタンの有効化
     initScrollShow();           // スクロールに応じたコンテンツ表示の有効化
+    initContactAnimation();     // コンタクトセクションのアニメーション（サブページ共通）
 };
 
 // ページ読み込み完了時に実行
@@ -165,4 +166,30 @@ const initScrollShow = () => {
     });
 
     targets.forEach(target => observer.observe(target));
+};
+
+
+/**************************************************
+   [機能] コンタクトセクションのアニメーション
+**************************************************/
+const initContactAnimation = () => {
+    const contactSection = document.querySelector('.p-contact');
+    const marquee = document.querySelector('.p-contact__marquee');
+    
+    if (!contactSection || !marquee) return;
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            // セクションが画面に入ってきたらマーキー（背景の巨大文字）を表示
+            if (entry.isIntersecting) {
+                marquee.classList.add('is-show');
+            } else {
+                marquee.classList.remove('is-show');
+            }
+        });
+    }, {
+        threshold: 0.1 // 10%見えたら発動
+    });
+
+    observer.observe(contactSection);
 };
