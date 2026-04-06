@@ -2,9 +2,10 @@
 
 /*-------------------------------------------------
    Breakpoints
-   - Mobile:  (default)
-   - Tablet:  768px
-   - Desktop: 1025px
+   - Mobile portrait           : (default)
+   - Mobile landscape          : ～h500px
+   - Tablet portrait           : w768px～
+   - Tablet landscape & Desktop: w1024px～
 -------------------------------------------------*/
 
 
@@ -19,7 +20,7 @@
 }
 
 /* --- Desktop --- */
-@media screen and (min-width: 1025px) {
+@media screen and (min-width: 1024px) {
     .c-cursor {
         display: block;
         position: fixed;
@@ -122,7 +123,7 @@
 }
 
 /* --- Desktop --- */
-@media screen and (min-width: 1025px) {
+@media screen and (min-width: 1024px) {
     .c-pagetop:hover {
         background-color: var(--clr-active);
         padding-right: var(--spc-m);            /* 少し左にせり出させる */
@@ -191,7 +192,7 @@
 }
 
 /* --- Desktop --- */
-@media screen and (min-width: 1025px) {
+@media screen and (min-width: 1024px) {
     /* --- PC：「>」アイコンのスタイルをリセット --- */
     .c-work-media__overlay {
         position: absolute;
@@ -264,7 +265,7 @@
 }
 
 /* --- Desktop --- */
-@media screen and (min-width: 1025px) {
+@media screen and (min-width: 1024px) {
     .c-btn-contact {
         font-size: 2.0rem;
         padding-block: var(--spc-s);

@@ -2,9 +2,10 @@
 
 /*-------------------------------------------------
    Breakpoints
-   - Mobile:  (default)
-   - Tablet:  768px
-   - Desktop: 1025px
+   - Mobile portrait           : (default)
+   - Mobile landscape          : ～h500px
+   - Tablet portrait           : w768px～
+   - Tablet landscape & Desktop: w1024px～
 -------------------------------------------------*/
 
 
@@ -263,7 +264,7 @@ span {
    Contact section
 **************************************************/
 .p-contact {
-    block-size: 350vh;              /* スクロールの遊びを確保 */
+    block-size: 400vh;              /* スクロールの遊びを確保 */
     padding-block: 0;
     border-block-start: none;
 }
@@ -277,7 +278,7 @@ span {
 
 .p-contact__marquee {
     position: sticky;
-    inset-block-start: 60px;
+    inset-block-start: calc(50vh - 30vh - 80px);        /* 画面中央（画面の半分 50vh - 要素の高さの半分 30vh) - ずらし 80px */
     display: flex;
     white-space: nowrap;
     overflow: hidden;
@@ -285,7 +286,7 @@ span {
 
 .p-contact__marquee-text {
     padding-right: 20px;
-    font-size: 5rem;
+    font-size: 2rem;
     font-weight: 700;
     color: rgba(255, 255, 255, 0.7);        /* 薄い白（透かす） */
     animation: marquee 10s linear infinite;
@@ -294,6 +295,7 @@ span {
 .p-contact__img {
     display: block;
     position: sticky;
+    block-size: 60vh;
     margin-inline: auto;
     margin-block-end: -20px;
     border: 1px solid var(--clr-bg-card);
@@ -301,38 +303,41 @@ span {
 }
 
 .p-contact__img:nth-of-type(1) {
-    inset-block-start: 160px;
+    inset-block-start: calc(50vh - 30vh - 30px);        /* 画面中央（画面の半分 50vh - 要素の高さの半分 30vh) - ずらし 30px */
     inline-size: 70%;
     z-index: var(--z-front-content);
 }
 
 .p-contact__img:nth-of-type(2) {
-    inset-block-start: 175px;
+    inset-block-start: calc(50vh - 30vh - 20px);        /* 画面中央（画面の半分 50vh - 要素の高さの半分 30vh) - ずらし 20px */
     inline-size: 75%;
     z-index: calc(var(--z-front-content) + 1);
 }
 
 .p-contact__img:nth-of-type(3) {
-    inset-block-start: 190px;
+    inset-block-start: calc(50vh - 30vh - 10px);        /* 画面中央（画面の半分 50vh - 要素の高さの半分 30vh) - ずらし 10px */
     inline-size: 80%;
     z-index: calc(var(--z-front-content) + 2);
 }
 
 .p-contact__container {
     position: sticky;
-    inset-block-start: 205px;
+    inset-block-start: calc(50vh - 30vh);               /* 画面中央（画面の半分 50vh - 要素の高さの半分 30vh) */
     inline-size: 85%;
-    block-size: calc(100vh - 205px);
+    block-size: 60vh;
     margin-inline: auto;
     margin-block-end: -20px;
     z-index: calc(var(--z-front-content) + 3);
 }
 
 .p-contact__content {
-    block-size: calc(100vh - 190px);
+    block-size: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background-color: var(--clr-bg-card);
-    border-radius: 16px 16px 0 0;
-    padding-block-start: var(--spc-xl);
+    border-radius: 8px;
     text-align: center;
     filter: drop-shadow(0 20px 60px rgba(0, 0, 0, 0.5));
 }
@@ -472,24 +477,84 @@ span {
 /**************************************************
    Media queries
 **************************************************/
-/* --- Tablet & Desktop --- */
-@media screen and (min-width: 768px) {
+/* --- Tablet portrait --- */
+@media screen and (min-width: 768px) and (orientation: portrait) {
    
     .l-header__nav {
-        padding-block-start: var(--spc-xl);
+        padding-block: 10vh;
+    }
+
+    .l-header__menu {
+        padding-block: 10vh;
     }
 
     .l-header__menu-link {
-        font-size: 2.0rem;
+        padding-block: 0;
+        padding-inline: var(--spc-2xl);
+        block-size: 15vh;
+        line-height: 15vh;
+        font-size: 3.2rem;
     }
 
+    .p-contact {
+        block-size: 300vh;              /* スクロールの遊びを確保 */
+        padding-block: 0;
+        border-block-start: none;
+    }
+
+    .p-contact__marquee {
+        inset-block-start: calc(50vh - 25vh - 150px);    /*  */
+    }
+
+    .p-contact__marquee-text {
+        font-size: 5.0rem;
+    }
+
+    .p-contact__img {
+        block-size: 40vh;
+    }
+
+    .p-contact__img:nth-of-type(1) {
+        inset-block-start: calc(50vh - 20vh - 60px);
+        inline-size: 45%;
+    }
+
+    .p-contact__img:nth-of-type(2) {
+        inset-block-start: calc(50vh - 20vh - 40px);
+        inline-size: 50%;
+    }
+
+    .p-contact__img:nth-of-type(3) {
+        inset-block-start: calc(50vh - 20vh - 20px);
+        inline-size: 55%;
+    }
+
+    .p-contact__container {
+        inset-block-start: calc(50vh - 20vh);
+        inline-size: 60%;
+        block-size: 40vh;
+    }
+
+    .p-contact__content {
+        block-size: 40vh;
+    }
+
+    .p-contact__title {
+        margin-block-end: var(--spc-xl);
+    }
+
+    .p-contact__text {
+        margin-block-end: var(--spc-l);
+    }
+    
     .u-br--sp {
         display: none;
     }
 }
 
-/* --- Desktop --- */
-@media screen and (min-width: 1025px) {
+
+/* --- Tablet landscape & Desktop --- */
+@media screen and (min-width: 1024px) {
     
     .l-body {
         font-size: 1.4rem;
@@ -542,6 +607,65 @@ span {
         padding-block-end: var(--spc-s);
         margin-block-end: var(--spc-xl);
     }
+    
+    .l-section__lead {
+        inline-size: 60%;
+        max-inline-size: 1024px;
+        margin-inline: auto;
+        padding-inline: 0;
+    }
+
+    .l-section__container {
+        inline-size: 75%;
+        max-inline-size: 1024px;
+        margin-inline: auto;
+        padding-inline: 0;
+    }
+
+    .p-contact {
+        block-size: 350vh;
+    }
+
+    .p-contact__marquee {
+        inset-block-start: calc(50vh - 25vh - 155px);
+    }
+
+    .p-contact__marquee-text {
+        font-size: 4rem;
+    }
+
+    .p-contact__img {
+        block-size: 55vh;
+    }
+
+    .p-contact__img:nth-of-type(1) {
+        inset-block-start: calc(50vh - 27.5vh - 60px);
+        inline-size: 40%;
+        max-inline-size: 620px;
+    }
+
+    .p-contact__img:nth-of-type(2) {
+        inset-block-start: calc(50vh - 27.5vh - 40px);
+        inline-size: 45%;
+        max-inline-size: 640px;
+    }
+
+    .p-contact__img:nth-of-type(3) {
+        inset-block-start: calc(50vh - 27.5vh - 20px);
+        inline-size: 50%;
+        max-inline-size: 660px;
+    }
+
+    .p-contact__container {
+        inset-block-start: calc(50vh - 27.5vh);
+        inline-size: 55%;
+        max-inline-size: 700px;
+        block-size: 55vh;
+    }
+
+    .p-contact__content {
+        block-size: 55vh;
+    }
 
     .l-footer__github-link:hover {
         text-decoration: underline;
@@ -565,5 +689,89 @@ span {
     .l-mask.is-active {
         opacity: 0.8;
         visibility: visible;
+    }
+
+    .u-br--sp {
+        display: none;
+    }
+}
+
+
+/* --- Mobile landscape --- */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+
+    .l-header__nav {
+        padding-block: 10vh;
+    }
+
+    .l-header__menu {
+        padding-block: 6vh;
+    }
+
+    .l-header__menu-link {
+        padding-block: 0;
+        block-size: 17vh;
+        line-height: 17vh;
+    }
+
+    .l-section {
+        padding-block: var(--spc-xl);
+    }
+
+    .l-section__lead {
+        padding-inline: var(--spc-2xl);
+    }
+
+    .l-section__container {
+        padding-inline: var(--spc-2xl);
+    }
+
+    .p-contact {
+        padding-block: 0;
+    }
+
+    .p-contact__marquee {
+        inset-block-start: calc(50vh - 32.5vh - 80px);
+    }
+
+    .p-contact__img {
+        block-size: 65vh;
+    }
+
+    .p-contact__img:nth-of-type(1) {
+        inset-block-start: calc(50vh - 32.5vh - 60px);
+        inline-size: 45%;
+    }
+
+    .p-contact__img:nth-of-type(2) {
+        inset-block-start: calc(50vh - 32.5vh - 40px);
+        inline-size: 50%;
+    }
+
+    .p-contact__img:nth-of-type(3) {
+        inset-block-start: calc(50vh - 32.5vh - 20px);
+        inline-size: 55%;
+    }
+
+    .p-contact__container {
+        inset-block-start: calc(50vh - 32.5vh);
+        inline-size: 60%;
+        block-size: 65vh;
+    }
+
+    .p-contact__content {
+        block-size: 65vh;
+    }
+
+    .u-br--sp {
+        display: none;
+    }
+
+    .p-contact__title {
+        margin-block-end: var(--spc-m);
+    }
+
+    .p-contact__text {
+        margin-block-end: var(--spc-s);
     }
 }

@@ -2,9 +2,10 @@
 
 /*-------------------------------------------------
    Breakpoints
-   - Mobile:  (default)
-   - Tablet:  768px
-   - Desktop: 1025px
+   - Mobile portrait           : (default)
+   - Mobile landscape          : ～h500px
+   - Tablet portrait           : w768px～
+   - Tablet landscape & Desktop: w1024px～
 -------------------------------------------------*/
 
 
@@ -328,19 +329,32 @@ body.is-ready .p-work-visual__job {
 /**************************************************
    Media queries
 **************************************************/
-/* --- Tablet & Desktop --- */
-@media screen and (min-width: 768px) {
+/* --- Tablet portrait --- */
+@media screen and (min-width: 768px) and (orientation: portrait) {
     
     .p-work-info {
-        inset-block-start: var(--spc-l);
-        padding-inline: 25%;
+        inset-block-start: 50vh;
+        transform: translateY(calc(-50% - 25vh));
+        padding-inline: 15%;
+    }
+
+    .p-work-visual__list {
+        padding-inline: 15%;                /* 左右に余白を設けて、前後の画像を少し画面に入れ込む */
+        gap: 5%;                            /* 前後の画像との隙間 */
+        -webkit-overflow-scrolling: touch;      /* 指での操作を滑らかにする */
     }
 }
 
 
-/* --- Desktop --- */
-@media screen and (min-width: 1025px) {
-    
+/* --- Tablet landscape & Desktop --- */
+@media screen and (min-width: 1024px) {
+
+    .p-work-info {
+        inset-block-start: var(--spc-xl);
+        transform: translateY(0);
+        padding-inline: 25%;
+    }
+
     .p-work-info__link:hover {
         text-decoration: underline;
         text-underline-offset: 0.5em;
@@ -364,7 +378,7 @@ body.is-ready .p-work-visual__job {
         display: block;
         position: fixed;
         inset-inline-start: 50%;
-        inset-block-end: var(--spc-l);
+        inset-block-end: var(--spc-m);
         transform: translateX(-50%);
         inline-size: 200px;
         display: flex;
@@ -397,5 +411,26 @@ body.is-ready .p-work-visual__job {
         font-size: 1.2rem;
         margin-block-end: var(--spc-l);
     }
+}
 
+
+/* --- Mobile landscape --- */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+
+    .p-work-info {
+        inset-inline-start: 25vw;
+        inset-block-start: var(--spc-m);
+    }
+
+    .p-work-visual__img {
+        block-size: 60vh;
+    }
+
+    .p-work-visual__item--contact .l-section__title {
+        margin-block-end: var(--spc-l);
+    }
+
+    .p-indicator {
+        inset-block-end: var(--spc-m);
+    }
 }
