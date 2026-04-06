@@ -2,9 +2,10 @@
 
 /*-------------------------------------------------
    Breakpoints
-   - Mobile:  (default)
-   - Tablet:  768px
-   - Desktop: 1025px
+   - Mobile portrait           : (default)
+   - Mobile landscape          : ～h500px
+   - Tablet portrait           : w768px～
+   - Tablet landscape & Desktop: w1024px～
 -------------------------------------------------*/
 
 
@@ -23,14 +24,10 @@
 }
 
 .p-about__photo {
-    width: 100%;
+    inline-size: 100%;
     border: 0.5px solid var(--clr-primary);
     border-radius: 8px;
     object-fit: cover;
-}
-
-.p-about__body {
-    /* padding-inline: var(--spc-s); */
 }
 
 .p-about__name {
@@ -136,3 +133,46 @@
     word-break: break-all;          /* 単語の途中で変な改行が起きないようにする */
 }
 
+
+/**************************************************
+   Media queries
+**************************************************/
+/* --- Tablet landscape & Desktop --- */
+@media screen and (min-width: 1024px) {
+
+    .p-about__container {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: var(--spc-xl);
+    }
+
+    .p-about__photo {
+        inline-size: 40%;
+        max-inline-size: 480px;
+    }
+
+    .p-approach__list {
+        padding-inline: var(--spc-2xl);
+    }
+
+    .p-approach__side {
+        padding-inline: var(--spc-l);
+    }
+
+    .p-approach__body {
+        padding: var(--spc-l);
+    }
+}
+
+
+/* --- Mobile landscape --- */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+
+    .p-approach__side {
+        padding-inline: var(--spc-l);
+    }
+
+    .p-approach__body {
+        padding: var(--spc-l);
+    }
+}
