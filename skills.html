@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/normalize.css">
+
+    <!-- Adobe Fontsの指定 -->
+    <script>
+        (function(d) {
+            var config = {
+            kitId: 'fav6ghg',
+            scriptTimeout: 3000,
+            async: true
+            },
+            h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+        })(document);
+    </script> <!-- Adobe Fontsの指定 end -->
+    
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/component.css">
+    <link rel="stylesheet" href="./css/skills.css">
+    <link rel="icon" href="./img/svg/favicon.svg" type="image/svg"> <!-- ファビコンは後で作成 -->
+
+    <!-- スクロール設定 -->
+    <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+    <script>
+        // 初期化
+        window.lenis = new Lenis({
+            lerp: 0.05,         // 慣性の強さ
+            wheelMultiplier: 1, // スクロールの速さ
+        });
+
+        // アニメーションループに組み込む
+        function raf(time) {
+            window.lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+        requestAnimationFrame(raf);
+    </script> <!-- スクロール設定 end -->
+
+    <script src="./js/common.js" defer></script>
+    <!-- <script src="./js/profile.js" defer></script> -->
+    <title>萩野弘祐のポートフォリオ</title>
+</head>
+<body class="l-body">
+    <div id="js-cursor" class="c-cursor"></div>
+
+    <header class="l-header">
+        <h1 class="l-header__logo"><a href="./index.html" class="l-header__logo-link">HAGINO</a></h1>
+        <nav id="js-header-nav" class="l-header__nav">
+            <ul class="l-header__menu">
+                <li class="l-header__item"><a href="./index.html" class="l-header__menu-link">Top</a></li>
+                <li class="l-header__item"><a href="./profile.html" class="l-header__menu-link">Profile</a></li>
+                <li class="l-header__item"><a href="./skills.html" class="l-header__menu-link is-active">Skills</a></li>
+                <li class="l-header__item"><a href="./works.html" class="l-header__menu-link">Works</a></li>
+            </ul>
+        </nav>
+        <button type="button" id="js-hamburger" class="l-header__menu-btn c-hamburger" aria-controls="js-header-nav" aria-expanded="false">
+            <span class="c-hamburger__line"></span>
+            <span class="c-hamburger__line"></span>
+        </button>
+    </header>
+
+    <main class="l-main">
+        <section class="p-design l-section">
+            <h2 class="l-section__title">Design</h2>
+            <p class="l-section__lead">Webサイトやバナーを制作することができます。デザイン4原則に基づいた、見やすく整理されたレイアウトを基本とし、そこに厨房設計で培った「ユーザー視点」を掛け合わせ、意図が正しく伝わる使い勝手の良いデザインを心がけています。</p>
+
+            <div class="p-skill-tabs l-section__container">
+                <button class="p-skill-tabs__item" data-skill="figma">Figma</button>
+                <button class="p-skill-tabs__item" data-skill="ps">Photoshop</button>
+                <button class="p-skill-tabs__item" data-skill="ai">Illustrator</button>
+            </div>
+
+            <div class="p-skill-data l-section__container">
+                <article id="figma" class="p-skill-data__content">
+                    <h3 class="p-skill-data__title" data-star="3">Figma</h3>
+                    <p class="p-skill-data__text">ポートフォリオや架空カフェサイトのデザインカンプ制作に使用しています。ワイヤーフレームに基づいた正確なレイアウト制作に加え、現在は効率的な運用のための「コンポーネント化」や「色・フォントのスタイル管理」を学習・実践しています。修正に強く、コーディング工程へスムーズに移行できるデータの構築を意識して取り組んでいます。</p>
+                    <div class="p-skill-data__img-unit">
+                        <img class="p-skill-data__icon" src="./img/icon/figma.png" alt="">
+                    </div>
+                </article>
+
+                <article id="ps" class="p-skill-data__content">
+                    <h3 class="p-skill-data__title" data-star="3">Photoshop</h3>
+                    <p class="p-skill-data__text">Webサイトに使用する写真のレタッチや合成、バナー制作に使用しています。写真の明るさ・色味の補正といった基本的なレタッチに加え、レイヤーマスクを用いた画像の切り抜き・合成が可能です。現在は、制作スピードの向上に加え、再編集を容易にするスマートオブジェクトの活用など、より実務的なワークフローの習得を意識して取り組んでいます。</p>
+                    <div class="p-skill-data__img-unit">
+                        <img class="p-skill-data__icon" src="./img/icon/ps.png" alt="">
+                    </div>
+                </article>
+
+                <article id="ai" class="p-skill-data__content">
+                    <h3 class="p-skill-data__title" data-star="3">Illustrator</h3>
+                    <p class="p-skill-data__text">Webサイトで使用するロゴやアイコンなどのベクターデータの制作に使用しています。パスファインダーを用いた図形の合成や、基本的なパス操作によるパーツ制作が可能です。現在は、拡大・縮小しても画質が劣化しないベクターデータの特性を活かし、SVG形式での適切な書き出しや、より効率的なパスの描き方を意識して取り組んでいます。</p>
+                    <div class="p-skill-data__img-unit">
+                        <img class="p-skill-data__icon" src="./img/icon/ai.png" alt="">
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="p-coding l-section">
+            <h2 class="l-section__title">Coding</h2>
+            <p class="l-section__lead">設計図を正確に読み取り、デザインを忠実に再現します。後々のメンテナンスを考慮し、規則性のある整ったコードを書くことを大切にしています。</p>
+
+            <div class="p-skill-tabs l-section__container">
+                <button class="p-skill-tabs__item" data-skill="html-css">HTML/CSS</button>
+                <button class="p-skill-tabs__item" data-skill="js">JavaScript</button>
+                <button class="p-skill-tabs__item" data-skill="php-sql">PHP/SQL</button>
+            </div>
+
+            <div class="p-skill-data l-section__container">
+                <article id="html-css" class="p-skill-data__content">
+                    <h3 class="p-skill-data__title" data-star="4">HTML / CSS(Sass)</h3>
+                    <p class="p-skill-data__text">Web標準を意識したセマンティックなHTML記述と、Flexboxを活用した柔軟なレイアウト構築が可能です。メディアクエリを用いたレスポンシブ対応はもちろん、JavaScriptと連携した動的なUI（タブ切り替えやアニメーション）の実装も行っています。現在はSassを導入し、変数管理やネストを活用した、より保守性の高い修正に強いコーディングを実践しています。</p>
+                    <div class="p-skill-data__img-unit">
+                        <img class="p-skill-data__icon" src="./img/icon/html.png" alt="">
+                        <img class="p-skill-data__icon" src="./img/icon/css.png" alt="">
+                        <img class="p-skill-data__icon" src="./img/icon/sass.png" alt="">
+                    </div>
+                </article>
+
+                <article id="js" class="p-skill-data__content">
+                    <h3 class="p-skill-data__title" data-star="3">JavaScript / jQuery</h3>
+                    <p class="p-skill-data__text">Webサイトに動きを加えるための基礎的なJavaScript（Vanilla JS）、jQueryを習得しています。ポートフォリオでは、addEventListener や dataset を活用し、各セクションが独立して動作するタブ切り替え機能などを自力で実装しました。現在は、より効率的で読みやすいコードの書き方や、再利用性の高い関数設計について、実践を通じて学習を深めています。</p>
+                    <div class="p-skill-data__img-unit">
+                        <img class="p-skill-data__icon" src="./img/icon/js.png" alt="">
+                        <img class="p-skill-data__icon" src="./img/icon/jquery.png" alt="">
+                    </div>
+                </article>
+
+                <article id="php-sql" class="p-skill-data__content">
+                    <h3 class="p-skill-data__title" data-star="3">PHP / SQL</h3>
+                    <p class="p-skill-data__text">Webサイトに動的な機能を実装するためのPHPの基本文法（変数、配列、ループ処理、関数）および、データベース（SQL）の基礎知識を習得しています。フォームからのデータ受け取りや、条件に応じたコンテンツの出し分けなど、バックエンドの基本的な仕組みを理解しています。現在はこれらの知識を応用し、WordPressの学習や、データベースを活用した効率的なコンテンツ管理の実装に向けて学習を深めています。</p>
+                    <div class="p-skill-data__img-unit">
+                        <img class="p-skill-data__icon" src="./img/icon/php.png" alt="">
+                        <img class="p-skill-data__icon" src="./img/icon/wp.png" alt="">
+                        <img class="p-skill-data__icon" src="./img/icon/mysql.png" alt="">
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="p-development l-section">
+            <h2 class="l-section__title">Development</h2>
+            <p class="l-section__lead">チーム開発や効率的な制作を可能にするツールを導入しています。常にモダンな開発フローを意識した環境構築を行っています。</p>
+
+            <div class="p-skill-tabs l-section__container">
+                <button class="p-skill-tabs__item" data-skill="git-github">Git/GitHub</button>
+                <button class="p-skill-tabs__item" data-skill="tools">Tools</button>
+            </div>
+
+            <div class="p-skill-data l-section__container">
+                <article id="git-github" class="p-skill-data__content">
+                    <h3 class="p-skill-data__title" data-star="3">Git/GitHub</h3>
+                    <p class="p-skill-data__text">Sourcetreeを活用し、制作プロセスの履歴管理およびGitHubへの公開を行っています。基本的なプッシュ・プル操作に加え、ブランチを用いた機能ごとの並行開発や管理が可能です。現在は個人開発においても、本番用と作業用ブランチを分けた安全なワークフローを実践しています。今後は、チーム開発におけるプルリクエストの活用や、コンフリクトを未然に防ぐ運用の習慣化を目標としています。</p>
+                    <div class="p-skill-data__img-unit">
+                        <img class="p-skill-data__icon" src="./img/icon/git.png" alt="">
+                        <img class="p-skill-data__icon" src="./img/icon/github.png" alt="">
+                        <img class="p-skill-data__icon" src="./img/icon/sourcetree.png" alt="">
+                    </div>
+                </article>
+
+                <article id="tools" class="p-skill-data__content">
+                    <h3 class="p-skill-data__title" data-star="3">Tools</h3>
+                    <p class="p-skill-data__text">VS Codeをメインエディタとして使用し、拡張機能を活用したミスのないスピーディーなコーディングを実践しています。また、ブラウザのデベロッパーツールを用いたリアルタイムでのデバッグやレスポンシブ検証を習慣化しており、PHP等の動作確認にはLocalを用いたローカルサーバー環境を構築しています。将来的には、ターミナル操作やパッケージマネージャー（npm等）の導入など、より実務的なモダン開発環境の習得も視野に入れて学習を進めています。</p>
+                    <div class="p-skill-data__img-unit">
+                        <img class="p-skill-data__icon" src="./img/icon/vscode.png" alt="">
+                        <img class="p-skill-data__icon" src="./img/icon/xampp.png" alt="">
+                    </div>
+                </article>
+            </div>
+        </section>
+        
+        <section id="contact" class="p-contact l-section">
+            <div class="p-contact__sticky-bg">
+                <div class="p-contact__marquee">
+                    <span class="p-contact__marquee-text">GET IN TOUCH / CONTACT ME / GET IN TOUCH / CONTACT ME /</span>
+                    <span class="p-contact__marquee-text">GET IN TOUCH / CONTACT ME / GET IN TOUCH / CONTACT ME /</span>
+                </div>
+            </div>
+            
+            <img class="p-contact__img u-fade-scale js-scroll" src="./img/photo/sakura.jpg" alt="">
+            <img class="p-contact__img u-fade-scale js-scroll" src="./img/photo/taiwan.jpg" alt="">
+            <img class="p-contact__img u-fade-scale js-scroll" src="./img/photo/sunset.jpg" alt="">
+                
+            <div class="p-contact__container">
+                <div class="p-contact__content u-fade-scale js-scroll">
+                    <h2 class="p-contact__title l-section__title u-fade-up u-delay-300 js-scroll">Contact</h2>
+                    <p class="p-contact__text u-fade-up u-delay-1200 js-scroll">
+                        ご覧いただき<span class="u-br--sp"></span>ありがとうございます。<br>
+                        下記のメールアドレスに<span class="u-br--sp"></span>お気軽にご連絡ください。
+                    </p>
+                    <a href="mailto:kosukehagino.web@gmail.com" class="c-btn-contact u-fade-up u-delay-1200 js-scroll">kosukehagino.web@gmail.com</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <button type="button" id="js-pagetop" class="c-pagetop l-pagetop" aria-label="ページトップに戻る">
+        <span class="c-pagetop__text">Page top</span>
+    </button>
+
+    <footer class="l-footer">
+        <p class="l-footer__github"><a href="https://github.com/KosukeHagino/portfolio" class="l-footer__github-link" target="_blank">My GitHub</a></p>
+        <p class="l-footer__copy">&copy;2026 kosuke hagino</p>
+    </footer>
+
+    <div id="js-mask" class="l-mask"></div>
+</body>
+</html>
