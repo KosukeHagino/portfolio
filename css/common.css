@@ -244,7 +244,7 @@ span {
 }
 
 .l-section__title.is-show::after {
-    inline-size: 90%;
+    inline-size: 70%;
 }
 
 .l-section__lead {
@@ -616,18 +616,18 @@ span {
     }
 
     .l-section__container {
-        inline-size: 75%;
-        max-inline-size: 1024px;
+        inline-size: 90%;
+        max-inline-size: 1200px;
         margin-inline: auto;
         padding-inline: 0;
     }
 
     .p-contact {
-        block-size: 350vh;
+        block-size: 400vh;
     }
 
     .p-contact__marquee {
-        inset-block-start: calc(50vh - 25vh - 155px);
+        inset-block-start: calc(50vh - 30vh - 150px);
     }
 
     .p-contact__marquee-text {
@@ -635,36 +635,40 @@ span {
     }
 
     .p-contact__img {
-        block-size: 55vh;
+        block-size: 60vh;
     }
 
     .p-contact__img:nth-of-type(1) {
-        inset-block-start: calc(50vh - 27.5vh - 60px);
+        inset-block-start: calc(50vh - 30vh - 60px);
         inline-size: 40%;
         max-inline-size: 620px;
     }
 
     .p-contact__img:nth-of-type(2) {
-        inset-block-start: calc(50vh - 27.5vh - 40px);
+        inset-block-start: calc(50vh - 30vh - 40px);
         inline-size: 45%;
         max-inline-size: 640px;
     }
 
     .p-contact__img:nth-of-type(3) {
-        inset-block-start: calc(50vh - 27.5vh - 20px);
+        inset-block-start: calc(50vh - 30vh - 20px);
         inline-size: 50%;
         max-inline-size: 660px;
     }
 
     .p-contact__container {
-        inset-block-start: calc(50vh - 27.5vh);
+        inset-block-start: calc(50vh - 30vh);
         inline-size: 55%;
         max-inline-size: 700px;
-        block-size: 55vh;
+        block-size: 60vh;
     }
 
     .p-contact__content {
-        block-size: 55vh;
+        block-size: 60vh;
+    }
+
+    .p-contact__title {
+        margin-block-end: var(--spc-l);
     }
 
     .l-footer__github-link:hover {
