@@ -149,19 +149,39 @@ const initPageTop = () => {
 **************************************************/
 const initScrollShow = () => {
     const targets = document.querySelectorAll('.js-scroll');
+
+    // 画面内に入っているものを一時的に貯めるキュー（待ち行列）
+    let scrollQueue = [];
+    let isProcessing = false;
     
+    const processQueue = () => {
+        if (scrollQueue.length === 0) {
+            isProcessing = false;
+            return;
+        }
+        isProcessing = true;
+
+        // キューの先頭を取り出して表示
+        const target = scrollQueue.shift();
+        target.classList.add('is-show');
+
+        // 0.3秒待ってから次の要素を処理
+        setTimeout(processQueue, 300);
+    };
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            // 画面内に入ったら
             if (entry.isIntersecting) {
-                entry.target.classList.add('is-show');
-                // 一度表示したら監視を止める（パフォーマンス向上）
+                // 画面内に入ったら即表示せず、キューに追加
+                scrollQueue.push(entry.target);
                 observer.unobserve(entry.target);
+
+                // 処理が動いていなければ開始
+                if (!isProcessing) processQueue();
             }
         });
     }, {
-        root: null, // ブラウザの画面全体を監視
-        rootMargin: '0px 0px -15% 0px', // 画面の下端から15%入ったところで発動
+        rootMargin: '0px 0px -10% 0px', // 画面の下端から10%入ったところで発動
         threshold: 0 // 少しでも入ったら反応
     });
 

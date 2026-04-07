@@ -110,7 +110,6 @@
 .c-pagetop__text {
     display: block;
     font-family: var(--fnt-accent);
-    font-size: 1.2rem;
     font-weight: 700;
     letter-spacing: 0.2em;
     text-transform: uppercase;

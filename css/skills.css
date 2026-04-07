@@ -1,0 +1,102 @@
+@charset "utf-8";
+
+/*-------------------------------------------------
+   Breakpoints
+   - Mobile portrait           : (default)
+   - Mobile landscape          : ～h500px
+   - Tablet portrait           : w768px～
+   - Tablet landscape & Desktop: w1024px～
+-------------------------------------------------*/
+
+
+/* --- 変数はcommon.cssで一括管理 --- */
+
+
+/**************************************************
+   Design section
+**************************************************/
+.p-skill-tabs {
+    display: none;
+}
+
+.p-skill-data {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spc-l);
+    margin-inline: auto;
+    padding-inline: var(--spc-m);
+}
+
+.p-skill-data__content {
+    padding: var(--spc-l);
+    background-color: var(--clr-bg-card);
+    border: 0.5px solid var(--clr-primary);
+    border-radius: 8px;
+}
+
+.p-skill-data__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--fnt-accent);
+    font-size: 2.4rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    margin-block-end: var(--spc-m);
+    border-block-end: 1px solid var(--clr-primary);
+    padding-block-end: var(--spc-2xs);
+}
+
+.star-container {
+    display: inline-flex;
+    margin-inline-start: auto;
+    gap: var(--spc-2xs);
+    font-family: initial;
+}
+
+.star {
+    font-size: 1.6rem;
+    color: var(--clr-bg-page);
+}
+
+.star.filled {
+    color: var(--primary);
+}
+
+.p-skill-data__text {
+    margin-block-end: var(--spc-m);
+}
+
+.p-skill-data__img-unit {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: var(--spc-m);
+}
+
+.p-skill-data__icon {
+    inline-size: 80px;
+    max-block-size: 80px;
+}
+
+
+/**************************************************
+   Media queries
+**************************************************/
+/* --- Tablet portrait --- */
+@media screen and (min-width: 768px) and (orientation: portrait) {
+
+    .p-skill-data {
+        padding-inline: var(--spc-xl);
+    }
+}
+
+
+/* --- Tablet landscape & Desktop --- */
+@media screen and (min-width: 1024px) {
+
+    .p-skill-data__content {
+        max-width: 800px;
+        margin-inline: auto;
+    }
+}

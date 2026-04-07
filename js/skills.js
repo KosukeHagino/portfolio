@@ -1,0 +1,96 @@
+'use strict';
+
+/**************************************************
+   初期化処理
+**************************************************/
+// 初期化処理
+const initSkill = () => {
+    // initSkillTabs();            // タブ切り替えの有効化
+    renderStars();              // スキルレベル(★)の生成
+    // autoSelectFirstTabs();      // 初期表示の設定
+};
+
+
+// ページ読み込み完了時に実行
+window.addEventListener('load', initSkill);
+
+
+/**************************************************
+   [機能] タブ切り替え
+**************************************************/
+const initSkillTabs = () => {
+    // 各セクション（DESIGN, CODING, ENVIRONMENT）を取得
+    const sections = document.querySelectorAll('.js-section');
+
+    sections.forEach(section => {
+        // セクション内の「ボタン」と「詳細コンテンツ」を取得
+        const tabBtns = section.querySelectorAll('.js-skill-tab-item');
+        const contents = section.querySelectorAll('.js-skill-data-content');
+
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // すでに active の場合は何もしない
+                if (btn.classList.contains('is-active')) return;
+
+                // 同じグループ内のボタンから active を外して、クリックしたものに付ける
+                tabBtns.forEach(el => el.classList.remove('is-active'));
+                btn.classList.add('active');
+
+                // 一旦すべての詳細コンテンツを非表示にする
+                contents.forEach(content => content.classList.remove('is-active'));
+
+                // ボタンの data-skill と同じ ID を持つ詳細コンテンツを表示する
+                const targetId = btn.getAttribute('data-skill');
+                const targetContent = section.querySelector(`#${targetId}`);
+                if (targetContent) {
+                    targetContent.classList.add('is-active');
+                }
+            });
+        });
+    });
+};
+
+
+/**************************************************
+   [機能] スキルレベル(★)の自動生成
+**************************************************/
+const renderStars = () => {
+    const skillTitles = document.querySelectorAll('.js-skill-data-title');
+
+    skillTitles.forEach(title => {
+        // data-starの値を取得（数値に変換）
+        const starCount = parseInt(title.getAttribute('data-star'), 10);
+        const maxStars = 5; // 最大星数
+        
+        // 星を入れるためのコンテナを作成
+        const starWrapper = document.createElement('span');
+        starWrapper.classList.add('star-container');
+
+        // 星マークを生成して流し込む
+        for (let i = 1; i <= maxStars; i++) {
+            const star = document.createElement('span');
+            star.classList.add('star');
+            star.textContent = '★'; // 星マーク
+            
+            // 現在のループ回数が starCount 以下なら「塗りつぶし」クラスをつける
+            if (i <= starCount) {
+                star.classList.add('filled');
+            }
+            starWrapper.appendChild(star);
+        }
+
+        // タイトルの後ろに追加
+        title.appendChild(starWrapper);
+    });
+};
+
+
+/**************************************************
+   [機能] 最初のタブを自動選択
+**************************************************/
+const autoSelectFirstTabs = () => {
+    document.querySelectorAll('.js-section').forEach(section => {
+        const firstTab = section.querySelector('.js-skill-tab-item');
+        if (firstTab) firstTab.click();     // 最初のタブを自動でクリック
+    });
+};

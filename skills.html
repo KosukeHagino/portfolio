@@ -40,7 +40,7 @@
     </script> <!-- スクロール設定 end -->
 
     <script src="./js/common.js" defer></script>
-    <!-- <script src="./js/profile.js" defer></script> -->
+    <script src="./js/skills.js" defer></script>
     <title>萩野弘祐のポートフォリオ</title>
 </head>
 <body class="l-body">
@@ -63,111 +63,111 @@
     </header>
 
     <main class="l-main">
-        <section class="p-design l-section">
-            <h2 class="l-section__title">Design</h2>
-            <p class="l-section__lead">Webサイトやバナーを制作することができます。デザイン4原則に基づいた、見やすく整理されたレイアウトを基本とし、そこに厨房設計で培った「ユーザー視点」を掛け合わせ、意図が正しく伝わる使い勝手の良いデザインを心がけています。</p>
+        <section class="p-design l-section js-section">
+            <h2 class="l-section__title u-fade-up js-scroll">Design</h2>
+            <p class="l-section__lead u-fade-up js-scroll">Webサイトやバナーを制作することができます。デザイン4原則に基づいた、見やすく整理されたレイアウトを基本とし、そこに厨房設計で培った「ユーザー視点」を掛け合わせ、意図が正しく伝わる使い勝手の良いデザインを心がけています。</p>
 
             <div class="p-skill-tabs l-section__container">
-                <button class="p-skill-tabs__item" data-skill="figma">Figma</button>
-                <button class="p-skill-tabs__item" data-skill="ps">Photoshop</button>
-                <button class="p-skill-tabs__item" data-skill="ai">Illustrator</button>
+                <button class="p-skill-tabs__item js-skill-tab-item" data-skill="figma">Figma</button>
+                <button class="p-skill-tabs__item js-skill-tab-item" data-skill="ps">Photoshop</button>
+                <button class="p-skill-tabs__item js-skill-tab-item" data-skill="ai">Illustrator</button>
             </div>
 
             <div class="p-skill-data l-section__container">
-                <article id="figma" class="p-skill-data__content">
-                    <h3 class="p-skill-data__title" data-star="3">Figma</h3>
+                <article id="figma" class="p-skill-data__content js-skill-data-content u-fade-scale js-scroll">
+                    <h3 class="p-skill-data__title js-skill-data-title" data-star="2">Figma</h3>
                     <p class="p-skill-data__text">ポートフォリオや架空カフェサイトのデザインカンプ制作に使用しています。ワイヤーフレームに基づいた正確なレイアウト制作に加え、現在は効率的な運用のための「コンポーネント化」や「色・フォントのスタイル管理」を学習・実践しています。修正に強く、コーディング工程へスムーズに移行できるデータの構築を意識して取り組んでいます。</p>
                     <div class="p-skill-data__img-unit">
-                        <img class="p-skill-data__icon" src="./img/icon/figma.png" alt="">
+                        <img class="p-skill-data__icon u-fade-scale js-scroll" src="./img/icon/figma.png" alt="">
                     </div>
                 </article>
 
-                <article id="ps" class="p-skill-data__content">
-                    <h3 class="p-skill-data__title" data-star="3">Photoshop</h3>
+                <article id="ps" class="p-skill-data__content js-skill-data-content u-fade-scale js-scroll">
+                    <h3 class="p-skill-data__title js-skill-data-title" data-star="3">Photoshop</h3>
                     <p class="p-skill-data__text">Webサイトに使用する写真のレタッチや合成、バナー制作に使用しています。写真の明るさ・色味の補正といった基本的なレタッチに加え、レイヤーマスクを用いた画像の切り抜き・合成が可能です。現在は、制作スピードの向上に加え、再編集を容易にするスマートオブジェクトの活用など、より実務的なワークフローの習得を意識して取り組んでいます。</p>
                     <div class="p-skill-data__img-unit">
-                        <img class="p-skill-data__icon" src="./img/icon/ps.png" alt="">
+                        <img class="p-skill-data__icon u-fade-scale js-scroll" src="./img/icon/ps.png" alt="">
                     </div>
                 </article>
 
-                <article id="ai" class="p-skill-data__content">
-                    <h3 class="p-skill-data__title" data-star="3">Illustrator</h3>
+                <article id="ai" class="p-skill-data__content js-skill-data-content u-fade-scale js-scroll">
+                    <h3 class="p-skill-data__title js-skill-data-title" data-star="2">Illustrator</h3>
                     <p class="p-skill-data__text">Webサイトで使用するロゴやアイコンなどのベクターデータの制作に使用しています。パスファインダーを用いた図形の合成や、基本的なパス操作によるパーツ制作が可能です。現在は、拡大・縮小しても画質が劣化しないベクターデータの特性を活かし、SVG形式での適切な書き出しや、より効率的なパスの描き方を意識して取り組んでいます。</p>
                     <div class="p-skill-data__img-unit">
-                        <img class="p-skill-data__icon" src="./img/icon/ai.png" alt="">
+                        <img class="p-skill-data__icon u-fade-scale js-scroll" src="./img/icon/ai.png" alt="">
                     </div>
                 </article>
             </div>
         </section>
 
-        <section class="p-coding l-section">
-            <h2 class="l-section__title">Coding</h2>
-            <p class="l-section__lead">設計図を正確に読み取り、デザインを忠実に再現します。後々のメンテナンスを考慮し、規則性のある整ったコードを書くことを大切にしています。</p>
+        <section class="p-coding l-section js-section">
+            <h2 class="l-section__title u-fade-up js-scroll">Coding</h2>
+            <p class="l-section__lead u-fade-up js-scroll">設計図を正確に読み取り、デザインを忠実に再現します。後々のメンテナンスを考慮し、規則性のある整ったコードを書くことを大切にしています。</p>
 
             <div class="p-skill-tabs l-section__container">
-                <button class="p-skill-tabs__item" data-skill="html-css">HTML/CSS</button>
-                <button class="p-skill-tabs__item" data-skill="js">JavaScript</button>
-                <button class="p-skill-tabs__item" data-skill="php-sql">PHP/SQL</button>
+                <button class="p-skill-tabs__item js-skill-tab-item" data-skill="html-css">HTML/CSS</button>
+                <button class="p-skill-tabs__item js-skill-tab-item" data-skill="js">JavaScript</button>
+                <button class="p-skill-tabs__item js-skill-tab-item" data-skill="php-sql">PHP/SQL</button>
             </div>
 
             <div class="p-skill-data l-section__container">
-                <article id="html-css" class="p-skill-data__content">
-                    <h3 class="p-skill-data__title" data-star="4">HTML / CSS(Sass)</h3>
+                <article id="html-css" class="p-skill-data__content js-skill-data-content u-fade-scale js-scroll">
+                    <h3 class="p-skill-data__title js-skill-data-title" data-star="4">HTML / CSS(Sass)</h3>
                     <p class="p-skill-data__text">Web標準を意識したセマンティックなHTML記述と、Flexboxを活用した柔軟なレイアウト構築が可能です。メディアクエリを用いたレスポンシブ対応はもちろん、JavaScriptと連携した動的なUI（タブ切り替えやアニメーション）の実装も行っています。現在はSassを導入し、変数管理やネストを活用した、より保守性の高い修正に強いコーディングを実践しています。</p>
                     <div class="p-skill-data__img-unit">
-                        <img class="p-skill-data__icon" src="./img/icon/html.png" alt="">
-                        <img class="p-skill-data__icon" src="./img/icon/css.png" alt="">
-                        <img class="p-skill-data__icon" src="./img/icon/sass.png" alt="">
+                        <img class="p-skill-data__icon u-fade-scale js-scroll" src="./img/icon/html.png" alt="">
+                        <img class="p-skill-data__icon u-fade-scale js-scroll" src="./img/icon/css.png" alt="">
+                        <img class="p-skill-data__icon u-fade-scale js-scroll" src="./img/icon/sass.png" alt="">
                     </div>
                 </article>
 
-                <article id="js" class="p-skill-data__content">
-                    <h3 class="p-skill-data__title" data-star="3">JavaScript / jQuery</h3>
+                <article id="js" class="p-skill-data__content js-skill-data-content u-fade-scale js-scroll">
+                    <h3 class="p-skill-data__title js-skill-data-title" data-star="3">JavaScript / jQuery</h3>
                     <p class="p-skill-data__text">Webサイトに動きを加えるための基礎的なJavaScript（Vanilla JS）、jQueryを習得しています。ポートフォリオでは、addEventListener や dataset を活用し、各セクションが独立して動作するタブ切り替え機能などを自力で実装しました。現在は、より効率的で読みやすいコードの書き方や、再利用性の高い関数設計について、実践を通じて学習を深めています。</p>
                     <div class="p-skill-data__img-unit">
-                        <img class="p-skill-data__icon" src="./img/icon/js.png" alt="">
-                        <img class="p-skill-data__icon" src="./img/icon/jquery.png" alt="">
+                        <img class="p-skill-data__icon u-fade-scale js-scroll" src="./img/icon/js.png" alt="">
+                        <img class="p-skill-data__icon u-fade-scale js-scroll" src="./img/icon/jquery.png" alt="">
                     </div>
                 </article>
 
-                <article id="php-sql" class="p-skill-data__content">
-                    <h3 class="p-skill-data__title" data-star="3">PHP / SQL</h3>
+                <article id="php-sql" class="p-skill-data__content js-skill-data-content u-fade-scale js-scroll">
+                    <h3 class="p-skill-data__title js-skill-data-title" data-star="2">PHP / SQL</h3>
                     <p class="p-skill-data__text">Webサイトに動的な機能を実装するためのPHPの基本文法（変数、配列、ループ処理、関数）および、データベース（SQL）の基礎知識を習得しています。フォームからのデータ受け取りや、条件に応じたコンテンツの出し分けなど、バックエンドの基本的な仕組みを理解しています。現在はこれらの知識を応用し、WordPressの学習や、データベースを活用した効率的なコンテンツ管理の実装に向けて学習を深めています。</p>
                     <div class="p-skill-data__img-unit">
-                        <img class="p-skill-data__icon" src="./img/icon/php.png" alt="">
-                        <img class="p-skill-data__icon" src="./img/icon/wp.png" alt="">
-                        <img class="p-skill-data__icon" src="./img/icon/mysql.png" alt="">
+                        <img class="p-skill-data__icon u-fade-scale js-scroll" src="./img/icon/php.png" alt="">
+                        <img class="p-skill-data__icon u-fade-scale js-scroll" src="./img/icon/wp.png" alt="">
+                        <img class="p-skill-data__icon u-fade-scale js-scroll" src="./img/icon/mysql.png" alt="">
                     </div>
                 </article>
             </div>
         </section>
 
-        <section class="p-development l-section">
-            <h2 class="l-section__title">Development</h2>
-            <p class="l-section__lead">チーム開発や効率的な制作を可能にするツールを導入しています。常にモダンな開発フローを意識した環境構築を行っています。</p>
+        <section class="p-development l-section js-section">
+            <h2 class="l-section__title u-fade-up js-scroll">Development</h2>
+            <p class="l-section__lead u-fade-up js-scroll">チーム開発や効率的な制作を可能にするツールを導入しています。常にモダンな開発フローを意識した環境構築を行っています。</p>
 
             <div class="p-skill-tabs l-section__container">
-                <button class="p-skill-tabs__item" data-skill="git-github">Git/GitHub</button>
-                <button class="p-skill-tabs__item" data-skill="tools">Tools</button>
+                <button class="p-skill-tabs__item js-skill-tab-item" data-skill="git-github">Git/GitHub</button>
+                <button class="p-skill-tabs__item js-skill-tab-item" data-skill="tools">Tools</button>
             </div>
 
             <div class="p-skill-data l-section__container">
-                <article id="git-github" class="p-skill-data__content">
-                    <h3 class="p-skill-data__title" data-star="3">Git/GitHub</h3>
+                <article id="git-github" class="p-skill-data__content js-skill-data-content u-fade-scale js-scroll">
+                    <h3 class="p-skill-data__title js-skill-data-title" data-star="3">Git/GitHub</h3>
                     <p class="p-skill-data__text">Sourcetreeを活用し、制作プロセスの履歴管理およびGitHubへの公開を行っています。基本的なプッシュ・プル操作に加え、ブランチを用いた機能ごとの並行開発や管理が可能です。現在は個人開発においても、本番用と作業用ブランチを分けた安全なワークフローを実践しています。今後は、チーム開発におけるプルリクエストの活用や、コンフリクトを未然に防ぐ運用の習慣化を目標としています。</p>
                     <div class="p-skill-data__img-unit">
-                        <img class="p-skill-data__icon" src="./img/icon/git.png" alt="">
-                        <img class="p-skill-data__icon" src="./img/icon/github.png" alt="">
-                        <img class="p-skill-data__icon" src="./img/icon/sourcetree.png" alt="">
+                        <img class="p-skill-data__icon u-fade-scale js-scroll" src="./img/icon/git.png" alt="">
+                        <img class="p-skill-data__icon u-fade-scale js-scroll" src="./img/icon/github.png" alt="">
+                        <img class="p-skill-data__icon u-fade-scale js-scroll" src="./img/icon/sourcetree.png" alt="">
                     </div>
                 </article>
 
-                <article id="tools" class="p-skill-data__content">
-                    <h3 class="p-skill-data__title" data-star="3">Tools</h3>
+                <article id="tools" class="p-skill-data__content js-skill-data-content u-fade-scale js-scroll">
+                    <h3 class="p-skill-data__title js-skill-data-title" data-star="3">Tools</h3>
                     <p class="p-skill-data__text">VS Codeをメインエディタとして使用し、拡張機能を活用したミスのないスピーディーなコーディングを実践しています。また、ブラウザのデベロッパーツールを用いたリアルタイムでのデバッグやレスポンシブ検証を習慣化しており、PHP等の動作確認にはLocalを用いたローカルサーバー環境を構築しています。将来的には、ターミナル操作やパッケージマネージャー（npm等）の導入など、より実務的なモダン開発環境の習得も視野に入れて学習を進めています。</p>
                     <div class="p-skill-data__img-unit">
-                        <img class="p-skill-data__icon" src="./img/icon/vscode.png" alt="">
-                        <img class="p-skill-data__icon" src="./img/icon/xampp.png" alt="">
+                        <img class="p-skill-data__icon u-fade-scale js-scroll" src="./img/icon/vscode.png" alt="">
+                        <img class="p-skill-data__icon u-fade-scale js-scroll" src="./img/icon/xampp.png" alt="">
                     </div>
                 </article>
             </div>
@@ -188,11 +188,11 @@
             <div class="p-contact__container">
                 <div class="p-contact__content u-fade-scale js-scroll">
                     <h2 class="p-contact__title l-section__title u-fade-up u-delay-300 js-scroll">Contact</h2>
-                    <p class="p-contact__text u-fade-up u-delay-1200 js-scroll">
+                    <p class="p-contact__text u-fade-up u-delay-600 js-scroll">
                         ご覧いただき<span class="u-br--sp"></span>ありがとうございます。<br>
                         下記のメールアドレスに<span class="u-br--sp"></span>お気軽にご連絡ください。
                     </p>
-                    <a href="mailto:kosukehagino.web@gmail.com" class="c-btn-contact u-fade-up u-delay-1200 js-scroll">kosukehagino.web@gmail.com</a>
+                    <a href="mailto:kosukehagino.web@gmail.com" class="c-btn-contact u-fade-up u-delay-600 js-scroll">kosukehagino.web@gmail.com</a>
                 </div>
             </div>
         </section>
