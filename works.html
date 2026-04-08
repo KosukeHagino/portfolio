@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/normalize.css">
+
+    <!-- Adobe Fontsの指定 -->
+    <script>
+        (function(d) {
+            var config = {
+            kitId: 'fav6ghg',
+            scriptTimeout: 3000,
+            async: true
+            },
+            h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+        })(document);
+    </script> <!-- Adobe Fontsの指定 end -->
+    
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/component.css">
+    <!-- <link rel="stylesheet" href="./css/works.css"> -->
+    <link rel="icon" href="./img/svg/favicon.svg" type="image/svg"> <!-- ファビコンは後で作成 -->
+
+    <!-- スクロール設定 -->
+    <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+    <script>
+        // 初期化
+        window.lenis = new Lenis({
+            lerp: 0.05,         // 慣性の強さ
+            wheelMultiplier: 1, // スクロールの速さ
+        });
+
+        // アニメーションループに組み込む
+        function raf(time) {
+            window.lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+        requestAnimationFrame(raf);
+    </script> <!-- スクロール設定 end -->
+
+    <script src="./js/common.js" defer></script>
+    <!-- <script src="./js/works.js" defer></script> -->
+    <title>萩野弘祐のポートフォリオ</title>
+</head>
+<body class="l-body">
+    <div id="js-cursor" class="c-cursor"></div>
+
+    <header class="l-header">
+        <h1 class="l-header__logo"><a href="./index.html" class="l-header__logo-link">HAGINO</a></h1>
+        <nav id="js-header-nav" class="l-header__nav">
+            <ul class="l-header__menu">
+                <li class="l-header__item"><a href="./index.html" class="l-header__menu-link">Top</a></li>
+                <li class="l-header__item"><a href="./profile.html" class="l-header__menu-link">Profile</a></li>
+                <li class="l-header__item"><a href="./skills.html" class="l-header__menu-link">Skills</a></li>
+                <li class="l-header__item"><a href="./works.html" class="l-header__menu-link is-active">Works</a></li>
+            </ul>
+        </nav>
+        <button type="button" id="js-hamburger" class="l-header__menu-btn c-hamburger" aria-controls="js-header-nav" aria-expanded="false">
+            <span class="c-hamburger__line"></span>
+            <span class="c-hamburger__line"></span>
+        </button>
+    </header>
+
+    <main class="l-main">
+        <section class="p-works l-section">
+            <h2 class="l-section__title u-fade-up js-scroll">Works</h2>
+            <p class="l-section__lead u-fade-up js-scroll">ユーザーの目的を達成するための「見やすさ」と、情報を正しく届けるための「設計」を大切に制作しています。基礎を忠実に再現したWebサイトから、細部まで意図を込めたバナー制作まで、一つひとつの課題に対して真摯に向き合った制作物です。現在は、より実践的なWebサイトの構築や、保守性の高いコーディング技術の向上に注力しており、学んだ技術を形にしながら、公開作品を順次アップデートしてまいります。</p>
+
+            <div class="p-works__container l-section__container">
+                <ul class="p-works__filter-list">
+                    <li class="p-works__filter-item"><a class="p-works__filter-link" href="#web-item">#web</a></li>
+                    <li class="p-works__filter-item"><a class="p-works__filter-link" href="#app-item">#app</a></li>
+                    <li class="p-works__filter-item"><a class="p-works__filter-link" href="#banner-item">#banner</a></li>
+                </ul>
+
+                <ul class="p-works__list">
+                    <li id="web-item" class="p-works__item">
+                        <a class="p-works__item-link c-work-media" href="./works-portfolio.html">
+                            <picture>
+                                <source srcset="./img/screenshot/portfolio-pc.webp" media="(min-width: 768px)">   <!-- 画像は後で差し替える -->
+                                <img class="p-work-visual__img c-work-media__img" src="./img/screenshot/portfolio-sp.webp" alt="web制作実績：ポートフォリオの詳細を見る">  <!-- 画像は後で差し替える -->
+                            </picture>
+                            <div class="c-work-media__overlay">
+                                <span class="c-work-media__view">VIEW DETAIL</span>
+                            </div>
+                            <div class="skill-label js-scroll-text">
+                                <span class="label work-type-label">#web</span>
+                                <h3 class="work-title-jp">ポートフォリオ</h3>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li id="web-item" class="p-works__item">
+                        <a class="p-works__item-link c-work-media" href="./works-portfolio.html">
+                            <picture>
+                                <source srcset="./img/screenshot/portfolio-pc.webp" media="(min-width: 768px)">   <!-- 画像は後で差し替える -->
+                                <img class="p-work-visual__img c-work-media__img" src="./img/screenshot/portfolio-sp.webp" alt="web制作実績：ポートフォリオの詳細を見る">  <!-- 画像は後で差し替える -->
+                            </picture>
+                            <div class="c-work-media__overlay">
+                                <span class="c-work-media__view">VIEW DETAIL</span>
+                            </div>
+                            <div class="skill-label js-scroll-text">
+                                <span class="label work-type-label">#web</span>
+                                <h3 class="work-title-jp">ポートフォリオ</h3>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li id="web-item" class="p-works__item">
+                        <a class="p-works__item-link c-work-media" href="./works-portfolio.html">
+                            <picture>
+                                <source srcset="./img/screenshot/portfolio-pc.webp" media="(min-width: 768px)">   <!-- 画像は後で差し替える -->
+                                <img class="p-work-visual__img c-work-media__img" src="./img/screenshot/portfolio-sp.webp" alt="web制作実績：ポートフォリオの詳細を見る">  <!-- 画像は後で差し替える -->
+                            </picture>
+                            <div class="c-work-media__overlay">
+                                <span class="c-work-media__view">VIEW DETAIL</span>
+                            </div>
+                            <div class="skill-label js-scroll-text">
+                                <span class="label work-type-label">#web</span>
+                                <h3 class="work-title-jp">ポートフォリオ</h3>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li id="web-item" class="p-works__item">
+                        <a class="p-works__item-link c-work-media" href="./works-portfolio.html">
+                            <picture>
+                                <source srcset="./img/screenshot/portfolio-pc.webp" media="(min-width: 768px)">   <!-- 画像は後で差し替える -->
+                                <img class="p-work-visual__img c-work-media__img" src="./img/screenshot/portfolio-sp.webp" alt="web制作実績：ポートフォリオの詳細を見る">  <!-- 画像は後で差し替える -->
+                            </picture>
+                            <div class="c-work-media__overlay">
+                                <span class="c-work-media__view">VIEW DETAIL</span>
+                            </div>
+                            <div class="skill-label js-scroll-text">
+                                <span class="label work-type-label">#web</span>
+                                <h3 class="work-title-jp">ポートフォリオ</h3>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="contact" class="p-contact l-section">
+            <div class="p-contact__sticky-bg">
+                <div class="p-contact__marquee">
+                    <span class="p-contact__marquee-text">GET IN TOUCH / CONTACT ME / GET IN TOUCH / CONTACT ME /</span>
+                    <span class="p-contact__marquee-text">GET IN TOUCH / CONTACT ME / GET IN TOUCH / CONTACT ME /</span>
+                </div>
+            </div>
+            
+            <img class="p-contact__img u-fade-scale js-scroll" src="./img/photo/sakura.jpg" alt="">
+            <img class="p-contact__img u-fade-scale js-scroll" src="./img/photo/taiwan.jpg" alt="">
+            <img class="p-contact__img u-fade-scale js-scroll" src="./img/photo/sunset.jpg" alt="">
+                
+            <div class="p-contact__container">
+                <div class="p-contact__content u-fade-scale js-scroll">
+                    <h2 class="p-contact__title l-section__title u-fade-up u-delay-300 js-scroll">Contact</h2>
+                    <p class="p-contact__text u-fade-up u-delay-600 js-scroll">
+                        ご覧いただき<span class="u-br--sp"></span>ありがとうございます。<br>
+                        下記のメールアドレスに<span class="u-br--sp"></span>お気軽にご連絡ください。
+                    </p>
+                    <a href="mailto:kosukehagino.web@gmail.com" class="c-btn-contact u-fade-up u-delay-600 js-scroll">kosukehagino.web@gmail.com</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <button type="button" id="js-pagetop" class="c-pagetop l-pagetop" aria-label="ページトップに戻る">
+        <span class="c-pagetop__text">Page top</span>
+    </button>
+
+    <footer class="l-footer">
+        <p class="l-footer__github"><a href="https://github.com/KosukeHagino/portfolio" class="l-footer__github-link" target="_blank">My GitHub</a></p>
+        <p class="l-footer__copy">&copy;2026 kosuke hagino</p>
+    </footer>
+
+    <div id="js-mask" class="l-mask"></div>
+</body>
+</html>
