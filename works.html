@@ -19,7 +19,7 @@
     
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/component.css">
-    <!-- <link rel="stylesheet" href="./css/works.css"> -->
+    <link rel="stylesheet" href="./css/works.css">
     <link rel="icon" href="./img/svg/favicon.svg" type="image/svg"> <!-- ファビコンは後で作成 -->
 
     <!-- スクロール設定 -->
@@ -65,7 +65,7 @@
     <main class="l-main">
         <section class="p-works l-section">
             <h2 class="l-section__title u-fade-up js-scroll">Works</h2>
-            <p class="l-section__lead u-fade-up js-scroll">ユーザーの目的を達成するための「見やすさ」と、情報を正しく届けるための「設計」を大切に制作しています。基礎を忠実に再現したWebサイトから、細部まで意図を込めたバナー制作まで、一つひとつの課題に対して真摯に向き合った制作物です。現在は、より実践的なWebサイトの構築や、保守性の高いコーディング技術の向上に注力しており、学んだ技術を形にしながら、公開作品を順次アップデートしてまいります。</p>
+            <p class="l-section__lead u-fade-up js-scroll">ユーザーの目的を達成するための見やすさと、情報を正しく届けるための設計を大切に制作しています。基礎を忠実に再現したWebサイトから、細部まで意図を込めたバナー制作まで、一つひとつの課題に対して真摯に向き合った制作物です。現在は、より実践的なWebサイトの構築や、保守性の高いコーディング技術の向上に注力しており、学んだ技術を形にしながら、公開作品を順次アップデートしてまいります。</p>
 
             <div class="p-works__container l-section__container">
                 <ul class="p-works__filter-list">
@@ -76,7 +76,7 @@
 
                 <ul class="p-works__list">
                     <li id="web-item" class="p-works__item">
-                        <a class="p-works__item-link c-work-media" href="./works-portfolio.html">
+                        <a class="p-works__link c-work-media" href="./works-portfolio.html">
                             <picture>
                                 <source srcset="./img/screenshot/portfolio-pc.webp" media="(min-width: 768px)">   <!-- 画像は後で差し替える -->
                                 <img class="p-work-visual__img c-work-media__img" src="./img/screenshot/portfolio-sp.webp" alt="web制作実績：ポートフォリオの詳細を見る">  <!-- 画像は後で差し替える -->
@@ -84,15 +84,23 @@
                             <div class="c-work-media__overlay">
                                 <span class="c-work-media__view">VIEW DETAIL</span>
                             </div>
-                            <div class="skill-label js-scroll-text">
-                                <span class="label work-type-label">#web</span>
-                                <h3 class="work-title-jp">ポートフォリオ</h3>
-                            </div>
                         </a>
+                        <a class="p-works-info__link" href="./works-portfolio.html">
+                            <span class="p-works-info__tag">#web</span>
+                            <h3 class="p-works-info__title">ポートフォリオ</h3>
+                        </a>
+                        <p class="p-works-skill">
+                            <span class="p-works-skill__label">HTML</span>
+                            <span class="p-works-skill__label">CSS</span>
+                            <span class="p-works-skill__label">JavaScript</span>
+                            <span class="p-works-skill__label">Figma</span>
+                            <span class="p-works-skill__label">Photoshop</span>
+                            <span class="p-works-skill__label">Git/Github</span>
+                        </p>
                     </li>
-
+                    
                     <li id="web-item" class="p-works__item">
-                        <a class="p-works__item-link c-work-media" href="./works-portfolio.html">
+                        <a class="p-works__link c-work-media" href="./works-portfolio.html">
                             <picture>
                                 <source srcset="./img/screenshot/portfolio-pc.webp" media="(min-width: 768px)">   <!-- 画像は後で差し替える -->
                                 <img class="p-work-visual__img c-work-media__img" src="./img/screenshot/portfolio-sp.webp" alt="web制作実績：ポートフォリオの詳細を見る">  <!-- 画像は後で差し替える -->
@@ -100,15 +108,23 @@
                             <div class="c-work-media__overlay">
                                 <span class="c-work-media__view">VIEW DETAIL</span>
                             </div>
-                            <div class="skill-label js-scroll-text">
-                                <span class="label work-type-label">#web</span>
-                                <h3 class="work-title-jp">ポートフォリオ</h3>
-                            </div>
                         </a>
+                        <a class="p-works-info__link" href="./works-portfolio.html">
+                            <span class="p-works-info__tag">#web</span>
+                            <h3 class="p-works-info__title">ポートフォリオ</h3>
+                        </a>
+                        <p class="p-works-skill">
+                            <span class="p-works-skill__label">HTML</span>
+                            <span class="p-works-skill__label">CSS</span>
+                            <span class="p-works-skill__label">JavaScript</span>
+                            <span class="p-works-skill__label">Figma</span>
+                            <span class="p-works-skill__label">Photoshop</span>
+                            <span class="p-works-skill__label">Git/Github</span>
+                        </p>
                     </li>
-
-                    <li id="web-item" class="p-works__item">
-                        <a class="p-works__item-link c-work-media" href="./works-portfolio.html">
+                    
+                    <li id="app-item" class="p-works__item">
+                        <a class="p-works__link c-work-media" href="./works-portfolio.html">
                             <picture>
                                 <source srcset="./img/screenshot/portfolio-pc.webp" media="(min-width: 768px)">   <!-- 画像は後で差し替える -->
                                 <img class="p-work-visual__img c-work-media__img" src="./img/screenshot/portfolio-sp.webp" alt="web制作実績：ポートフォリオの詳細を見る">  <!-- 画像は後で差し替える -->
@@ -116,15 +132,23 @@
                             <div class="c-work-media__overlay">
                                 <span class="c-work-media__view">VIEW DETAIL</span>
                             </div>
-                            <div class="skill-label js-scroll-text">
-                                <span class="label work-type-label">#web</span>
-                                <h3 class="work-title-jp">ポートフォリオ</h3>
-                            </div>
                         </a>
+                        <a class="p-works-info__link" href="./works-portfolio.html">
+                            <span class="p-works-info__tag">#web</span>
+                            <h3 class="p-works-info__title">ポートフォリオ</h3>
+                        </a>
+                        <p class="p-works-skill">
+                            <span class="p-works-skill__label">HTML</span>
+                            <span class="p-works-skill__label">CSS</span>
+                            <span class="p-works-skill__label">JavaScript</span>
+                            <span class="p-works-skill__label">Figma</span>
+                            <span class="p-works-skill__label">Photoshop</span>
+                            <span class="p-works-skill__label">Git/Github</span>
+                        </p>
                     </li>
-
-                    <li id="web-item" class="p-works__item">
-                        <a class="p-works__item-link c-work-media" href="./works-portfolio.html">
+                    
+                    <li id="banner-item" class="p-works__item">
+                        <a class="p-works__link c-work-media" href="./works-portfolio.html">
                             <picture>
                                 <source srcset="./img/screenshot/portfolio-pc.webp" media="(min-width: 768px)">   <!-- 画像は後で差し替える -->
                                 <img class="p-work-visual__img c-work-media__img" src="./img/screenshot/portfolio-sp.webp" alt="web制作実績：ポートフォリオの詳細を見る">  <!-- 画像は後で差し替える -->
@@ -132,12 +156,21 @@
                             <div class="c-work-media__overlay">
                                 <span class="c-work-media__view">VIEW DETAIL</span>
                             </div>
-                            <div class="skill-label js-scroll-text">
-                                <span class="label work-type-label">#web</span>
-                                <h3 class="work-title-jp">ポートフォリオ</h3>
-                            </div>
                         </a>
+                        <a class="p-works-info__link" href="./works-portfolio.html">
+                            <span class="p-works-info__tag">#web</span>
+                            <h3 class="p-works-info__title">ポートフォリオ</h3>
+                        </a>
+                        <p class="p-works-skill">
+                            <span class="p-works-skill__label">HTML</span>
+                            <span class="p-works-skill__label">CSS</span>
+                            <span class="p-works-skill__label">JavaScript</span>
+                            <span class="p-works-skill__label">Figma</span>
+                            <span class="p-works-skill__label">Photoshop</span>
+                            <span class="p-works-skill__label">Git/Github</span>
+                        </p>
                     </li>
+                    
                 </ul>
             </div>
         </section>

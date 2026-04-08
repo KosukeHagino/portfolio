@@ -1,0 +1,112 @@
+@charset "utf-8";
+
+/*-------------------------------------------------
+   Breakpoints
+   - Mobile portrait           : (default)
+   - Mobile landscape          : ～h500px
+   - Tablet portrait           : w768px～
+   - Tablet landscape & Desktop: w1024px～
+-------------------------------------------------*/
+
+
+/* --- 変数はcommon.cssで一括管理 --- */
+
+
+/**************************************************
+   Works section
+**************************************************/
+.p-works {
+
+}
+
+.p-works__container {
+
+}
+
+.p-works__filter-list {
+    margin-inline: auto;
+    position: sticky;
+    top: var(--spc-xl);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spc-s);
+    margin-bottom: var(--spc-l);
+    z-index: var(--z-front-content);
+}
+
+.p-works__filter-item {
+    flex-basis: 20%;
+}
+
+.p-works__filter-link {
+    display: block;
+    text-align: center;
+    padding-inline: var(--spc-s);
+    padding-block: var(--spc-xs);
+    background-color: var(--clr-primary);
+    font-family: var(--fnt-accent);
+    font-size: 2.0rem;
+    line-height: 1;
+    color: var(--clr-bg-card);
+    border-radius: 999px;
+    transition: background-color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.p-works__filter-link:hover {
+    background-color: var(--clr-active);
+}
+
+.p-works__list {
+    width: 80%;
+    margin-inline: auto;
+}
+
+.p-works__item {
+    padding-block: var(--spc-l);
+}
+
+.p-works__link {
+
+}
+
+.p-work-visual__img {
+    margin-bottom: 32px;
+    border-radius: 8px;
+    border: 0.5px solid var(--clr-primary);
+}
+
+.p-works-info__link {
+    display: flex;
+    gap: var(--spc-s);
+    margin-block-end: var(--spc-m);
+}
+
+.p-works-info__tag {
+    color: var(--clr-primary);
+}
+
+.p-works-info__title {
+    font-size: 1.4rem;
+    font-weight: 400;
+}
+
+.p-works-info__title::after {
+    content: ">";
+    padding-inline-start: var(--spc-xs);
+}
+
+.p-works-skill {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spc-xs);
+}
+
+.p-works-skill__label {
+    padding-inline: var(--spc-xs);
+    padding-block: var(--spc-2xs);
+    font-size: 1.0rem;
+    color: var(--clr-primary);
+    border: 0.5px solid var(--clr-primary);
+    border-radius: 999px;
+}
