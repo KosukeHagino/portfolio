@@ -303,6 +303,10 @@
 /* --- Mobile landscape --- */
 @media screen and (max-height: 500px) and (orientation: landscape) {
 
+    .p-about__photo {
+        max-inline-size: 480px;
+    }
+
     .p-approach__side {
         padding-inline: var(--spc-l);
     }
