@@ -11,6 +11,11 @@
 
 /* --- 変数はcommon.cssで一括管理 --- */
 
+/* アニメーションをより滑らかにするための設定 */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
 
 /**************************************************
    Design section
@@ -23,8 +28,6 @@
     display: flex;
     flex-direction: column;
     gap: var(--spc-l);
-    margin-inline: auto;
-    padding-inline: var(--spc-m);
 }
 
 .p-skill-data__content {
@@ -38,11 +41,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
     font-family: var(--fnt-accent);
     font-size: 2.4rem;
     font-weight: 700;
     letter-spacing: 0.2em;
-    margin-block-end: var(--spc-m);
+    margin-block-end: var(--spc-l);
     border-block-end: 1px solid var(--clr-primary);
     padding-block-end: var(--spc-2xs);
 }
@@ -60,11 +64,14 @@
 }
 
 .star.filled {
-    color: var(--primary);
+    color: var(--clr-primary);
 }
 
 .p-skill-data__text {
     margin-block-end: var(--spc-m);
+    text-align: justify;            /* 両端揃え */
+    text-justify: inter-character;  /* 日本語の調整を最適化 */
+    word-break: break-all;          /* 単語の途中で変な改行が起きないようにする */
 }
 
 .p-skill-data__img-unit {
@@ -86,8 +93,53 @@
 /* --- Tablet portrait --- */
 @media screen and (min-width: 768px) and (orientation: portrait) {
 
+    .p-skill-tabs {
+        display: flex;
+        justify-content: center;
+        gap: var(--spc-xs);
+    }
+
+    .p-skill-tabs__item {
+        flex-basis: 23%;
+        padding-block: var(--spc-s);
+        border: 0.5px solid var(--clr-primary);
+        border-block-end: none;
+        border-radius: 4px 4px 0 0;
+        font-family: var(--fnt-accent);
+        font-size: 1.4rem;
+        font-weight: 700;
+        letter-spacing: 0.2em;
+        background-color: var(--clr-primary);
+        color: var(--clr-bg-card);
+        transition: background-color 0.5s ease;
+    }
+
+    .p-skill-tabs__item.is-active {
+        background-color: var(--clr-active);
+    }
+
     .p-skill-data {
         padding-inline: var(--spc-xl);
+    }
+
+    .p-skill-data__content {
+        display: none;
+        position: relative;
+        block-size: 100%;
+        opacity: 0;
+    }
+
+    .p-skill-data__content.is-active {
+        display: block;
+        opacity: 1;
+    }
+
+    .p-skill-data__title {
+        font-size: 2.8rem;
+    }
+
+    .star {
+        font-size: 2.0rem;
     }
 }
 
@@ -95,8 +147,62 @@
 /* --- Tablet landscape & Desktop --- */
 @media screen and (min-width: 1024px) {
 
+    .p-skill-tabs {
+        display: flex;
+        justify-content: center;
+        gap: var(--spc-s);
+    }
+
+    .p-skill-tabs__item {
+        flex-basis: 20%;
+        padding-block: var(--spc-s);
+        border: 0.5px solid var(--clr-primary);
+        border-block-end: none;
+        border-radius: 4px 4px 0 0;
+        font-family: var(--fnt-accent);
+        font-size: 2.0rem;
+        font-weight: 700;
+        letter-spacing: 0.2em;
+        background-color: var(--clr-primary);
+        color: var(--clr-bg-card);
+        transition: background-color 0.5s ease;
+    }
+
+    .p-skill-tabs__item.is-active {
+        background-color: var(--clr-active);
+    }
+
+    .p-skill-tabs__item:hover {
+        background-color: var(--clr-active);
+    }
+
+    .p-skill-data {
+        padding-inline: var(--spc-xl);
+    }
+
     .p-skill-data__content {
-        max-width: 800px;
-        margin-inline: auto;
+        display: none;
+        position: relative;
+        block-size: 100%;
+        padding: var(--spc-xl);
+        opacity: 0;
+    }
+
+    .p-skill-data__content.is-active {
+        display: block;
+        opacity: 1;
+    }
+
+    .p-skill-data__title {
+        font-size: 3.6rem;
+    }
+
+    .star {
+        font-size: 2.4rem;
+    }
+
+    .p-skill-data__icon {
+        inline-size: 120px;
+        max-block-size: 120px;
     }
 }

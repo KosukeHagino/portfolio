@@ -5,9 +5,9 @@
 **************************************************/
 // 初期化処理
 const initSkill = () => {
-    // initSkillTabs();            // タブ切り替えの有効化
+    initSkillTabs();            // タブ切り替えの有効化
     renderStars();              // スキルレベル(★)の生成
-    // autoSelectFirstTabs();      // 初期表示の設定
+    autoSelectFirstTabs();      // 初期表示の設定
 };
 
 
@@ -19,7 +19,7 @@ window.addEventListener('load', initSkill);
    [機能] タブ切り替え
 **************************************************/
 const initSkillTabs = () => {
-    // 各セクション（DESIGN, CODING, ENVIRONMENT）を取得
+    // 各セクション（DESIGN, CODING, DEVELOPMENT）を取得
     const sections = document.querySelectorAll('.js-section');
 
     sections.forEach(section => {
@@ -34,7 +34,7 @@ const initSkillTabs = () => {
 
                 // 同じグループ内のボタンから active を外して、クリックしたものに付ける
                 tabBtns.forEach(el => el.classList.remove('is-active'));
-                btn.classList.add('active');
+                btn.classList.add('is-active');
 
                 // 一旦すべての詳細コンテンツを非表示にする
                 contents.forEach(content => content.classList.remove('is-active'));
