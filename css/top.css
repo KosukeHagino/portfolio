@@ -349,8 +349,7 @@ body.is-ready .p-work-visual__job {
 @media screen and (min-width: 1024px) {
 
     .p-work-info {
-        inset-block-start: var(--spc-xl);
-        transform: translateY(0);
+        inset-block-start: var(--spc-l);
         padding-inline: 25%;
     }
 
