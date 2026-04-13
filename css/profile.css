@@ -21,6 +21,7 @@
     justify-content: space-between;
     align-items: center;
     gap: var(--spc-l);
+    padding-inline: var(--spc-xs);
 }
 
 .p-about__photo {
@@ -61,14 +62,10 @@
 /**************************************************
    Approach section
 **************************************************/
-.p-approach {
-    padding-block-end: 0;
-}
-
 .p-approach__list {
     display: flex;
     flex-direction: column;
-    gap: var(--spc-m);
+    gap: var(--spc-l);
 }
 
 .p-approach__list:first-of-type {
@@ -78,7 +75,6 @@
 }
 
 .p-approach__item {
-    margin-block-end: var(--spc-l);
     border: 0.5px solid var(--clr-primary);
     border-radius: 8px;
 }
@@ -87,14 +83,13 @@
     padding-inline: var(--spc-m);
     padding-block: var(--spc-s);
     display: flex;
-    flex-direction: row;
     align-items: center;
     gap: var(--spc-s);
     background: var(--clr-primary);
     color: var(--clr-bg-card);
     border-radius: 8px 8px 0 0;
     font-family: var(--fnt-accent);
-    font-size: 1.6rem;
+    font-size: 2.0rem;
 }
 
 .p-approach__num {
@@ -103,6 +98,7 @@
 
 .p-approach__label {
     font-style: italic;
+    text-transform: uppercase;
 }
 
 .p-approach__icon {
@@ -110,7 +106,8 @@
 }
 
 .p-approach__body {
-    padding: var(--spc-l) var(--spc-m) var(--spc-m);
+    padding-inline: var(--spc-l);
+    padding-block: var(--spc-l);
     background-color: var(--clr-bg-card);
     border-radius: 0 0 8px 8px;
 }
@@ -122,9 +119,10 @@
 }
 
 .p-approach__title {
-    font-size: 1.6rem;
+    font-size: 2.0rem;
     font-weight: 400;
     letter-spacing: 0.2em;
+    line-height: 1.6;
 }
 
 .p-approach__text {
@@ -247,24 +245,24 @@
         overflow-y: hidden;
         scrollbar-width: thin;
         scrollbar-color: var(--clr-active) transparent;  
-        padding: var(--spc-l);
         padding-inline: 0;
+        padding-block: var(--spc-xl);
         background-color: var(--clr-bg-card);
         color: var(--clr-text);
         border-radius: 0 8px 8px 0;
         transition:
-            inline-size cubic-bezier(0.22, 1, 0.36, 1),
-            padding-inline cubic-bezier(0.22, 1, 0.36, 1);
+            inline-size 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.3s,
+            padding-inline 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.3s;
     }
 
     .is-active .p-approach__body {
         inline-size: 100%;
-        padding-inline: var(--spc-l);
+        padding-inline: var(--spc-xl);
         overflow-y: auto;
         transition:
-            inline-size cubic-bezier(0.22, 1, 0.36, 1),
-            padding-inline cubic-bezier(0.22, 1, 0.36, 1),
-            overflow-y 0.3s linear 0.6s;
+            inline-size 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.3s,
+            padding-inline 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.3s,
+            overflow-y 0.3s linear 0.9s;
     }
 
     .p-approach__title {
@@ -303,8 +301,8 @@
 /* --- Mobile landscape --- */
 @media screen and (max-height: 500px) and (orientation: landscape) {
 
-    .p-about__photo {
-        max-inline-size: 480px;
+    .p-about__container {
+        padding-inline: var(--spc-2xl);
     }
 
     .p-approach__side {

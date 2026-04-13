@@ -14,38 +14,34 @@
 **************************************************/
 /* --- 変数は全ページ分を下記で一括管理 --- */
 :root {
-    /* --- Break point --- */
-    --bp-tab : 768px;           /* スマホとタブレットの境界 */
-    --bp-pc  : 1024px;          /* タブレットとPCの境界 */
-
     /* --- Z-index --- */
-    --z-loading         : 8000;         /* ローディング */
-    --z-cursor          : 7000;         /* 追尾カーソル */
-    --z-header          : 5000;         /* ヘッダー */
+    --z-loading         : 6000;        /* ローディング */
+    --z-cursor          : 5000;         /* 追尾カーソル */
+    --z-header          : 4000;         /* ヘッダー */
     --z-header-menu-btn : 200;          /* ヘッダー内メニューボタン */
     --z-header-nav      : 100;          /* ヘッダー内ナビ */
-    --z-mask            : 4000;         /* メニュー開時の背景マスク */
-    --z-pagetop         : 3000;         /* ページトップに戻るボタン */
-    --z-footer          : 2000;         /* フッター */
+    --z-mask            : 3000;         /* メニュー開時の背景マスク */
+    --z-pagetop         : 2000;         /* ページトップに戻るボタン */
+    --z-footer          : 1000;         /* フッター */
     --z-main            : 1;            /* メイン */
     --z-front-content   : 2;            /* メイン内の前面に表示するコンテンツ */
     --z-back-content    : -1;           /* メイン内の背面に表示するコンテンツ */
 
     /* --- Colors --- */
-    /* >> base */
+    /* - base - */
     --clr-bg-page    : #e6ecec;         /* Gray  : サイト全体の背景 */
-    --clr-bg-card    : #faffff;         /* White : タブ・カードの背景・メニュー文字色 */
+    --clr-bg-card    : #faffff;         /* White : カードの背景・メニュー等の文字色 */
     --clr-text       : #1c1c1c;         /* Black : メインの文字色 */
-    /* >> accent & states */
+    /* - accent & states - */
     --clr-primary    : #558890;         /* Green : メニュー背景・タグ文字・差し色 */
     --clr-active     : #1e2a3a;         /* Blue  : ホバー・アクティブ背景 */
-    --clr-bg-contact : linear-gradient(180deg, #e6ecec 0%, #92b1b6 100%);     /* Gradient(Green → Blue) : コンタクトセクションの背景色 */
+    --clr-bg-contact : linear-gradient(180deg, #e6ecec 0%, #92b1b6 100%);     /* Gradient : コンタクトセクションの背景色 */
 
     /* --- Font family --- */
-    /* >> common */
+    /* - common - */
     --fnt-base   : dnp-shuei-gothic-gin-std, Montserrat, Corbel, source-sans-pro, sans-serif;
     --fnt-accent : futura-pt, dnp-shuei-gothic-gin-std, sans-serif;
-    /* >> top */
+    /* - top (loading) - */
     --fnt-countup : "inter-variable",sans-serif;
 
     /* --- Spacing / Margin / Padding --- */
@@ -60,8 +56,9 @@
 
 
 /**************************************************
-   Common / Keyframes
+   Keyframes
 **************************************************/
+/* --- Contact section 内の横流れループ文字 --- */
 @keyframes marquee {
     0%   { transform: translateX(0); }
     100% { transform: translateX(-50%); }           /* 50%まで動かしてループ */
@@ -108,7 +105,7 @@ ul {
 a {
     display: inline-block;
     text-decoration: none;
-    color: inherit;             /* リンクテキストの色をリセット */
+    color: inherit;                     /* リンクテキストの色をリセット */
 }
 
 button {
@@ -146,6 +143,7 @@ span {
     font-size: 2.4rem;
     font-weight: 700;
     letter-spacing: 0.3em;
+    text-transform: uppercase;
 }
 
 .l-header__nav {
@@ -163,14 +161,10 @@ span {
         visibility 0.3s;
 }
 
-/* --- Active --- */
+/* - Active - */
 .l-header__nav.is-active {
     inset-block-start: 0;
     visibility: visible;
-}
-
-.l-header__menu {
-    padding-block: var(--space-l);
 }
 
 .l-header__item {
@@ -189,8 +183,10 @@ span {
     font-size: 2.4rem;
     letter-spacing: 0.2em;
     color: var(--clr-bg-card);
+    text-transform: capitalize;
 }
 
+/* - Active - */
 .l-header__menu-link.is-active {
     background-color: var(--clr-active);
 }
@@ -221,14 +217,15 @@ span {
 
 .l-section__title {
     position: relative;
+    padding-block-end: var(--spc-xs);
+    margin-block-end: var(--spc-xl);
     font-family: var(--fnt-accent);
     font-weight: 700;
     font-size: 3.2rem;
     letter-spacing: 0.15em;
     line-height: 1;
     text-align: center;
-    padding-block-end: var(--spc-xs);
-    margin-block-end: var(--spc-xl);
+    text-transform: capitalize;
 }
 
 .l-section__title::after {
@@ -244,11 +241,13 @@ span {
 }
 
 .l-section__title.is-show::after {
-    inline-size: 90%;
+    inline-size: 85%;
 }
 
 .l-section__lead {
-    padding-inline: var(--spc-l);
+    inline-size: 85%;
+    padding-inline: var(--spc-m);
+    margin-inline: auto;
     margin-block-end: var(--spc-xl);
     text-align: justify;            /* 両端揃え */
     text-justify: inter-character;  /* 日本語の調整を最適化 */
@@ -256,7 +255,8 @@ span {
 }
 
 .l-section__container {
-    padding-inline: var(--spc-l);
+    inline-size: 85%;
+    margin-inline: auto;
 }
 
 
@@ -288,6 +288,7 @@ span {
     padding-right: 20px;
     font-size: 2.4rem;
     font-weight: 700;
+    text-transform: uppercase;
     color: rgba(255, 255, 255, 0.7);        /* 薄い白（透かす） */
     animation: marquee 10s linear infinite;
 }
@@ -425,7 +426,7 @@ span {
     border: 0;
 }
 
-/* --- スマホ改行用 --- */
+/* --- スマホ専用の改行 --- */
 .u-br--sp {
     display: block;
     content: "";
@@ -443,6 +444,7 @@ span {
         visibility 0.6s;
 }
 
+/* - Show - */
 .u-fade-up.is-show {
     opacity: 1;
     visibility: visible;
@@ -460,6 +462,7 @@ span {
         visibility 0.6s;
 }
 
+/* - Show - */
 .u-fade-scale.is-show {
     opacity: 1;
     visibility: visible;
@@ -469,9 +472,6 @@ span {
 /* --- delay --- */
 .u-delay-300  { transition-delay: 0.3s; }
 .u-delay-600  { transition-delay: 0.6s; }
-.u-delay-900  { transition-delay: 0.9s; }
-.u-delay-1200 { transition-delay: 1.2s; }
-.u-delay-1500 { transition-delay: 1.5s; }
 
 
 /**************************************************
@@ -503,7 +503,7 @@ span {
     }
 
     .p-contact__marquee {
-        inset-block-start: calc(50vh - 25vh - 150px);    /*  */
+        inset-block-start: calc(50vh - 25vh - 150px);
     }
 
     .p-contact__marquee-text {
@@ -605,7 +605,6 @@ span {
     .l-section__title {
         font-size: 4.8rem;
         padding-block-end: var(--spc-s);
-        margin-block-end: var(--spc-xl);
     }
     
     .l-section__title.is-show::after {
@@ -632,7 +631,7 @@ span {
     }
 
     .p-contact__marquee {
-        inset-block-start: calc(50vh - 30vh - 150px);
+        inset-block-start: calc(50vh - 30vh - 140px);
     }
 
     .p-contact__marquee-text {

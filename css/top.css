@@ -61,7 +61,7 @@ body:not(.is-loading) .l-loading {
     align-items: baseline;
     font-family: var(--fnt-countup);
     font-variation-settings: 'wght' 400, 'slnt' -10;
-    font-size: 2.0rem;
+    font-size: 2.4rem;
     color: var(--clr-bg-card);
     letter-spacing: 0.12em;
     font-variant-numeric: tabular-nums;     /* 数字の幅を等幅（固定幅）にする */
@@ -210,15 +210,14 @@ body:not(.is-loading) .l-loading__counter {
     align-items: center;
 }
 
-/* --- Works slide --- */
-.p-work-visual__item .c-work-media__img {
+.p-work-visual__link {
     transform: scale(0.8);
     opacity: 0.4;
     transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 /* --- Active --- */
-.p-work-visual__item.is-active .c-work-media__img {
+.is-active .p-work-visual__link {
     transform: scale(1.0);
     opacity: 1;
 }
@@ -238,6 +237,7 @@ body:not(.is-loading) .l-loading__counter {
     line-height: 1.6;
     letter-spacing: 0.3em;
     text-align: justify;
+    text-transform: uppercase;
 }
 
 .p-work-visual__job {
@@ -285,7 +285,6 @@ body.is-ready .p-work-visual__job {
 }
 
 .p-work-visual__contact-text {
-    font-size: 1.0rem;
     margin-block-end: var(--spc-m);
 }
 
@@ -355,11 +354,19 @@ body.is-ready .p-work-visual__job {
         padding-inline: 25%;
     }
 
+    .p-work-info__link {
+        gap: var(--spc-m);
+    }
+
     .p-work-info__link:hover {
         text-decoration: underline;
         text-underline-offset: 0.5em;
         text-decoration-thickness: 0.5px;
         text-decoration-color: var(--clr-primary);
+    }
+
+    .p-work-info__title {
+        font-size: 2.0rem;
     }
 
     .p-work-visual__name {
@@ -408,7 +415,6 @@ body.is-ready .p-work-visual__job {
     }
 
     .p-work-visual__contact-text {
-        font-size: 1.2rem;
         margin-block-end: var(--spc-l);
     }
 }
