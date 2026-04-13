@@ -17,22 +17,19 @@ window.addEventListener('load', initProcess);
    [機能] プロセス項目の切り替え
 **************************************************/
 const initProcessTabs = () => {
-    // 各セクションを取得
-    const sections = document.querySelectorAll('.js-section');
+    // 全てのグループを取得
+    const approachGroups = document.querySelectorAll('.js-approach-group');
 
-    sections.forEach(section => {
-        // セクション内のアイテムだけを取得
-        const Items = section.querySelectorAll('.js-approach-item');
+    approachGroups.forEach((group) => {
+        // グループ内のアイテムを取得
+        const items = group.querySelectorAll('.js-approach-item');
 
-        Items.forEach(item => {
+        items.forEach((item) => {
             item.addEventListener('click', () => {
-                // すでにactiveのものをクリックしたときは何もしない
-                if (item.classList.contains('is-active')) return;
-
-                // このセッション内のアイテムだけからactiveを消す
-                Items.forEach(el => el.classList.remove('is-active'));
-
-                // クリックされたアイテムにactiveをつける
+                // 同じグループ内の他のアイテムからis-activeを外す
+                group.querySelector('.is-active').classList.remove('is-active');
+                
+                // クリックされたアイテムにis-activeをつける
                 item.classList.add('is-active');
             });
         });
