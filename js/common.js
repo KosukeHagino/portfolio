@@ -65,7 +65,7 @@ const initCustomCursor = () => {
     // ホバーイベントの設定
     // 特定の要素に乗ったときにカーソルの見た目を変える
     const updateHoverEvents = () => {
-        const hoverElements = document.querySelectorAll('a, button');
+        const hoverElements = document.querySelectorAll('a, button, .p-approach__side');
         hoverElements.forEach((el) => {
             el.addEventListener('mouseenter', () => cursor.classList.add('cursor-large'));
             el.addEventListener('mouseleave', () => cursor.classList.remove('cursor-large'));
@@ -86,7 +86,8 @@ const initHamburgerMenu = () => {
     const body = document.body;
     if (!menuBtn || !nav || !mask) return;
 
-    menuBtn.addEventListener('click', () => {
+    // 開閉を切り替える共通関数
+    const toggleBtn = () => {
         // 現在の状態（開いているか）を判定
         const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
 
@@ -99,7 +100,13 @@ const initHamburgerMenu = () => {
 
         // アクセシビリティ属性の更新
         menuBtn.setAttribute('aria-expanded', !isExpanded);
-    });
+    };
+
+    // ボタンクリック時
+    menuBtn.addEventListener('click', toggleBtn);
+
+    // マスク（背景）クリック時
+    mask.addEventListener('click', toggleBtn);
 };
 
 
