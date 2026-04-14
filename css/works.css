@@ -82,7 +82,7 @@
 
 .p-works-info__title::after {
     content: ">";
-    padding-inline-start: var(--spc-xs);
+    padding-inline-start: var(--spc-s);
 }
 
 .p-works-skill {
@@ -130,6 +130,13 @@
         
     .p-works-info__link {
         gap: var(--spc-m);
+    }
+
+    .p-works-info__link:hover {
+        text-decoration: underline;
+        text-underline-offset: 0.5em;
+        text-decoration-thickness: 0.5px;
+        text-decoration-color: var(--clr-primary);
     }
 
     .p-works-info__title {

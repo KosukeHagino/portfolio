@@ -143,7 +143,7 @@ body:not(.is-loading) .l-loading__counter {
 
 .p-work-info__title::after {
     content: ">";
-    padding-inline-start: var(--spc-xs);
+    padding-inline-start: var(--spc-s);
 }
 
 /* --- 上側待機（diff < 0) --- */

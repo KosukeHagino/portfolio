@@ -771,10 +771,6 @@ span {
         block-size: 65vh;
     }
 
-    .u-br--sp {
-        display: none;
-    }
-
     .p-contact__title {
         margin-block-end: var(--spc-m);
     }
