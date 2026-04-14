@@ -126,7 +126,7 @@
     /* - Hover - */
     .c-pagetop:hover {
         background-color: var(--clr-active);
-        padding-right: var(--spc-m);            /* 少し左にせり出させる */
+        padding-inline-end: var(--spc-m);            /* 少し左にせり出させる */
     }
 }
 

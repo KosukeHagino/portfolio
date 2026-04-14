@@ -52,7 +52,7 @@
     color: var(--clr-primary);
 }
 
-.p-about__description {
+.p-about__desc {
     text-align: justify;            /* 両端揃え */
     text-justify: inter-character;  /* 日本語の調整を最適化 */
     word-break: break-all;          /* 単語の途中で変な改行が起きないようにする */
@@ -85,7 +85,7 @@
     display: flex;
     align-items: center;
     gap: var(--spc-s);
-    background: var(--clr-primary);
+    background-color: var(--clr-primary);
     color: var(--clr-bg-card);
     border-radius: 8px 8px 0 0;
     font-family: var(--fnt-accent);
@@ -185,17 +185,24 @@
         padding-block: var(--spc-m);
         flex-direction: column;
         gap: var(--spc-m);
-        background: var(--clr-primary);
+        background-color: var(--clr-primary);
         color: var(--clr-bg-card);
         border-radius: 8px;
         font-family: var(--fnt-accent);
         font-size: 2.4rem;
         cursor: pointer;
-        transition: border-radius 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.3s;
+        transition:
+            border-radius 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.3s,
+            background-color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .p-approach__side:hover {
+        background-color: var(--clr-active);
     }
 
     .is-active .p-approach__side {
         border-radius: 8px 0 0 8px;
+        background-color: var(--clr-active);
     }
 
     .p-approach__label {
