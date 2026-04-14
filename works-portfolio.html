@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/normalize.css">
+
+    <!-- Adobe Fontsの指定 -->
+    <script>
+        (function(d) {
+            var config = {
+            kitId: 'fav6ghg',
+            scriptTimeout: 3000,
+            async: true
+            },
+            h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+        })(document);
+    </script> <!-- Adobe Fontsの指定 end -->
+    
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/component.css">
+    <link rel="stylesheet" href="./css/works.css">
+    <link rel="icon" href="./img/svg/favicon.svg" type="image/svg"> <!-- ファビコンは後で作成 -->
+
+    <!-- スクロール設定 -->
+    <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+    <script>
+        // 初期化
+        window.lenis = new Lenis({
+            lerp: 0.05,         // 慣性の強さ
+            wheelMultiplier: 1, // スクロールの速さ
+        });
+
+        // アニメーションループに組み込む
+        function raf(time) {
+            window.lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+        requestAnimationFrame(raf);
+    </script> <!-- スクロール設定 end -->
+
+    <script src="./js/common.js" defer></script>
+    <!-- <script src="./js/works.js" defer></script> -->
+    <title>萩野弘祐のポートフォリオ</title>
+</head>
+<body class="l-body">
+    <div id="js-cursor" class="c-cursor"></div>
+
+    <header class="l-header">
+        <h1 class="l-header__logo"><a href="./index.html" class="l-header__logo-link">Hagino</a></h1>
+        <nav id="js-header-nav" class="l-header__nav">
+            <ul class="l-header__menu">
+                <li class="l-header__item"><a href="./index.html" class="l-header__menu-link">top</a></li>
+                <li class="l-header__item"><a href="./profile.html" class="l-header__menu-link">profile</a></li>
+                <li class="l-header__item"><a href="./skills.html" class="l-header__menu-link">skills</a></li>
+                <li class="l-header__item"><a href="./works.html" class="l-header__menu-link is-active">works</a></li>
+            </ul>
+        </nav>
+        <button type="button" id="js-hamburger" class="l-header__menu-btn c-hamburger" aria-controls="js-header-nav" aria-expanded="false">
+            <span class="c-hamburger__line"></span>
+            <span class="c-hamburger__line"></span>
+        </button>
+    </header>
+
+    <main class="l-main">
+        <section class="p-detail l-section">
+            <h2 class="l-section__title u-fade-up js-scroll">portfolio</h2>
+            <p class="l-section__lead u-fade-up js-scroll">転職活動のためにポートフォリオを制作しました。採用担当者の方に自身を知ってもらうこと、何ができるのか、どういうことを心掛けているのかなどをページやセクションごとに分けて情報を整理し、興味をもって見ていただけるようなデザインや動きを意識しました。また、CSSカスタムプロパティ(変数)などを使って、一貫性があってメンテナンス性が高いコーディングを心掛けることで、チーム内においても円滑な連携に貢献したいと考えています。</p>
+
+            <div class="p-detail__container l-section__container">
+                <div class="p-detail__mockup">
+                    <img src="./img/screenshot/portfolio-pc.webp" alt="ポートフォリオサイトのPC版モックアップ" class="p-detail__mockup-img">
+                    <img src="./img/screenshot/portfolio-sp.webp" alt="ポートフォリオサイトのスマホ版モックアップ" class="p-detail__mockup-img">
+                </div>
+
+                <button type="button" class="c-btn-toggle">+</button>
+
+                <div class="p-detail__capture">
+                    <div class="p-detail__capture-top"></div>
+                    <div class="p-detail__capture-profile"></div>
+                    <div class="p-detail__capture-skills"></div>
+                    <div class="p-detail__capture-works"></div>
+                </div>
+
+                <dl class="p-detail__list">
+                    <div class="p-detail__item">
+                        <dt class="p-detail__term">ターゲット</dt>
+                        <dd class="p-detail__desc">Web制作に携わる企業の採用担当者、現場責任者の方々</dd>
+                    </div>
+
+                    <div class="p-detail__item">
+                        <dt class="p-detail__term">課題</dt>
+                        <dd class="p-detail__desc">転職活動をするうえで、制作物をまとめたサイトがない。自身の経歴や人柄だけでなく、制作物のこだわりポイントやコーディングの実装力などを見てほしい。</dd>
+                    </div>
+
+                    <div class="p-detail__item">
+                        <dt class="p-detail__term">目的</dt>
+                        <dd class="p-detail__desc">まずは採用担当者の方にポートフォリオを見ていただき、自身の経歴や人柄、制作物を知っていただく。その上で興味を持っていただき、書類通過を目指す。</dd>
+                    </div>
+
+                    <div class="p-detail__item">
+                        <dt class="p-detail__term">制作期間</dt>
+                        <dd class="p-detail__desc">
+                            <span>企画 / 情報設計 / ワイヤーフレーム</span><span>約2週間</span><br>
+                            <span>デザイン</span><span>約2週間</span><br>
+                            <span>コーディング</span><span>約8週間</span>
+                        </dd>
+                    </div>
+                    
+                    <div class="p-detail__item">
+                        <dt class="p-detail__term">使用ツール</dt>
+                        <dd class="p-detail__desc">
+                            <span class="p-detail__skill">開発環境</span>VS Code / Git（Sourcetree）<br>
+                            <span class="p-detail__skill">言語</span>HTML / CSS / JavaScript<br>
+                            <span class="p-detail__skill">デザイン</span>Figma / Photoshop
+                        </dd>
+                    </div>
+
+                    <div class="p-detail__item">
+                        <dt class="p-detail__term">こだわり</dt>
+                        <dd class="p-detail__desc">
+                            <ul class="p-detail__point">
+                                <li class="p-detail__point-item">CSSカスタムプロパティ（変数）を使い、共通コードや各数値を一か所にまとめることでメンテナンスしやすくしました。</li>
+                                <li class="p-detail__point-item">Topページに一番見てもらいたい制作物をスライドで配置することで、どういったことが出来るか、一目でわかるようにしました。</li>
+                                <li class="p-detail__point-item">サイト内、ページ内を回遊しやすくなるように工夫しました。<br>
+                                （ナビメニュー、PAGE TOPボタン、Worksページのページ内リンク、Works詳細ページからWorksページに戻るボタンなど）</li>
+                                <li class="p-detail__point-item">Profileページに自己紹介、前職での実績、思考プロセスを、Skillページに何が出来るのかを、Worksページに制作物を載せて各ページの役割を明確に分けることで、見る人が知りたい情報にいち早くアクセスできようにしました。</li>
+                            </ul>
+                        </dd>
+                    </div>
+                </dl>
+        </section>
+
+        <section class="p-other l-section">
+            <h2 class="l-section__title u-fade-up js-scroll">other</h2>
+            <p class="l-section__lead u-fade-up js-scroll">その他の制作物はこちら</p>
+
+            <ul class="p-other__list">
+                <li class="p-other__item">
+                    <img class="p-other__img" src="" alt="">
+                    <a class="p-other__link" href="">
+                        <span class="p-other__tag">#web</span>
+                        <h3 class="p-other__title">ポートフォリオ</h3>
+                    </a>
+                </li>
+                <li class="p-other__item">
+                    <img class="p-other__img" src="" alt="">
+                    <a class="p-other__link" href="">
+                        <span class="p-other__tag">#web</span>
+                        <h3 class="p-other__title">ポートフォリオ</h3>
+                    </a>
+                </li>
+                <li class="p-other__item">
+                    <img class="p-other__img" src="" alt="">
+                    <a class="p-other__link" href="">
+                        <span class="p-other__tag">#web</span>
+                        <h3 class="p-other__title">ポートフォリオ</h3>
+                    </a>
+                </li>
+                <li class="p-other__item">
+                    <img class="p-other__img" src="" alt="">
+                    <a class="p-other__link" href="">
+                        <span class="p-other__tag">#web</span>
+                        <h3 class="p-other__title">ポートフォリオ</h3>
+                    </a>
+                </li>
+            </ul>
+
+            <a class="p-other__back" href="./works.html">back to works</a>
+        </section>
+
+        <section id="contact" class="p-contact l-section">
+            <div class="p-contact__sticky-bg">
+                <div class="p-contact__marquee">
+                    <span class="p-contact__marquee-text">get in touch / contact me / get in touch / contact me /</span>
+                    <span class="p-contact__marquee-text">get in touch / contact me / get in touch / contact me /</span>
+                </div>
+            </div>
+            
+            <img class="p-contact__img u-fade-scale js-scroll" src="./img/photo/sakura.jpg" alt="">
+            <img class="p-contact__img u-fade-scale js-scroll" src="./img/photo/taiwan.jpg" alt="">
+            <img class="p-contact__img u-fade-scale js-scroll" src="./img/photo/sunset.jpg" alt="">
+                
+            <div class="p-contact__container">
+                <div class="p-contact__content u-fade-scale js-scroll">
+                    <h2 class="p-contact__title l-section__title u-fade-up u-delay-300 js-scroll">contact</h2>
+                    <p class="p-contact__text u-fade-up u-delay-600 js-scroll">
+                        ご覧いただき<span class="u-br--sp"></span>ありがとうございます。<br>
+                        下記のメールアドレスに<span class="u-br--sp"></span>お気軽にご連絡ください。
+                    </p>
+                    <a href="mailto:kosukehagino.web@gmail.com" class="c-btn-contact u-fade-up u-delay-600 js-scroll">kosukehagino.web@gmail.com</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <button type="button" id="js-pagetop" class="c-pagetop l-pagetop" aria-label="ページトップに戻る">
+        <span class="c-pagetop__text">page top</span>
+    </button>
+
+    <footer class="l-footer">
+        <p class="l-footer__github"><a href="https://github.com/KosukeHagino/portfolio" class="l-footer__github-link" target="_blank">My GitHub</a></p>
+        <p class="l-footer__copy">&copy;2026 Kosuke Hagino</p>
+    </footer>
+
+    <div id="js-mask" class="l-mask"></div>
+</body>
+</html>
