@@ -100,7 +100,7 @@
     padding-block: var(--spc-xs);
     padding-inline: var(--spc-s);
     border: none;
-    border-radius: 999px 0 0 999px;
+    border-radius: 9999px 0 0 9999px;
     cursor: pointer;
     opacity: 0;
     transform: translateX(100%);

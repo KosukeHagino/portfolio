@@ -19,7 +19,7 @@
     
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/component.css">
-    <link rel="stylesheet" href="./css/works.css">
+    <link rel="stylesheet" href="./css/works-detail.css">
     <link rel="icon" href="./img/svg/favicon.svg" type="image/svg"> <!-- ファビコンは後で作成 -->
 
     <!-- スクロール設定 -->
@@ -65,23 +65,13 @@
     <main class="l-main">
         <section class="p-detail l-section">
             <h2 class="l-section__title u-fade-up js-scroll">portfolio</h2>
-            <p class="l-section__lead u-fade-up js-scroll">転職活動のためにポートフォリオを制作しました。採用担当者の方に自身を知ってもらうこと、何ができるのか、どういうことを心掛けているのかなどをページやセクションごとに分けて情報を整理し、興味をもって見ていただけるようなデザインや動きを意識しました。また、CSSカスタムプロパティ(変数)などを使って、一貫性があってメンテナンス性が高いコーディングを心掛けることで、チーム内においても円滑な連携に貢献したいと考えています。</p>
+            <div class="p-detail__mockup">
+                <img src="./img/mockup/portfolio-mockup-pc.webp" alt="ポートフォリオサイトのPC版モックアップ" class="p-detail__mockup-pc">
+                <img src="./img/mockup/portfolio-mockup-sp.webp" alt="ポートフォリオサイトのスマホ版モックアップ" class="p-detail__mockup-sp">
+            </div>
+            <p class="l-section__lead .p-detail__lead u-fade-up js-scroll">転職活動のためにポートフォリオを制作しました。採用担当者の方に自身を知ってもらうこと、何ができるのか、どういうことを心掛けているのかなどをページやセクションごとに分けて情報を整理し、興味をもって見ていただけるようなデザインや動きを意識しました。また、CSSカスタムプロパティ(変数)などを使って、一貫性があってメンテナンス性が高いコーディングを心掛けることで、チーム内においても円滑な連携に貢献したいと考えています。</p>
 
             <div class="p-detail__container l-section__container">
-                <div class="p-detail__mockup">
-                    <img src="./img/screenshot/portfolio-pc.webp" alt="ポートフォリオサイトのPC版モックアップ" class="p-detail__mockup-img">
-                    <img src="./img/screenshot/portfolio-sp.webp" alt="ポートフォリオサイトのスマホ版モックアップ" class="p-detail__mockup-img">
-                </div>
-
-                <button type="button" class="c-btn-toggle">+</button>
-
-                <div class="p-detail__capture">
-                    <div class="p-detail__capture-top"></div>
-                    <div class="p-detail__capture-profile"></div>
-                    <div class="p-detail__capture-skills"></div>
-                    <div class="p-detail__capture-works"></div>
-                </div>
-
                 <dl class="p-detail__list">
                     <div class="p-detail__item">
                         <dt class="p-detail__term">ターゲット</dt>
@@ -101,31 +91,59 @@
                     <div class="p-detail__item">
                         <dt class="p-detail__term">制作期間</dt>
                         <dd class="p-detail__desc">
-                            <span>企画 / 情報設計 / ワイヤーフレーム</span><span>約2週間</span><br>
-                            <span>デザイン</span><span>約2週間</span><br>
-                            <span>コーディング</span><span>約8週間</span>
+                            <div class="p-deail__desc-wrapper">
+                                <span>企画・情報設計</span><span>約2週間</span>
+                            </div>
+                            <div class="p-deail__desc-wrapper">
+                                <span>デザイン</span><span>約2週間</span>
+                            </div>
+                            <div class="p-deail__desc-wrapper">
+                                <span>コーディング</span><span>約8週間</span>
+                            </div>
                         </dd>
                     </div>
                     
                     <div class="p-detail__item">
                         <dt class="p-detail__term">使用ツール</dt>
                         <dd class="p-detail__desc">
-                            <span class="p-detail__skill">開発環境</span>VS Code / Git（Sourcetree）<br>
-                            <span class="p-detail__skill">言語</span>HTML / CSS / JavaScript<br>
-                            <span class="p-detail__skill">デザイン</span>Figma / Photoshop
+                            <div class="p-deail__desc-wrapper">
+                                <span>開発環境</span><span>VS Code / Git</span>
+                            </div>
+                            <div class="p-deail__desc-wrapper">
+                                <span>言語</span><span>HTML / CSS / JavaScript</span>
+                            </div>
+                            <div class="p-deail__desc-wrapper">
+                                <span>デザイン</span><span>Figma / Photoshop</span>
+                            </div>
                         </dd>
                     </div>
 
                     <div class="p-detail__item">
-                        <dt class="p-detail__term">こだわり</dt>
+                        <dt class="p-detail__term">こだわりポイント-その１</dt>
                         <dd class="p-detail__desc">
-                            <ul class="p-detail__point">
-                                <li class="p-detail__point-item">CSSカスタムプロパティ（変数）を使い、共通コードや各数値を一か所にまとめることでメンテナンスしやすくしました。</li>
-                                <li class="p-detail__point-item">Topページに一番見てもらいたい制作物をスライドで配置することで、どういったことが出来るか、一目でわかるようにしました。</li>
-                                <li class="p-detail__point-item">サイト内、ページ内を回遊しやすくなるように工夫しました。<br>
-                                （ナビメニュー、PAGE TOPボタン、Worksページのページ内リンク、Works詳細ページからWorksページに戻るボタンなど）</li>
-                                <li class="p-detail__point-item">Profileページに自己紹介、前職での実績、思考プロセスを、Skillページに何が出来るのかを、Worksページに制作物を載せて各ページの役割を明確に分けることで、見る人が知りたい情報にいち早くアクセスできようにしました。</li>
-                            </ul>
+                            <span>ページ数が増えるにつれ、スタイルの管理が複雑になり、修正に時間がかかる懸念がありました。</span>
+                            <span>BEM設計とCSS変数を導入し、カラー変更や余白調整を一箇所で完結できるようにしたことで、保守・管理の時間を大幅に削減しました。</span>
+                        </dd>
+                    </div>
+                    <div class="p-detail__item">
+                        <dt class="p-detail__term">こだわりポイント-その２</dt>
+                        <dd class="p-detail__desc">
+                            <span>JSで動くパーツは見た目の変化だけで、スクリーンリーダー等の支援技術を利用するユーザーに状態が伝わらない課題がありました。</span>
+                            <span>aria-expanded等のARIA属性を適切に実装し、情報の変化を音でも伝えることで、全てのユーザーにとって使いやすい品質を追求しました。</span>
+                        </dd>
+                    </div>
+                    <div class="p-detail__item">
+                        <dt class="p-detail__term">こだわりポイント-その３</dt>
+                        <dd class="p-detail__desc">
+                            <span>情報が煩雑だと、採用担当者が知りたい情報（スキルや実績）に辿り着く前に離脱してしまうリスクがありました。</span>
+                            <span>情報の優先順位を整理したワイヤーフレームを徹底することで、迷わない導線を実現しました。</span>
+                        </dd>
+                    </div>
+                    <div class="p-detail__item">
+                        <dt class="p-detail__term">こだわりポイント-その４</dt>
+                        <dd class="p-detail__desc">
+                            <span>演出にこだわると画像が重くなり、ページの読み込み速度が低下してストレスを与える懸念がありました。</span>
+                            <span>画像をWebP形式に変換して軽量化を図る一方、Lenisによる滑らかなスクロール演出を取り入れることで、快適な閲覧環境と心地よい操作感を両立させました。</span>
                         </dd>
                     </div>
                 </dl>
@@ -137,31 +155,66 @@
 
             <ul class="p-other__list">
                 <li class="p-other__item">
-                    <img class="p-other__img" src="" alt="">
-                    <a class="p-other__link" href="">
-                        <span class="p-other__tag">#web</span>
-                        <h3 class="p-other__title">ポートフォリオ</h3>
+                    <a class="p-other__link c-work-media u-fade-scale js-scroll" href="./works-portfolio.html">
+                        <picture>
+                            <source srcset="./img/screenshot/portfolio-pc.webp" media="(min-width: 768px)">   <!-- 画像は後で差し替える -->
+                            <img class="c-work-media__img" src="./img/screenshot/portfolio-sp.webp" alt="web制作実績：ポートフォリオの詳細を見る">  <!-- 画像は後で差し替える -->
+                        </picture>
+                        <div class="c-work-media__overlay">
+                            <span class="c-work-media__view">view detail</span>
+                        </div>
+                    </a>
+                    <a class="p-other-info__link u-fade-up js-scroll" href="./works-portfolio.html">
+                        <span class="p-other-info__tag">#web</span>
+                        <h3 class="p-other-info__title">ポートフォリオ</h3>
                     </a>
                 </li>
+
                 <li class="p-other__item">
-                    <img class="p-other__img" src="" alt="">
-                    <a class="p-other__link" href="">
-                        <span class="p-other__tag">#web</span>
-                        <h3 class="p-other__title">ポートフォリオ</h3>
+                    <a class="p-other__link c-work-media u-fade-scale js-scroll" href="./works-portfolio.html">
+                        <picture>
+                            <source srcset="./img/screenshot/portfolio-pc.webp" media="(min-width: 768px)">   <!-- 画像は後で差し替える -->
+                            <img class="c-work-media__img" src="./img/screenshot/portfolio-sp.webp" alt="web制作実績：ポートフォリオの詳細を見る">  <!-- 画像は後で差し替える -->
+                        </picture>
+                        <div class="c-work-media__overlay">
+                            <span class="c-work-media__view">view detail</span>
+                        </div>
+                    </a>
+                    <a class="p-other-info__link u-fade-up js-scroll" href="./works-portfolio.html">
+                        <span class="p-other-info__tag">#web</span>
+                        <h3 class="p-other-info__title">ポートフォリオ</h3>
                     </a>
                 </li>
+
                 <li class="p-other__item">
-                    <img class="p-other__img" src="" alt="">
-                    <a class="p-other__link" href="">
-                        <span class="p-other__tag">#web</span>
-                        <h3 class="p-other__title">ポートフォリオ</h3>
+                    <a class="p-other__link c-work-media u-fade-scale js-scroll" href="./works-portfolio.html">
+                        <picture>
+                            <source srcset="./img/screenshot/portfolio-pc.webp" media="(min-width: 768px)">   <!-- 画像は後で差し替える -->
+                            <img class="c-work-media__img" src="./img/screenshot/portfolio-sp.webp" alt="web制作実績：ポートフォリオの詳細を見る">  <!-- 画像は後で差し替える -->
+                        </picture>
+                        <div class="c-work-media__overlay">
+                            <span class="c-work-media__view">view detail</span>
+                        </div>
+                    </a>
+                    <a class="p-other-info__link u-fade-up js-scroll" href="./works-portfolio.html">
+                        <span class="p-other-info__tag">#web</span>
+                        <h3 class="p-other-info__title">ポートフォリオ</h3>
                     </a>
                 </li>
+
                 <li class="p-other__item">
-                    <img class="p-other__img" src="" alt="">
-                    <a class="p-other__link" href="">
-                        <span class="p-other__tag">#web</span>
-                        <h3 class="p-other__title">ポートフォリオ</h3>
+                    <a class="p-other__link c-work-media u-fade-scale js-scroll" href="./works-portfolio.html">
+                        <picture>
+                            <source srcset="./img/screenshot/portfolio-pc.webp" media="(min-width: 768px)">   <!-- 画像は後で差し替える -->
+                            <img class="c-work-media__img" src="./img/screenshot/portfolio-sp.webp" alt="web制作実績：ポートフォリオの詳細を見る">  <!-- 画像は後で差し替える -->
+                        </picture>
+                        <div class="c-work-media__overlay">
+                            <span class="c-work-media__view">view detail</span>
+                        </div>
+                    </a>
+                    <a class="p-other-info__link u-fade-up js-scroll" href="./works-portfolio.html">
+                        <span class="p-other-info__tag">#web</span>
+                        <h3 class="p-other-info__title">ポートフォリオ</h3>
                     </a>
                 </li>
             </ul>
