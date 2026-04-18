@@ -175,4 +175,10 @@
     .p-works__link {
         margin-block-end: 0;
     }
+
+    .p-works-info__link {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spc-2xs);
+    }
 }

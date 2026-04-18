@@ -778,4 +778,8 @@ span {
     .p-contact__text {
         margin-block-end: var(--spc-s);
     }
+
+    .u-br--sp {
+        display: none;
+    }
 }

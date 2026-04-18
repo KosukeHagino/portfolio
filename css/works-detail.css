@@ -11,16 +11,21 @@
 
 
 /**************************************************
+   Keyframes
+**************************************************/
+/* --- mockup画像の無限切り替え --- */
+@keyframes img-switch-anim {
+    0%   { transform: translateX(0); }
+    45%  { transform: translateX(0); }
+    50%  { transform: translateX(-100vw); }
+    95%  { transform: translateX(-100vw); }
+    100% { transform: translateX(0); }
+}
+
+
+/**************************************************
    Detail section
 **************************************************/
-.p-detail {
-
-}
-
-.p-detail__container {
-    
-}
-
 .p-detail__mockup {
     position: relative;
     display: flex;
@@ -45,14 +50,6 @@
 
 .p-detail__mockup-sp {
     object-fit: contain;
-}
-
-@keyframes img-switch-anim {
-    0%   { transform: translateX(0); }
-    45%  { transform: translateX(0); }
-    50%  { transform: translateX(-100vw); }
-    95%  { transform: translateX(-100vw); }
-    100% { transform: translateX(0); }
 }
 
 .p-detail__lead {
@@ -88,20 +85,17 @@
 }
 
 .p-other__list {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    padding-inline: var(--spc-m);   
-    margin-block-end: var(--spc-l); 
-}
-
-.p-other__item {
-    inline-size: 42%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
+    gap: var(--spc-l);
+    justify-content: center;
+    margin-block-end: var(--spc-xl);
+    padding-inline: var(--spc-m);
 }
 
 .p-other__link {
     display: block;
-    margin-block-end: var(--spc-m);
+    margin-block-end: var(--spc-s);
 }
 
 .p-other-info__link {
@@ -109,7 +103,6 @@
     align-items: flex-start;
     flex-direction: column;
     gap: var(--spc-xs);
-    margin-block-end: var(--spc-l);
     line-height: 1.2;
 }
 
@@ -124,25 +117,136 @@
 
 .p-other-info__title::after {
     content: ">";
-    padding-inline-start: var(--spc-xs);
+    padding-inline-start: var(--spc-s);
 }
 
 .p-other__back {
     display: block;
     inline-size: 200px;
+    margin-inline: auto;
     padding-block: var(--spc-xs);
     padding-inline: var(--spc-s);
-    margin-inline: auto;
-    text-align: center;
     border: 1px solid var(--clr-primary);
     border-radius: 9999px;                      /* 左右両端を半円 */
     font-family: var(--fnt-accent);
     font-size: 1.4rem;
+    text-align: center;
     color: var(--clr-primary);
+    text-transform: capitalize;
 }
 
 .p-other__back::after {
     content: "→";
     display: inline-block;
     padding-inline-start: var(--spc-m);
+}
+
+
+/**************************************************
+   Media queries
+**************************************************/
+/* --- Tablet portrait --- */
+@media screen and (min-width: 768px) and (orientation: portrait) {
+
+    .p-deail__desc-wrapper {
+        justify-content: flex-start;
+    }
+
+    .p-deail__desc-wrapper span:first-child {
+        inline-size: 25%;
+    }
+
+    .p-other__list {
+        gap: var(--spc-xl);
+        margin-block-end: var(--spc-2xl);
+        padding-inline: var(--spc-l);
+    }
+
+    .p-other__link {
+        margin-block-end: var(--spc-m);
+    }
+
+    .p-other-info__link {
+        flex-direction: row;
+        gap: var(--spc-m);
+    }
+}
+
+
+/* --- Tablet landscape & Desktop --- */
+@media screen and (min-width: 1024px) {
+
+    .p-detail__mockup {
+        margin-block-end: var(--spc-2xl);
+    }
+
+    .p-detail__mockup-pc {
+        object-fit: contain;
+    }
+
+    .p-deail__desc-wrapper {
+        justify-content: flex-start;
+    }
+
+    .p-deail__desc-wrapper span:first-child {
+        inline-size: 25%;
+    }
+
+    .p-other__list {
+        max-inline-size: 1268px;
+        grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
+        margin-inline: auto;
+        padding-inline: var(--spc-xl);
+    }
+
+    .p-other__item {
+        margin-block-end: var(--spc-l);
+    }
+
+    .p-other__link {
+        margin-block-end: var(--spc-m);
+    }
+
+    .p-other-info__link {
+        flex-direction: row;
+        gap: var(--spc-m);
+    }
+
+    .p-other-info__link:hover {
+        text-decoration: underline;
+        text-underline-offset: 0.5em;
+        text-decoration-thickness: 0.5px;
+        text-decoration-color: var(--clr-primary);
+    }
+
+    .p-other__back {
+        inline-size: 300px;
+        font-size: 2.0rem;
+        padding-block: var(--spc-s);
+        padding-inline: var(--spc-l);
+        pointer-events: auto;
+    }
+
+    .p-other__back:hover {
+        color: var(--clr-bg-card);
+        background-color: var(--clr-active);
+        transition:
+            color 0.3s ease,
+            background-color 0.3s ease;
+    }
+}
+
+
+/* --- Mobile landscape --- */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+
+    .p-detail__mockup-pc,
+    .p-detail__mockup-sp {
+        padding-inline: var(--spc-xl);
+    }
+
+    .p-other__list {
+        grid-template-columns: repeat(auto-fit, minmax(25%, 1fr));
+        padding-inline: var(--spc-xl);
+    }
 }
