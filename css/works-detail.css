@@ -26,6 +26,10 @@
 /**************************************************
    Detail section
 **************************************************/
+.p-detail {
+    margin-block-end: var(--spc-xl);
+}
+
 .p-detail__mockup {
     position: relative;
     display: flex;
@@ -56,6 +60,10 @@
     margin-block-end: var(--spc-m);
 }
 
+.p-detail__list {
+    margin-block-end: var(--spc-xl);
+}
+
 .p-detail__item {
     display: flex;
     flex-direction: column;
@@ -63,6 +71,10 @@
     padding-inline: var(--spc-m);
     padding-block: var(--spc-l);
     border-block-start: 1px dotted var(--clr-primary);
+}
+
+.p-detail__item:last-child {
+    border-block-end: 1px dotted var(--clr-primary);
 }
 
 .p-detail__term {
@@ -82,6 +94,13 @@
     align-items: baseline;
     gap: var(--spc-m);
     margin-block-end: 0.5rem;
+}
+
+.p-detail__visit {
+    display: block;
+    inline-size: 150px;
+    text-align: center;
+    text-transform: capitalize;
 }
 
 .p-other__list {
@@ -122,23 +141,9 @@
 
 .p-other__back {
     display: block;
-    inline-size: 200px;
-    margin-inline: auto;
-    padding-block: var(--spc-xs);
-    padding-inline: var(--spc-s);
-    border: 1px solid var(--clr-primary);
-    border-radius: 9999px;                      /* 左右両端を半円 */
-    font-family: var(--fnt-accent);
-    font-size: 1.4rem;
+    inline-size: 150px;
     text-align: center;
-    color: var(--clr-primary);
     text-transform: capitalize;
-}
-
-.p-other__back::after {
-    content: "→";
-    display: inline-block;
-    padding-inline-start: var(--spc-m);
 }
 
 
@@ -147,6 +152,10 @@
 **************************************************/
 /* --- Tablet portrait --- */
 @media screen and (min-width: 768px) and (orientation: portrait) {
+
+    .p-detail__list {
+        margin-block-end: var(--spc-2xl);
+    }
 
     .p-deail__desc-wrapper {
         justify-content: flex-start;
@@ -184,12 +193,20 @@
         object-fit: contain;
     }
 
+    .p-detail__list {
+        margin-block-end: var(--spc-2xl);
+    }
+    
     .p-deail__desc-wrapper {
         justify-content: flex-start;
     }
 
     .p-deail__desc-wrapper span:first-child {
         inline-size: 25%;
+    }
+
+    .p-detail__visit {
+        inline-size: 300px;
     }
 
     .p-other__list {
@@ -221,18 +238,6 @@
 
     .p-other__back {
         inline-size: 300px;
-        font-size: 2.0rem;
-        padding-block: var(--spc-s);
-        padding-inline: var(--spc-l);
-        pointer-events: auto;
-    }
-
-    .p-other__back:hover {
-        color: var(--clr-bg-card);
-        background-color: var(--clr-active);
-        transition:
-            color 0.3s ease,
-            background-color 0.3s ease;
     }
 }
 
