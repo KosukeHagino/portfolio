@@ -17,10 +17,10 @@
 **************************************************/
 /* --- Scroll bar --- */
 @keyframes scroll-bar {
-    0%    { transform: scaleX(0); transform-origin: start; }     /* 左端を固定して右へ伸ばす */
-    50%   { transform: scaleX(1); transform-origin: start; }
-    50.1% { transform: scaleX(1); transform-origin: end; }       /* 右端を固定して左へ縮ませる */
-    100%  { transform: scaleX(0); transform-origin: end; }
+    0%    { transform: scaleX(0); transform-origin: left; }         /* 左端を固定して右へ伸ばす */
+    50%   { transform: scaleX(1); transform-origin: left; }
+    50.1% { transform: scaleX(1); transform-origin: right; }        /* 右端を固定して左へ縮ませる */
+    100%  { transform: scaleX(0); transform-origin: right; }
 }
 
 
