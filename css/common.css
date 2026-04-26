@@ -71,7 +71,6 @@
 html {
     inline-size: 100%;
     font-size: 62.5%;               /* 1rem = 16px * 62.5% = 10px */
-    scrollbar-gutter: stable;       /* スクロールバーの幅を常に確保 */ 
     scroll-behavior: smooth;        /* ページ内リンクをクリックした時、スクロールを滑らかにする */
 }
 

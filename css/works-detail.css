@@ -31,29 +31,16 @@
 }
 
 .p-detail__mockup {
-    position: relative;
+    inline-size: 200vw;
     display: flex;
-    justify-content: flex-start;
     align-items: center;
-    overflow-x: hidden;
     margin-block-end: var(--spc-xl);
 }
 
-.p-detail__mockup-pc,
-.p-detail__mockup-sp {
+.p-detail__mockup-img {
     display: block;
-    flex-shrink: 0;
     inline-size: 100vw;
-    block-size: 55vh;
     animation: img-switch-anim 10s infinite;
-}
-
-.p-detail__mockup-pc {
-    object-fit: cover;
-}
-
-.p-detail__mockup-sp {
-    object-fit: contain;
 }
 
 .p-detail__lead {
@@ -153,6 +140,7 @@
 /* --- Tablet portrait --- */
 @media screen and (min-width: 768px) and (orientation: portrait) {
 
+
     .p-detail__list {
         margin-block-end: var(--spc-2xl);
     }
@@ -186,11 +174,17 @@
 @media screen and (min-width: 1024px) {
 
     .p-detail__mockup {
+        inline-size: 80vw;
+        max-inline-size: 1024px;
+        margin-inline: auto;
         margin-block-end: var(--spc-2xl);
     }
 
-    .p-detail__mockup-pc {
-        object-fit: contain;
+    .p-detail__mockup-img {
+        inline-size: 40vw;
+        max-inline-size: 512px;
+        padding: var(--spc-2xs);
+        animation: none;
     }
 
     .p-detail__list {
@@ -245,9 +239,15 @@
 /* --- Mobile landscape --- */
 @media screen and (max-height: 500px) and (orientation: landscape) {
 
-    .p-detail__mockup-pc,
-    .p-detail__mockup-sp {
-        padding-inline: var(--spc-xl);
+    .p-detail__mockup {
+        inline-size: 80vw;
+        margin-inline: auto;
+    }
+
+    .p-detail__mockup-img {
+        inline-size: 40vw;
+        padding: var(--spc-2xs);
+        animation: none;
     }
 
     .p-other__list {
