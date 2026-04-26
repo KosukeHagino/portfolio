@@ -234,7 +234,7 @@ body:not(.is-loading) .l-loading__counter {
     font-family: var(--fnt-accent);
     font-weight: 700;
     font-size: 4.0rem;
-    line-height: 1.6;
+    line-height: 1;
     letter-spacing: 0.3em;
     text-align: justify;
     text-transform: uppercase;
@@ -242,6 +242,7 @@ body:not(.is-loading) .l-loading__counter {
 
 .p-work-visual__job {
     display: block;
+    padding-block: var(--spc-s);
     font-weight: 400;
     font-size: 1.4rem;
     letter-spacing: 0.15em;
